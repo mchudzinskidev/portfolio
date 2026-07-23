@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'SourceSans3';
+    src: url('assets/fonts/Source_Sans_3/SourceSans3-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: SourceSans3, sans-serif;
+}
+
+body{
+    background-color: black;
+    color: white;
+}
+
+a, a:visited{
+    color: white;
+}

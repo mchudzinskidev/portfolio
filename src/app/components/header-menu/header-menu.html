@@ -1,0 +1,23 @@
+<nav class="nav">
+    @for (hm of headerMenu(); track hm.displayName) {
+        <div class="headerMenuItem">
+            <div class="navTile">
+                @if ((hm.link ?? '').length > 0){
+                    <a href="{{ hm.link }}">{{ hm.displayName }}</a>
+                }@else{
+                    <span>{{ hm.displayName }}</span>
+                }
+            </div>
+            <div class="navSubMenuContainer">
+                @for (sub of hm.subMenu; track sub.displayName; let first = $first) {
+                    <div class="subMenu">
+                        <div>
+                            <div class="SubMenuArrow" [class.firstArrow]="first"></div>
+                        </div>
+                        <a href="{{ sub.link }}">{{ sub.displayName }}</a>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+</nav>

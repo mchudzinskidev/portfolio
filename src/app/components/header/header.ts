@@ -8,5 +8,5 @@ import { HomeContent } from '../../core/models/home-content';
   styleUrl: './header.scss',
 })
 export class Header {
-  public hero = input.required<HomeContent['hero']>();
+  public header = input.required<HomeContent['header']>();
 }
