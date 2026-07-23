@@ -1,11 +1,9 @@
 import { Component, inject } from '@angular/core';
-import { Header } from '../../components/header/header';
-import { HeaderMenu } from '../../components/header-menu/header-menu';
 import { Content } from '../../core/services/content';
 
 @Component({
   selector: 'app-home-page',
-  imports: [Header, HeaderMenu],
+  imports: [],
   templateUrl: './home-page.html',
   styleUrl: './home-page.scss',
 })
