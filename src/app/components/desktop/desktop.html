@@ -1,7 +1,7 @@
 <div class="desktopContainer">
     <div class="desktop">
         @for (window of windows; track $index) {
-            <app-window [window]="window"></app-window>
+            <app-window [window]="window" [index]="$index" (focused)="focusCallback($event)"></app-window>
         }
     </div>
     <div class="desktopToolbar">

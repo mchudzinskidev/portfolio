@@ -26,7 +26,20 @@ export class Desktop {
       posY: 64,
       innerH: 192,
       innerW: 256,
+      zIndex: this.windows.length > 0 ? Math.max(...this.windows.map(win => win.zIndex)) + 1 : 1,
+    });
+  }
+  public focusCallback(id: number): void {
+    const maxIndex = Math.max(...this.windows.map(win => win.zIndex));
+    const currentIndex = this.windows[id].zIndex;
+    if (currentIndex === maxIndex) {
+      return;
+    }
+    for (const win of this.windows) {
+      if (win.zIndex > currentIndex) {
+        win.zIndex--;
       }
-    );
+    }
+    this.windows[id].zIndex = maxIndex;
   }
 }

@@ -2,6 +2,7 @@ import {
   Component,
   HostListener,
   input,
+  output,
 } from '@angular/core';
 
 import { Window as WindowModel } from '../../core/models/window';
@@ -15,6 +16,9 @@ import { Window as WindowModel } from '../../core/models/window';
 export class Window {
 
   public window = input.required<WindowModel>();
+  public index = input.required<number>();
+
+  public focused = output<number>();
 
   private dragging = false;
   private startMouseX = 0;
