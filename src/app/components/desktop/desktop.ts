@@ -11,6 +11,7 @@ import { Window } from '../../core/models/window';
 export class Desktop {
   public clock: string = '00:00';
   public windows: Window[] = [];
+  public showFullscreenIndicator: boolean = false;
   constructor(){
     this.updateClock();
     setInterval(() => { this.updateClock(); }, 1000);
@@ -41,5 +42,8 @@ export class Desktop {
       }
     }
     this.windows[id].zIndex = maxIndex;
+  }
+  public dragIndCallback(top: boolean){
+    this.showFullscreenIndicator = top;
   }
 }

@@ -19,6 +19,7 @@ export class Window {
   public index = input.required<number>();
 
   public focused = output<number>();
+  public draggedToTop = output<boolean>();
 
   private dragging = false;
   private startMouseX = 0;
@@ -45,7 +46,14 @@ export class Window {
       return;
     }
     this.window().posX = this.startWindowX + event.clientX - this.startMouseX;
-    this.window().posY = this.startWindowY + event.clientY - this.startMouseY;
+    const newPosY = this.startWindowY + event.clientY - this.startMouseY
+    if(newPosY <= 0){
+      this.draggedToTop.emit(true);
+      this.window().posY = 0;
+    }else{
+      this.draggedToTop.emit(false);
+      this.window().posY = newPosY;
+    }
   }
   @HostListener('document:pointerup')
   stopDrag(): void {
