@@ -1,4 +1,11 @@
-<div class="window noselect" [style.top.px]="window().posY" [style.left.px]="window().posX" [style.z-index]="window().zIndex" (pointerdown)="focused.emit(index())">
+<div
+    class="window noselect"
+    [style.top.px]="window().posY"
+    [style.left.px]="window().posX"
+    [style.z-index]="window().zIndex"
+    (pointerdown)="focused.emit(index())"
+    [class.fullscreen]="window().isFullscreen"
+>
     <table class="table">
         <tr>
             <td class="resizeCornerNwse"></td>
@@ -15,7 +22,12 @@
                     <div role="button">&#9723;</div>
                     <div role="button">&#10005;</div>
                 </div>
-                <div class="content" [style.height.px]="window().innerH" [style.width.px]="window().innerW">{{ index() }}</div>
+                <div
+                    class="content"
+                    [style.height]="window().isFullscreen ? 'calc(100vh - 34px)' : window().innerH + 'px'"
+                    [style.width]="window().isFullscreen ? 'calc(100vw - 4px)' : window().innerW + 'px'">
+                    {{ index() }}
+                </div>
             </td>
             <td class="resizeHorizontal"></td>
         </tr>

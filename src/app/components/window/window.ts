@@ -28,17 +28,23 @@ export class Window {
   private startWindowY = 0;
 
   public startDrag(event: PointerEvent): void {
-    if (event.button !== 0) {
-      return;
-    }
-    this.dragging = true;
-    this.startMouseX = event.clientX;
-    this.startMouseY = event.clientY;
-    this.startWindowX = this.window().posX;
-    this.startWindowY = this.window().posY;
-    (event.target as HTMLElement).setPointerCapture(event.pointerId);
-    event.preventDefault();
+  if (event.button !== 0) {
+    return;
   }
+  this.dragging = true;
+  this.startMouseX = event.clientX;
+  this.startMouseY = event.clientY;
+  if (this.window().isFullscreen) {
+    this.window().isFullscreen = false;
+    const ratio = event.clientX / window.innerWidth;
+    this.window().posX = event.clientX - this.window().innerW * ratio;
+    this.window().posY = 0;
+  }
+  this.startWindowX = this.window().posX;
+  this.startWindowY = this.window().posY;
+  (event.target as HTMLElement).setPointerCapture(event.pointerId);
+  event.preventDefault();
+}
 
   @HostListener('document:pointermove', ['$event'])
   onPointerMove(event: PointerEvent): void {
@@ -58,5 +64,9 @@ export class Window {
   @HostListener('document:pointerup')
   stopDrag(): void {
     this.dragging = false;
+    if(this.window().posY === 0){
+      this.window().posX = 0;
+      this.window().isFullscreen = true;
+    }
   }
 }

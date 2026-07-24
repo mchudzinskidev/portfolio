@@ -5,4 +5,5 @@ export interface Window {
   innerH: number;
   innerW: number;
   zIndex: number;
+  isFullscreen: boolean;
 }

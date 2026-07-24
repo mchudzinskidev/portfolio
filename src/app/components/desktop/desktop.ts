@@ -28,6 +28,7 @@ export class Desktop {
       innerH: 192,
       innerW: 256 + 64,
       zIndex: this.windows.length > 0 ? Math.max(...this.windows.map(win => win.zIndex)) + 1 : 1,
+      isFullscreen: false,
     });
   }
   public focusCallback(id: number): void {
