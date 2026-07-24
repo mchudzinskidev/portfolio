@@ -10,6 +10,7 @@
         height: 100%;
     }
     .desktopToolbar{
+        z-index: 999999;
         position: fixed;
         bottom: 48px;
         left: 48px;

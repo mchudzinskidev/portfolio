@@ -28,8 +28,15 @@
         background-color: #1a1a1a;
         align-items: center;
         justify-content: flex-end;
+        .headerIcon{
+            height: 22px;
+            width: 22px;
+            background-image: url(../../../assets/images/gear.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0 4px;
+        }
         .headerTitle{
-            padding: 4px 8px;
             margin-right: auto;
         }
         div[role=button]{
