@@ -1,4 +1,9 @@
-import { Component, input, OnInit } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  input,
+} from '@angular/core';
+
 import { Window as WindowModel } from '../../core/models/window';
 
 @Component({
@@ -8,5 +13,38 @@ import { Window as WindowModel } from '../../core/models/window';
   styleUrl: './window.scss',
 })
 export class Window {
+
   public window = input.required<WindowModel>();
+
+  private dragging = false;
+  private startMouseX = 0;
+  private startMouseY = 0;
+  private startWindowX = 0;
+  private startWindowY = 0;
+
+  public startDrag(event: PointerEvent): void {
+    if (event.button !== 0) {
+      return;
+    }
+    this.dragging = true;
+    this.startMouseX = event.clientX;
+    this.startMouseY = event.clientY;
+    this.startWindowX = this.window().posX;
+    this.startWindowY = this.window().posY;
+    (event.target as HTMLElement).setPointerCapture(event.pointerId);
+    event.preventDefault();
+  }
+
+  @HostListener('document:pointermove', ['$event'])
+  onPointerMove(event: PointerEvent): void {
+    if (!this.dragging) {
+      return;
+    }
+    this.window().posX = this.startWindowX + event.clientX - this.startMouseX;
+    this.window().posY = this.startWindowY + event.clientY - this.startMouseY;
+  }
+  @HostListener('document:pointerup')
+  stopDrag(): void {
+    this.dragging = false;
+  }
 }

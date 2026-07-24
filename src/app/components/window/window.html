@@ -8,7 +8,7 @@
         <tr>
             <td class="resizeHorizontal"></td>
             <td>
-                <div class="headerBar">
+                <div class="headerBar" (pointerdown)="startDrag($event)">
                     <div class="headerTitle">{{ window().title }}</div>
                     <div role="button">&#9472;</div>
                     <div role="button">&#9723;</div>
