@@ -24,6 +24,17 @@
         .right{
             margin-left: auto;
         }
+        .toolbarIcon{
+            margin-left: 16px;
+            border-radius: 50%;
+            height: 48px;
+            width: 48px;
+            background-color: green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
     }
     .fullscreenIndicator{
         position: fixed;

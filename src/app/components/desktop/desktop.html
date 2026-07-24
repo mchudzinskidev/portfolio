@@ -5,9 +5,10 @@
         }
     </div>
     <div class="desktopToolbar">
-        <div>
-            <div (click)="newWindow()">+</div>
-        </div>
+        <div (click)="newWindow()">+</div>
+        @for (window of windows; track $index) {
+            <div class="toolbarIcon" (click)="focusCallback($index)">{{ $index }}</div>
+        }
         <div class="right">
             <div>{{ clock }}</div>
         </div>
