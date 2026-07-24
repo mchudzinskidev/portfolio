@@ -1,0 +1,15 @@
+<div class="desktopContainer">
+    <div class="desktop">
+        @for (window of windows; track $index) {
+            <app-window [window]="window"></app-window>
+        }
+    </div>
+    <div class="desktopToolbar">
+        <div>
+            <div (click)="newWindow()">+</div>
+        </div>
+        <div class="right">
+            <div>{{ clock }}</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+.window{
+    position: fixed;
+    background-color: #4a4a4a;
+    box-shadow: 0 0 10px #101010;
+    cursor: default;
+    .table{
+        border-spacing: 0;
+        td{
+            min-width: 2px;
+            min-height: 2px;
+            height: 2px;
+        }
+        .resizeCornerNesw{
+            cursor: nesw-resize;
+        }
+        .resizeCornerNwse{
+            cursor: nwse-resize;
+        }
+        .resizeVertical{
+            cursor: ns-resize;
+        }
+        .resizeHorizontal{
+            cursor: ew-resize;
+        }
+    }
+    .headerBar{
+        display: flex;
+        background-color: #1a1a1a;
+        align-items: center;
+        justify-content: flex-end;
+        .headerTitle{
+            padding: 4px 8px;
+            margin-right: auto;
+        }
+        div[role=button]{
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        div[role=button]:hover{
+            background-color: #3a3a3a;
+        }
+    }
+    .content{
+        background-color: #2a2a2a;
+    }
+}

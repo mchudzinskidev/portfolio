@@ -1,0 +1,28 @@
+.desktopContainer{
+    background-color: black;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    .desktop{
+        background-color: #1a1a1a;
+        background-image: url('../../../assets/images/background_pattern.jpg');
+        background-repeat: repeat;
+        height: 100%;
+    }
+    .desktopToolbar{
+        position: fixed;
+        bottom: 48px;
+        left: 48px;
+        display: flex;
+        align-items: center;
+        background-color: rgba(48, 48, 48, 0.9);
+        box-shadow: 0 0 10px #101010;
+        height: 64px;
+        border-radius: 32px;
+        width: calc(100% - 96px);
+        padding: 8px 32px;
+        .right{
+            margin-left: auto;
+        }
+    }
+}

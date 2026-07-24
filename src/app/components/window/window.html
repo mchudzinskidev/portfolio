@@ -1,0 +1,27 @@
+<div class="window noselect" [style.top.px]="window().posY" [style.left.px]="window().posX">
+    <table class="table">
+        <tr>
+            <td class="resizeCornerNwse"></td>
+            <td class="resizeVertical"></td>
+            <td class="resizeCornerNesw"></td>
+        </tr>
+        <tr>
+            <td class="resizeHorizontal"></td>
+            <td>
+                <div class="headerBar">
+                    <div class="headerTitle">{{ window().title }}</div>
+                    <div role="button">&#9472;</div>
+                    <div role="button">&#9723;</div>
+                    <div role="button">&#10005;</div>
+                </div>
+                <div class="content" [style.height.px]="window().innerH" [style.width.px]="window().innerW">content</div>
+            </td>
+            <td class="resizeHorizontal"></td>
+        </tr>
+        <tr>
+            <td class="resizeCornerNesw"></td>
+            <td class="resizeVertical"></td>
+            <td class="resizeCornerNwse"></td>
+        </tr>
+    </table>
+</div>
