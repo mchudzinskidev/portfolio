@@ -16,11 +16,11 @@ export class Desktop {
     this.updateClock();
     setInterval(() => { this.updateClock(); }, 1000);
   }
-  private updateClock() {
+  private updateClock(): void{
     const now = new Date();
     this.clock = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
   }
-  public newWindow(){
+  public newWindow(): void{
     this.windows.push({
       title: 'goodbye world ' + this.clock,
       posX: 64,
@@ -29,11 +29,13 @@ export class Desktop {
       innerW: 256 + 64,
       zIndex: this.windows.length > 0 ? Math.max(...this.windows.map(win => win.zIndex)) + 1 : 1,
       isFullscreen: false,
+      isMinimized: false,
     });
   }
   public focusCallback(id: number): void {
     const maxIndex = Math.max(...this.windows.map(win => win.zIndex));
     const currentIndex = this.windows[id].zIndex;
+    this.windows[id].isMinimized = false;
     if (currentIndex === maxIndex) {
       return;
     }
@@ -44,7 +46,7 @@ export class Desktop {
     }
     this.windows[id].zIndex = maxIndex;
   }
-  public dragIndCallback(top: boolean){
+  public dragIndCallback(top: boolean): void{
     this.showFullscreenIndicator = top;
   }
   public closeWindowCallback(id: number): void{

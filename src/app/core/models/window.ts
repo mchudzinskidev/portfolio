@@ -6,4 +6,5 @@ export interface Window {
   innerW: number;
   zIndex: number;
   isFullscreen: boolean;
+  isMinimized: boolean;
 }

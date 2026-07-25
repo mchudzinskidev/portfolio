@@ -76,7 +76,10 @@ export class Window {
       this.oldPosY = this.window().posY;
     }
   }
-  public fullscreenClick(){
+  public minimizeCallback(): void{
+    this.window().isMinimized = true;
+  }
+  public fullscreenClick(): void{
     if(this.window().isFullscreen){
       this.window().posX = this.oldPosX;
       this.window().posY = this.oldPosY;
@@ -88,7 +91,7 @@ export class Window {
       this.window().isFullscreen = true;
     }
   }
-  public closeClick(){
+  public closeClick(): void{
     this.closed.emit(this.index());
   }
 }

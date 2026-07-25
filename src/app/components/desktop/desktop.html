@@ -1,13 +1,15 @@
 <div class="desktopContainer">
     <div class="desktop">
         @for (window of windows; track $index) {
-            <app-window
+            @if(!window.isMinimized){
+                <app-window
                 [window]="window"
                 [index]="$index"
                 (focused)="focusCallback($event)"
                 (draggedToTop)="dragIndCallback($event)"
                 (closed)="closeWindowCallback($event);"
             ></app-window>
+            }
         }
     </div>
     <div class="desktopToolbar">
