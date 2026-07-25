@@ -38,7 +38,6 @@ export class Window {
     this.window().isFullscreen = false;
     const ratio = event.clientX / window.innerWidth;
     this.window().posX = event.clientX - this.window().innerW * ratio;
-    this.window().posY = 0;
   }
   this.startWindowX = this.window().posX;
   this.startWindowY = this.window().posY;
