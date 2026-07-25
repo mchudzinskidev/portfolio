@@ -7,4 +7,5 @@ export interface Window {
   zIndex: number;
   isFullscreen: boolean;
   isMinimized: boolean;
+  icon: string;
 }

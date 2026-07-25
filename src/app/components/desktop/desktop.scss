@@ -26,15 +26,24 @@
             margin-left: auto;
         }
         .toolbarIcon{
-            margin-left: 16px;
+            > div:first-child{
+                height: 22px;
+                width: 22px;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            margin-left: 12px;
             border-radius: 50%;
-            height: 48px;
+            padding: 0 12px;
             width: 48px;
-            background-color: green;
+            height: 48px;
+            background-color: #4a4a4a;
             display: flex;
             justify-content: center;
             align-items: center;
             cursor: pointer;
+        }.toolbarIconFocused{
+            background-color: forestgreen;
         }
     }
     .fullscreenIndicator{

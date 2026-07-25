@@ -1,5 +1,6 @@
 import {
   Component,
+  computed,
   HostListener,
   input,
   output,
@@ -21,6 +22,8 @@ export class Window {
   public focused = output<number>();
   public draggedToTop = output<boolean>();
   public closed = output<number>();
+
+  public iconUrl = computed(() => `url(./media/${this.window().icon})`);
 
   private dragging = false;
   private startMouseX = 0;

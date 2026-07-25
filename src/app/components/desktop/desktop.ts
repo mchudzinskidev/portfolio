@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, computed } from '@angular/core';
 import { Window as WindowComponent } from '../window/window';
 import { Window } from '../../core/models/window';
 
@@ -30,10 +30,14 @@ export class Desktop {
       zIndex: this.windows.length > 0 ? Math.max(...this.windows.map(win => win.zIndex)) + 1 : 1,
       isFullscreen: false,
       isMinimized: false,
+      icon: 'gear.png',
     });
   }
+  public getMaxWindowZindex(): number{
+    return Math.max(...this.windows.map(win => win.zIndex));
+  }
   public focusCallback(id: number): void {
-    const maxIndex = Math.max(...this.windows.map(win => win.zIndex));
+    const maxIndex = this.getMaxWindowZindex();
     const currentIndex = this.windows[id].zIndex;
     this.windows[id].isMinimized = false;
     if (currentIndex === maxIndex) {

@@ -15,7 +15,9 @@
     <div class="desktopToolbar">
         <div (click)="newWindow()">+</div>
         @for (window of windows; track $index) {
-            <div class="toolbarIcon" (click)="focusCallback($index)">{{ $index }}</div>
+            <div class="toolbarIcon" (click)="focusCallback($index)" [class.toolbarIconFocused]="window.zIndex === getMaxWindowZindex()">
+                <div [style.background-image]="'url(./media/' + window.icon + ')'"></div>
+            </div>
         }
         <div class="right">
             <div>{{ clock }}</div>
