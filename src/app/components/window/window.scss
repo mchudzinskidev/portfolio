@@ -25,7 +25,7 @@
     }
     .headerBar{
         display: flex;
-        background-color: black;
+        background-color: #3a3a3a;
         align-items: center;
         justify-content: flex-end;
         .headerIcon{
@@ -49,6 +49,9 @@
         div[role=button]:hover{
             background-color: #3a3a3a;
         }
+    }
+    .headerBarFocused{
+        background-color: black;
     }
     .content{
         background-color: #2a2a2a;

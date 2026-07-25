@@ -21,6 +21,7 @@ export class Window {
 
   public window = input.required<WindowModel>();
   public index = input.required<number>();
+  public isFocused = input.required<boolean>();
 
   public focused = output<number>();
   public draggedToTop = output<boolean>();

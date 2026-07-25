@@ -1,12 +1,13 @@
-import { Component, computed } from '@angular/core';
+import { Component, computed, HostListener } from '@angular/core';
 import { Window as WindowComponent } from '../window/window';
+import { StartMenu } from '../start-menu/start-menu';
 import { Window } from '../../core/models/window';
 import { FileExplorer } from '../file-explorer/file-explorer';
 import { About } from '../about/about';
 
 @Component({
   selector: 'app-desktop',
-  imports: [WindowComponent],
+  imports: [WindowComponent, StartMenu],
   templateUrl: './desktop.html',
   styleUrl: './desktop.scss',
 })
@@ -14,9 +15,14 @@ export class Desktop {
   public clock: string = '00:00';
   public windows: Window[] = [];
   public showFullscreenIndicator: boolean = false;
+  public showStartMenu: boolean = false;
   constructor(){
     this.updateClock();
     setInterval(() => { this.updateClock(); }, 1000);
+  }
+  @HostListener('document:pointerdown')
+  public closeMenu(): void {
+    this.showStartMenu = false;
   }
   private updateClock(): void{
     const now = new Date();
@@ -32,7 +38,7 @@ export class Desktop {
       zIndex: this.windows.length > 0 ? Math.max(...this.windows.map(win => win.zIndex)) + 1 : 1,
       isFullscreen: false,
       isMinimized: false,
-      icon: 'gear.png',
+      icon: 'gear',
       component: fileExplorer ? FileExplorer : About,
     });
   }
@@ -58,5 +64,8 @@ export class Desktop {
   }
   public closeWindowCallback(id: number): void{
     this.windows = this.windows.filter((win, index) => index !== id);
+  }
+  public toggleStartMenu(){
+    this.showStartMenu = !this.showStartMenu;
   }
 }

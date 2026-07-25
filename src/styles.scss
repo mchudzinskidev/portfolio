@@ -12,6 +12,10 @@
     font-family: SourceSans3, sans-serif;
 }
 
+*[role=button]{
+    cursor: pointer;
+}
+
 body{
     background-color: black;
     color: white;
@@ -28,4 +32,8 @@ a, a:visited{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.center{
+    text-align: center;
 }

@@ -8,16 +8,29 @@
                 (focused)="focusCallback($event)"
                 (draggedToTop)="dragIndCallback($event)"
                 (closed)="closeWindowCallback($event);"
+                [isFocused]="window.zIndex === getMaxWindowZindex()"
             ></app-window>
             }
         }
     </div>
     <div class="desktopToolbar">
-        <div (click)="newWindow(true)">folder</div>
-        <div (click)="newWindow(false)">about</div>
+        @if(showStartMenu){
+            <app-start-menu
+                (openAboutWindowClicked)="newWindow(false)"
+                (openFileExplorerWindowClicked)="newWindow(true)"
+                (pointerdown)="$event.stopPropagation()"
+            ></app-start-menu>
+        }
+        <div
+            class="noselect startMenuBtn"
+            (click)="toggleStartMenu()"
+            (pointerdown)="$event.stopPropagation()"
+            role="button"
+            [class.startMenuBtnFocused]="showStartMenu"
+        >Start</div>
         @for (window of windows; track $index) {
             <div class="toolbarIcon" (click)="focusCallback($index)" [class.toolbarIconFocused]="window.zIndex === getMaxWindowZindex()">
-                <div [style.background-image]="'url(./media/' + window.icon + ')'"></div>
+                <div [class.iconGear]="window.icon === 'gear'"></div>
             </div>
         }
         <div class="right">

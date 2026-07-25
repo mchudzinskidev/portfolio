@@ -15,8 +15,8 @@
         <tr>
             <td class="resizeHorizontal" (pointerdown)="startResize($event, 'w')"></td>
             <td>
-                <div class="headerBar" (pointerdown)="startDrag($event)" (dblclick)="toggleFullscreen($event)">
-                    <div class="headerIcon" [style.background-image]="iconUrl()"></div>
+                <div class="headerBar" (pointerdown)="startDrag($event)" (dblclick)="toggleFullscreen($event)" [class.headerBarFocused]="isFocused()">
+                    <div class="headerIcon" [class.iconGear]="window().icon === 'gear'"></div>
                     <div class="headerTitle">{{ window().title }}</div>
                     <div role="button" (pointerdown)="$event.stopPropagation(); focused.emit(index())" (click)="minimizeCallback()">&#9472;</div>
                     <div role="button" (pointerdown)="$event.stopPropagation(); focused.emit(index())" (click)="fullscreenClick()">&#9723;</div>
