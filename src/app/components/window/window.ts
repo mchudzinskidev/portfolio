@@ -174,4 +174,11 @@ export class Window {
   public closeClick(): void{
     this.closed.emit(this.index());
   }
+  public toggleFullscreen(event: MouseEvent): void {
+    event.stopPropagation();
+    this.dragging = false;
+    this.window().posX = 0;
+    this.window().posY = 0;
+    this.window().isFullscreen = true;
+  }
 }
