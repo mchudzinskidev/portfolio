@@ -134,6 +134,7 @@ export class Window {
   public stopDrag(): void {
     this.dragging = false;
     this.resizing = false;
+    this.draggedToTop.emit(false);
     if (this.window().posY === 0 && !this.resizing) {
         this.window().posX = 0;
         this.window().isFullscreen = true;
@@ -165,7 +166,6 @@ export class Window {
     if(this.window().isFullscreen){
       this.window().posX = this.oldPosX;
       this.window().posY = this.oldPosY;
-      this.draggedToTop.emit(false);
       this.window().isFullscreen = false;
     }else{
       this.window().posX = 0;

@@ -16,8 +16,8 @@
     <div class="desktopToolbar">
         @if(showStartMenu){
             <app-start-menu
-                (openAboutWindowClicked)="newWindow(false)"
-                (openFileExplorerWindowClicked)="newWindow(true)"
+                (openAboutWindowClicked)="newWindow(wType.me)"
+                (openFileExplorerWindowClicked)="newWindow(wType.dir)"
                 (pointerdown)="$event.stopPropagation()"
             ></app-start-menu>
         }
@@ -30,7 +30,11 @@
         >Start</div>
         @for (window of windows; track $index) {
             <div class="toolbarIcon" (click)="focusCallback($index)" [class.toolbarIconFocused]="window.zIndex === getMaxWindowZindex()">
-                <div [class.iconGear]="window.icon === 'gear'"></div>
+                <div
+                    [class.iconGear]="window.icon === 'gear'"
+                    [class.iconDir]="window.icon === 'dir'"
+                    [class.iconMe]="window.icon === 'me'"
+                ></div>
             </div>
         }
         <div class="right">

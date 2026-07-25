@@ -1,9 +1,11 @@
-import { Component, computed, HostListener } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Window as WindowComponent } from '../window/window';
 import { StartMenu } from '../start-menu/start-menu';
 import { Window } from '../../core/models/window';
 import { FileExplorer } from '../file-explorer/file-explorer';
 import { About } from '../about/about';
+
+export enum WindowType { me, dir }
 
 @Component({
   selector: 'app-desktop',
@@ -16,6 +18,7 @@ export class Desktop {
   public windows: Window[] = [];
   public showFullscreenIndicator: boolean = false;
   public showStartMenu: boolean = false;
+  public wType = WindowType;
   constructor(){
     this.updateClock();
     setInterval(() => { this.updateClock(); }, 1000);
@@ -28,7 +31,21 @@ export class Desktop {
     const now = new Date();
     this.clock = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
   }
-  public newWindow(fileExplorer: boolean): void{
+  public newWindow(wType: WindowType): void{
+    let component;
+    let icon;
+    switch(wType){
+      case WindowType.dir: {
+        component = FileExplorer;
+        icon = 'dir';
+        break;
+      }
+      case WindowType.me: {
+        component = About;
+        icon = 'me';
+        break;
+      }
+    }
     this.windows.push({
       title: 'goodbye world ' + this.clock,
       posX: 64,
@@ -38,8 +55,8 @@ export class Desktop {
       zIndex: this.windows.length > 0 ? Math.max(...this.windows.map(win => win.zIndex)) + 1 : 1,
       isFullscreen: false,
       isMinimized: false,
-      icon: 'gear',
-      component: fileExplorer ? FileExplorer : About,
+      icon: icon,
+      component: component,
     });
   }
   public getMaxWindowZindex(): number{
