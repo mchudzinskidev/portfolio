@@ -8,12 +8,12 @@
 >
     <table class="table">
         <tr>
-            <td class="resizeCornerNwse"></td>
-            <td class="resizeVertical"></td>
-            <td class="resizeCornerNesw"></td>
+            <td class="resizeCornerNwse" (pointerdown)="startResize($event, 'nw')"></td>
+            <td class="resizeVertical" (pointerdown)="startResize($event, 'n')"></td>
+            <td class="resizeCornerNesw" (pointerdown)="startResize($event, 'ne')"></td>
         </tr>
         <tr>
-            <td class="resizeHorizontal"></td>
+            <td class="resizeHorizontal" (pointerdown)="startResize($event, 'w')"></td>
             <td>
                 <div class="headerBar" (pointerdown)="startDrag($event)">
                     <div class="headerIcon" [style.background-image]="iconUrl()"></div>
@@ -29,12 +29,12 @@
                     {{ index() }}
                 </div>
             </td>
-            <td class="resizeHorizontal"></td>
+            <td class="resizeHorizontal" (pointerdown)="startResize($event, 'e')"></td>
         </tr>
         <tr>
-            <td class="resizeCornerNesw"></td>
-            <td class="resizeVertical"></td>
-            <td class="resizeCornerNwse"></td>
+            <td class="resizeCornerNesw" (pointerdown)="startResize($event, 'sw')"></td>
+            <td class="resizeVertical" (pointerdown)="startResize($event, 's')"></td>
+            <td class="resizeCornerNwse" (pointerdown)="startResize($event, 'se')"></td>
         </tr>
     </table>
 </div>

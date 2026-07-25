@@ -26,7 +26,7 @@ export class Desktop {
       posX: 64,
       posY: 64,
       innerH: 192,
-      innerW: 256 + 64,
+      innerW: 288,
       zIndex: this.windows.length > 0 ? Math.max(...this.windows.map(win => win.zIndex)) + 1 : 1,
       isFullscreen: false,
       isMinimized: false,

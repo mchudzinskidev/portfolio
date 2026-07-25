@@ -8,6 +8,8 @@ import {
 
 import { Window as WindowModel } from '../../core/models/window';
 
+type ResizeDirection = 'n' | 's' | 'e' | 'w' | 'ne' | 'nw' | 'se' | 'sw';
+
 @Component({
   selector: 'app-window',
   imports: [],
@@ -32,6 +34,12 @@ export class Window {
   private startWindowY = 0;
   private oldPosX = 0;
   private oldPosY = 0;
+  private resizing = false;
+  private resizeDirection!: ResizeDirection;
+  private startWidth = 0;
+  private startHeight = 0;
+  private readonly minWidth = 288;
+  private readonly minHeight = 192;
 
   public startDrag(event: PointerEvent): void {
     if (event.button !== 0) {
@@ -55,29 +63,98 @@ export class Window {
 
   @HostListener('document:pointermove', ['$event'])
   public onPointerMove(event: PointerEvent): void {
-    if (!this.dragging) {
+    if (this.dragging) {
+      this.window().posX = this.startWindowX + event.clientX - this.startMouseX;
+      const newPosY = this.startWindowY + event.clientY - this.startMouseY;
+      if (newPosY <= 0) {
+        this.draggedToTop.emit(true);
+        this.window().posY = 0;
+      } else {
+        this.draggedToTop.emit(false);
+        this.window().posY = newPosY;
+      }
       return;
     }
-    this.window().posX = this.startWindowX + event.clientX - this.startMouseX;
-    const newPosY = this.startWindowY + event.clientY - this.startMouseY
-    if(newPosY <= 0){
-      this.draggedToTop.emit(true);
-      this.window().posY = 0;
-    }else{
-      this.draggedToTop.emit(false);
-      this.window().posY = newPosY;
+    if (!this.resizing) {
+      return;
+    }
+    const dx = event.clientX - this.startMouseX;
+    const dy = event.clientY - this.startMouseY;
+    switch (this.resizeDirection) {
+      case 'e':
+        this.window().innerW = Math.max(this.minWidth, this.startWidth + dx);
+        break;
+      case 's':
+        this.window().innerH = Math.max(this.minHeight, this.startHeight + dy);
+        break;
+      case 'se':
+        this.window().innerW = Math.max(this.minWidth, this.startWidth + dx);
+        this.window().innerH = Math.max(this.minHeight, this.startHeight + dy);
+        break;
+      case 'w': {
+        const width = Math.max(this.minWidth, this.startWidth - dx);
+        this.window().innerW = width;
+        this.window().posX = this.startWindowX + this.startWidth - width;
+        break;
+      }
+      case 'n': {
+        const height = Math.max(this.minHeight, this.startHeight - dy);
+        this.window().innerH = height;
+        this.window().posY = this.startWindowY + this.startHeight - height;
+        break;
+      }
+      case 'nw': {
+        const width = Math.max(this.minWidth, this.startWidth - dx);
+        const height = Math.max(this.minHeight, this.startHeight - dy);
+        this.window().innerW = width;
+        this.window().innerH = height;
+        this.window().posX = this.startWindowX + this.startWidth - width;
+        this.window().posY = this.startWindowY + this.startHeight - height;
+        break;
+      }
+      case 'ne': {
+        const height = Math.max(this.minHeight, this.startHeight - dy);
+        this.window().innerW = Math.max(this.minWidth, this.startWidth + dx);
+        this.window().innerH = height;
+        this.window().posY = this.startWindowY + this.startHeight - height;
+        break;
+      }
+      case 'sw': {
+        const width = Math.max(this.minWidth, this.startWidth - dx);
+        this.window().innerW = width;
+        this.window().innerH = Math.max(this.minHeight, this.startHeight + dy);
+        this.window().posX = this.startWindowX + this.startWidth - width;
+        break;
+      }
     }
   }
   @HostListener('document:pointerup')
   public stopDrag(): void {
     this.dragging = false;
-    if(this.window().posY === 0){
-      this.window().posX = 0;
-      this.window().isFullscreen = true;
-    }else{
-      this.oldPosX = this.window().posX;
-      this.oldPosY = this.window().posY;
+    this.resizing = false;
+    if (this.window().posY === 0 && !this.resizing) {
+        this.window().posX = 0;
+        this.window().isFullscreen = true;
+    } else {
+        this.oldPosX = this.window().posX;
+        this.oldPosY = this.window().posY;
     }
+  }
+  public startResize(event: PointerEvent, direction: ResizeDirection): void {
+    if (event.button !== 0 || this.window().isFullscreen) {
+      return;
+    }
+    this.resizing = true;
+    this.resizeDirection = direction;
+    this.startMouseX = event.clientX;
+    this.startMouseY = event.clientY;
+    this.startWindowX = this.window().posX;
+    this.startWindowY = this.window().posY;
+    this.startWidth = this.window().innerW;
+    this.startHeight = this.window().innerH;
+    (event.target as HTMLElement).setPointerCapture(event.pointerId);
+    event.preventDefault();
+    event.stopPropagation();
   }
   public minimizeCallback(): void{
     this.window().isMinimized = true;
