@@ -18,9 +18,9 @@
                 <div class="headerBar" (pointerdown)="startDrag($event)">
                     <div class="headerIcon"></div>
                     <div class="headerTitle">{{ window().title }}</div>
-                    <div role="button">&#9472;</div>
-                    <div role="button">&#9723;</div>
-                    <div role="button">&#10005;</div>
+                    <div role="button" (pointerdown)="$event.stopPropagation()">&#9472;</div>
+                    <div role="button" (pointerdown)="$event.stopPropagation()" (click)="fullscreenClick()">&#9723;</div>
+                    <div role="button" (pointerdown)="$event.stopPropagation()">&#10005;</div>
                 </div>
                 <div
                     class="content"
