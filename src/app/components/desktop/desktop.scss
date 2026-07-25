@@ -3,6 +3,18 @@
     overflow: hidden;
     height: 100vh;
     width: 100vw;
+    .desktopIcons{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        .selectionRectangle{
+            position: fixed;
+            border: 2px solid forestgreen;
+            background-color: rgba(0, 255, 0, 0.05);
+        }
+    }
     .desktop{
         background-color: #1a1a1a;
         background-image: url('../../../assets/images/background_pattern.jpg');

@@ -1,4 +1,23 @@
 <div class="desktopContainer">
+    <div
+        class="desktopIcons"
+        (pointerdown)="selectionStart($event)"
+        (pointermove)="selectionMove($event)"
+        (pointerup)="selectionEnd($event)"
+    >
+        @for(icon of icons; track $index){
+            <app-desktop-icon [iconDetails]="icon" (clicked)="newWindow(icon.wType)" (selected)="icon.selected = !icon.selected"></app-desktop-icon>
+        }
+        @if(selection.visible){
+            <div
+                class="selectionRectangle"
+                [style.left.px]="selection.left"
+                [style.top.px]="selection.top"
+                [style.width.px]="selection.width"
+                [style.height.px]="selection.height">
+            </div>
+        }
+    </div>
     <div class="desktop">
         @for (window of windows; track $index) {
             @if(!window.isMinimized){
