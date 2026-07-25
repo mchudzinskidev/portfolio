@@ -21,6 +21,7 @@
                         [class.iconGear]="window().icon === 'gear'"
                         [class.iconDir]="window().icon === 'dir'"
                         [class.iconMe]="window().icon === 'me'"
+                        [class.iconTerm]="window().icon === 'term'"
                     ></div>
                     <div class="headerTitle">{{ window().title }}</div>
                     <div role="button" (pointerdown)="$event.stopPropagation(); focused.emit(index())" (click)="minimizeCallback()">&#9472;</div>

@@ -9,4 +9,6 @@ import { Component, output } from '@angular/core';
 export class StartMenu {
   public openFileExplorerWindowClicked = output<void>();
   public openAboutWindowClicked = output<void>();
+  public openTerminalWindowClicked = output<void>();
+  public openSettingsWindowClicked = output<void>();
 }

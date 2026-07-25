@@ -18,6 +18,8 @@
             <app-start-menu
                 (openAboutWindowClicked)="newWindow(wType.me)"
                 (openFileExplorerWindowClicked)="newWindow(wType.dir)"
+                (openSettingsWindowClicked)="newWindow(wType.gear)"
+                (openTerminalWindowClicked)="newWindow(wType.term)"
                 (pointerdown)="$event.stopPropagation()"
             ></app-start-menu>
         }
@@ -34,6 +36,7 @@
                     [class.iconGear]="window.icon === 'gear'"
                     [class.iconDir]="window.icon === 'dir'"
                     [class.iconMe]="window.icon === 'me'"
+                    [class.iconTerm]="window.icon === 'term'"
                 ></div>
             </div>
         }

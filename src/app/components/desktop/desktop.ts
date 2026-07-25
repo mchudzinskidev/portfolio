@@ -4,8 +4,10 @@ import { StartMenu } from '../start-menu/start-menu';
 import { Window } from '../../core/models/window';
 import { FileExplorer } from '../file-explorer/file-explorer';
 import { About } from '../about/about';
+import { Settings } from '../settings/settings';
+import { Terminal } from '../terminal/terminal';
 
-export enum WindowType { me, dir }
+export enum WindowType { me, dir, gear, term }
 
 @Component({
   selector: 'app-desktop',
@@ -34,20 +36,35 @@ export class Desktop {
   public newWindow(wType: WindowType): void{
     let component;
     let icon;
+    let title;
     switch(wType){
       case WindowType.dir: {
         component = FileExplorer;
         icon = 'dir';
+        title = 'File Explorer';
         break;
       }
       case WindowType.me: {
         component = About;
         icon = 'me';
+        title = 'About';
+        break;
+      }
+      case WindowType.gear: {
+        component = Settings;
+        icon = 'gear';
+        title = 'Settings';
+        break;
+      }
+      case WindowType.term: {
+        component = Terminal;
+        icon = 'term';
+        title = 'Terminal';
         break;
       }
     }
     this.windows.push({
-      title: 'goodbye world ' + this.clock,
+      title: title,
       posX: 64,
       posY: 64,
       innerH: 192,
@@ -58,6 +75,7 @@ export class Desktop {
       icon: icon,
       component: component,
     });
+    this.showStartMenu = false;
   }
   public getMaxWindowZindex(): number{
     return Math.max(...this.windows.map(win => win.zIndex));

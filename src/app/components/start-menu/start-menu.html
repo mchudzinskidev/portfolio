@@ -1,12 +1,13 @@
 <div class="menuContainer noselect">
     <div>
-        <div role="button" (click)="openFileExplorerWindowClicked.emit()">File Explorer</div>
+        <div class="leftMenuItem" role="button" (click)="openFileExplorerWindowClicked.emit()">File Explorer</div>
+        <div class="leftMenuItem" role="button" (click)="openTerminalWindowClicked.emit()">Terminal</div>
     </div>
     <div class="vr"></div>
     <div>
         <div class="profilePicture"></div>
         <div class="center">Marcin Chudziński</div>
         <div class="rightMenuItem center" role="button" (click)="openAboutWindowClicked.emit()">About</div>
-        <div class="rightMenuItem center" role="button">Settings</div>
+        <div class="rightMenuItem center" role="button" (click)="openSettingsWindowClicked.emit()">Settings</div>
     </div>
 </div>
