@@ -7,12 +7,13 @@ import {
 } from '@angular/core';
 
 import { Window as WindowModel } from '../../core/models/window';
+import { NgComponentOutlet } from '@angular/common';
 
 type ResizeDirection = 'n' | 's' | 'e' | 'w' | 'ne' | 'nw' | 'se' | 'sw';
 
 @Component({
   selector: 'app-window',
-  imports: [],
+  imports: [NgComponentOutlet],
   templateUrl: './window.html',
   styleUrl: './window.scss',
 })

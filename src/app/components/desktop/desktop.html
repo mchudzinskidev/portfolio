@@ -13,7 +13,8 @@
         }
     </div>
     <div class="desktopToolbar">
-        <div (click)="newWindow()">+</div>
+        <div (click)="newWindow(true)">folder</div>
+        <div (click)="newWindow(false)">about</div>
         @for (window of windows; track $index) {
             <div class="toolbarIcon" (click)="focusCallback($index)" [class.toolbarIconFocused]="window.zIndex === getMaxWindowZindex()">
                 <div [style.background-image]="'url(./media/' + window.icon + ')'"></div>

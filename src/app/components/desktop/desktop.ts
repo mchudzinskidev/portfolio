@@ -1,6 +1,8 @@
 import { Component, computed } from '@angular/core';
 import { Window as WindowComponent } from '../window/window';
 import { Window } from '../../core/models/window';
+import { FileExplorer } from '../file-explorer/file-explorer';
+import { About } from '../about/about';
 
 @Component({
   selector: 'app-desktop',
@@ -20,7 +22,7 @@ export class Desktop {
     const now = new Date();
     this.clock = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
   }
-  public newWindow(): void{
+  public newWindow(fileExplorer: boolean): void{
     this.windows.push({
       title: 'goodbye world ' + this.clock,
       posX: 64,
@@ -31,6 +33,7 @@ export class Desktop {
       isFullscreen: false,
       isMinimized: false,
       icon: 'gear.png',
+      component: fileExplorer ? FileExplorer : About,
     });
   }
   public getMaxWindowZindex(): number{
