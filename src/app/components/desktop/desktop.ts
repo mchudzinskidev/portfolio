@@ -47,4 +47,7 @@ export class Desktop {
   public dragIndCallback(top: boolean){
     this.showFullscreenIndicator = top;
   }
+  public closeWindowCallback(id: number): void{
+    this.windows = this.windows.filter((win, index) => index !== id);
+  }
 }

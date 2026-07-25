@@ -20,6 +20,7 @@ export class Window {
 
   public focused = output<number>();
   public draggedToTop = output<boolean>();
+  public closed = output<number>();
 
   private dragging = false;
   private startMouseX = 0;
@@ -50,7 +51,7 @@ export class Window {
   }
 
   @HostListener('document:pointermove', ['$event'])
-  onPointerMove(event: PointerEvent): void {
+  public onPointerMove(event: PointerEvent): void {
     if (!this.dragging) {
       return;
     }
@@ -65,7 +66,7 @@ export class Window {
     }
   }
   @HostListener('document:pointerup')
-  stopDrag(): void {
+  public stopDrag(): void {
     this.dragging = false;
     if(this.window().posY === 0){
       this.window().posX = 0;
@@ -86,5 +87,8 @@ export class Window {
       this.window().posY = 0;
       this.window().isFullscreen = true;
     }
+  }
+  public closeClick(){
+    this.closed.emit(this.index());
   }
 }
