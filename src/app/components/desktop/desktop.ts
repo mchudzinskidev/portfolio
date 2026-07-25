@@ -35,6 +35,14 @@ export class Desktop {
     gridSize: 128,
     wType: WindowType.term,
     selected: false,
+  },{
+    title: 'File Explorer',
+    gridPosX: 3,
+    gridPosY: 2,
+    icon: 'dir',
+    gridSize: 128,
+    wType: WindowType.dir,
+    selected: false,
   }];
   public selection = {
     visible: false,
@@ -48,6 +56,10 @@ export class Desktop {
   public showFullscreenIndicator: boolean = false;
   public showStartMenu: boolean = false;
   public wType = WindowType;
+  public dragging = false;
+  public dragStartX = 0;
+  public dragStartY = 0;
+  public initialIconPositions = new Map<number, { x: number, y: number }>();
   constructor(){
     this.updateClock();
     setInterval(() => { this.updateClock(); }, 1000);
@@ -173,5 +185,72 @@ export class Desktop {
         iconCenterY >= this.selection.top &&
         iconCenterY <= bottom;
     });
+  }
+  public startDrag(event: PointerEvent, index: number): void {
+    event.preventDefault();
+    const icon = this.icons[index];
+    if (!icon.selected) {
+      this.icons.forEach(i => i.selected = false);
+      icon.selected = true;
+    }
+    this.dragging = true;
+    this.dragStartX = event.clientX;
+    this.dragStartY = event.clientY;
+    this.initialIconPositions.clear();
+    this.icons.forEach((ic, id) => {
+      if(ic.selected){
+        this.initialIconPositions.set(id, {
+          x: ic.gridPosX,
+          y: ic.gridPosY
+        });
+      }
+    });
+    (event.target as HTMLElement).setPointerCapture(event.pointerId);
+  }
+  public drag(event: PointerEvent): void {
+    if (!this.dragging){
+      return;
+    }
+    const dx = event.clientX - this.dragStartX;
+    const dy = event.clientY - this.dragStartY;
+    const grid = this.icons[0].gridSize;
+    this.initialIconPositions.forEach((pos, id) => {
+      const newX = pos.x * grid + dx;
+      const newY = pos.y * grid + dy;
+      this.icons[id].gridPosX = Math.round(newX / grid);
+      this.icons[id].gridPosY = Math.round(newY / grid);
+    });
+  }
+  public stopDrag2(event: PointerEvent): void {
+    if(!this.dragging){
+      return;
+    }
+    const collision = this.icons
+      .filter((icon, id) => this.initialIconPositions.has(id))
+      .some(icon => this.hasCollision(icon) || this.isOutsideScreen(icon));
+    if (collision) {
+      this.initialIconPositions.forEach((pos, id) => {
+        this.icons[id].gridPosX = pos.x;
+        this.icons[id].gridPosY = pos.y;
+      });
+    }
+    this.dragging = false;
+    for(let key of this.initialIconPositions.keys()){
+      setTimeout(() => {
+        this.icons[key].selected = true;
+      });
+    }
+    this.initialIconPositions.clear();
+  }
+  private hasCollision(icon: DesktopIconModel): boolean {
+    return this.icons.some((other, id) =>
+      other !== icon &&
+      !this.initialIconPositions.has(id) && // ignore dragged icons
+      other.gridPosX === icon.gridPosX &&
+      other.gridPosY === icon.gridPosY
+    );
+  }
+  private isOutsideScreen(icon: DesktopIconModel): boolean {
+    return icon.gridPosX < 0 || icon.gridPosY < 0;
   }
 }
