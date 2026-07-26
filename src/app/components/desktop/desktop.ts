@@ -43,6 +43,14 @@ export class Desktop {
     gridSize: 128,
     wType: WindowType.dir,
     selected: false,
+  },{
+    title: 'LinkedIn',
+    gridPosX: 3,
+    gridPosY: 1,
+    icon: 'in',
+    gridSize: 128,
+    wType: WindowType.in,
+    selected: false,
   }];
   public selection = {
     visible: false,
@@ -52,7 +60,7 @@ export class Desktop {
     top: 0,
     width: 0,
     height: 0
-};
+  };
   public showFullscreenIndicator: boolean = false;
   public showStartMenu: boolean = false;
   public wType = WindowType;
@@ -77,6 +85,7 @@ export class Desktop {
     this.clock = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
   }
   public newWindow(wType: WindowType): void{
+    this.showStartMenu = false;
     let component;
     let icon;
     let title;
@@ -105,6 +114,10 @@ export class Desktop {
         title = 'Terminal';
         break;
       }
+      case WindowType.in: {
+        window.open('https://www.linkedin.com/in/marcin-chudzi%C5%84ski-5a2058230/', '_blank')?.focus();
+        return;
+      }
     }
     this.windows.push({
       title: title,
@@ -118,7 +131,6 @@ export class Desktop {
       icon: icon,
       component: component,
     });
-    this.showStartMenu = false;
   }
   public getMaxWindowZindex(): number{
     return Math.max(...this.windows.map(win => win.zIndex));

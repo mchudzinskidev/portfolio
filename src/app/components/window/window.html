@@ -22,6 +22,7 @@
                         [class.iconDir]="window().icon === 'dir'"
                         [class.iconMe]="window().icon === 'me'"
                         [class.iconTerm]="window().icon === 'term'"
+                        [class.iconIn]="window().icon === 'in'"
                     ></div>
                     <div class="headerTitle">{{ window().title }}</div>
                     <div role="button" (pointerdown)="$event.stopPropagation(); focused.emit(index())" (click)="minimizeCallback()">&#9472;</div>
@@ -33,9 +34,7 @@
                     [style.height]="window().isFullscreen ? 'calc(100vh - 34px)' : window().innerH + 'px'"
                     [style.width]="window().isFullscreen ? 'calc(100vw - 4px)' : window().innerW + 'px'"
                 >
-                    <ng-container
-                        *ngComponentOutlet="window().component">
-                    </ng-container>
+                    <ng-container *ngComponentOutlet="window().component"></ng-container>
                 </div>
             </td>
             <td class="resizeHorizontal" (pointerdown)="startResize($event, 'e')"></td>

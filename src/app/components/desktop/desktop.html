@@ -8,7 +8,12 @@
         (pointerup)="stopDrag2($event)"
     >
         @for(icon of icons; track $index){
-            <app-desktop-icon [iconDetails]="icon" (clicked)="newWindow(icon.wType)" (selected)="icon.selected = !icon.selected" (pointerdown)="startDrag($event, $index)"></app-desktop-icon>
+            <app-desktop-icon
+                [iconDetails]="icon"
+                (clicked)="newWindow(icon.wType)"
+                (selected)="icon.selected = !icon.selected"
+                (pointerdown)="startDrag($event, $index)"
+            ></app-desktop-icon>
         }
         @if(selection.visible){
             <div
@@ -58,6 +63,7 @@
                     [class.iconDir]="window.icon === 'dir'"
                     [class.iconMe]="window.icon === 'me'"
                     [class.iconTerm]="window.icon === 'term'"
+                    [class.iconIn]="window.icon === 'in'"
                 ></div>
             </div>
         }
