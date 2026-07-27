@@ -11,4 +11,5 @@ export interface Window {
   isMinimized: boolean;
   icon: string;
   component: Type<any>;
+  inputs: Record<string, unknown>;
 }

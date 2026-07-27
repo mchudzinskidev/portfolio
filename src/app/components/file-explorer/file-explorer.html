@@ -1,1 +1,44 @@
-<p>file-explorer works!</p>
+
+<div class="fileExplorer">
+    <div class="topBar">
+        <div role="button" (click)="goToHome()">&#8962;</div>
+        <div role="button" (click)="goToUpperDir()">&#x2191;</div>
+        <div class="topBarPath">
+            @for(item of getPathComponents(); track $index){
+                @if($index !== 0){
+                    <span>/</span>
+                }
+                <span role="button" (click)="openNode(item)">{{ item.name }}</span>
+            }
+        </div>
+    </div>
+    <div class="mainWindow">
+        <div class="quickAccess">
+            <div>Quick Access</div>
+            @for(item of quickAccessItems; track $index){
+                @if(item !== null){
+                    <div role="button" (click)="openNode(item)">
+                        <div [class]="'children' in item ? 'iconDir' : 'iconFile'"></div>
+                        <span>{{ item.name }}</span>
+                    </div>
+                }
+            }
+        </div>
+        <div class="vr"></div>
+        <div class="content">
+            @if('children' in node){
+                @for (item of node.children; track $index) {
+                    <div role="button" (click)="openNode(item)">
+                        <div [class]="'children' in item ? 'iconDir' : 'iconFile'"></div>
+                        <span>{{ item.name }}</span>
+                    </div>
+                }
+                @if(node.children.length === 0){
+                    <span class="emptyInd center">This folder is empty</span>
+                }
+            }@else{
+                TODO open file
+            }
+        </div>
+    </div>
+</div>

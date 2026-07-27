@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { Window as WindowComponent } from '../window/window';
 import { StartMenu } from '../start-menu/start-menu';
 import { Window } from '../../core/models/window';
@@ -9,6 +9,7 @@ import { About } from '../about/about';
 import { Settings } from '../settings/settings';
 import { Terminal } from '../terminal/terminal';
 import { WindowType } from '../../core/types/window-types';
+import { FileSystem } from '../../core/services/file-system';
 
 @Component({
   selector: 'app-desktop',
@@ -17,6 +18,7 @@ import { WindowType } from '../../core/types/window-types';
   styleUrl: './desktop.scss',
 })
 export class Desktop {
+  private fs = inject(FileSystem);
   public clock: string = '00:00';
   public windows: Window[] = [];
   public icons: DesktopIconModel[] = [{
@@ -50,6 +52,14 @@ export class Desktop {
     icon: 'in',
     gridSize: 128,
     wType: WindowType.in,
+    selected: false,
+  },{
+    title: 'projects',
+    gridPosX: 0,
+    gridPosY: 1,
+    icon: 'dir',
+    gridSize: 128,
+    wType: WindowType.projects,
     selected: false,
   }];
   public selection = {
@@ -89,6 +99,7 @@ export class Desktop {
     let component;
     let icon;
     let title;
+    let inputs: Record<string, unknown> = {};
     switch(wType){
       case WindowType.dir: {
         component = FileExplorer;
@@ -118,18 +129,26 @@ export class Desktop {
         window.open('https://www.linkedin.com/in/marcin-chudzi%C5%84ski-5a2058230/', '_blank')?.focus();
         return;
       }
+      case WindowType.projects: {
+        component = FileExplorer;
+        icon = 'dir';
+        title = 'File Explorer';
+        inputs = { currentNode: this.fs.resolvePath('root/desktop/projects') };
+        break;
+      }
     }
     this.windows.push({
       title: title,
       posX: 64,
       posY: 64,
-      innerH: 192,
-      innerW: 288,
+      innerH: 288,
+      innerW: 512,
       zIndex: this.windows.length > 0 ? Math.max(...this.windows.map(win => win.zIndex)) + 1 : 1,
       isFullscreen: false,
       isMinimized: false,
       icon: icon,
       component: component,
+      inputs: inputs,
     });
   }
   public getMaxWindowZindex(): number{

@@ -1,1 +1,1 @@
-export enum WindowType { me, dir, gear, term, in }
+export enum WindowType { me, dir, gear, term, in, projects }
