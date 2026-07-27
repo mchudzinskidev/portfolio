@@ -7,6 +7,7 @@ import { DesktopIcon } from '../desktop-icon/desktop-icon';
 import { FileExplorer } from '../file-explorer/file-explorer';
 import { About } from '../about/about';
 import { Settings } from '../settings/settings';
+import { Browser } from '../browser/browser';
 import { Terminal } from '../terminal/terminal';
 import { WindowType } from '../../core/types/window-types';
 import { FileSystem } from '../../core/services/file-system';
@@ -94,17 +95,19 @@ export class Desktop {
     const now = new Date();
     this.clock = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
   }
-  public newWindow(wType: WindowType): void{
+  public newWindow(wType: WindowType, inputs: Record<string, unknown> = {}): void{
     this.showStartMenu = false;
     let component;
     let icon;
     let title;
-    let inputs: Record<string, unknown> = {};
     switch(wType){
       case WindowType.dir: {
         component = FileExplorer;
         icon = 'dir';
         title = 'File Explorer';
+        inputs = {
+          openBrowserClicked: (path: string) => { this.newWindow(WindowType.net, { path: path }); }
+        };
         break;
       }
       case WindowType.me: {
@@ -133,7 +136,16 @@ export class Desktop {
         component = FileExplorer;
         icon = 'dir';
         title = 'File Explorer';
-        inputs = { currentNode: this.fs.resolvePath('root/desktop/projects') };
+        inputs = {
+          currentNode: this.fs.resolvePath('home/desktop/projects'),
+          openBrowserClicked: (path: string) => { this.newWindow(WindowType.net, { path: path }); }
+        };
+        break;
+      }
+      case WindowType.net: {
+        component = Browser;
+        icon = 'net';
+        title = 'Browser';
         break;
       }
     }

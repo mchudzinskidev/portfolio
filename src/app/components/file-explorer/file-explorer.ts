@@ -10,10 +10,11 @@ import { DirectoryNode, FileSystem, Node } from '../../core/services/file-system
 export class FileExplorer implements OnInit{
   public fs = inject(FileSystem);
   public currentNode = input<(Node | DirectoryNode)>(this.fs.getFs());
+  public openBrowserClicked = input<(path: string) => void>(() => {});
   public node: (Node | DirectoryNode) = this.fs.getFs();
   public quickAccessItems: (Node | null)[] = [
-    this.fs.resolvePath('root'),
-    this.fs.resolvePath('root/desktop/projects')
+    this.fs.resolvePath('home'),
+    this.fs.resolvePath('home/desktop/projects')
   ];
   ngOnInit(){
     this.node = this.currentNode();
@@ -25,7 +26,11 @@ export class FileExplorer implements OnInit{
     this.node = this.fs.getFs();
   }
   public openNode(node: Node): void{
-    this.node = node;
+    if('children' in node){
+      this.node = node;
+    }else{
+      this.openBrowserClicked()(this.fs.getPath(node));
+    }
   }
   public getPathComponents(): Node[]{
     const result: Node[] = [];

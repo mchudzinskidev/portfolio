@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Type } from '@angular/core';
+import { Starling } from '../../components/files/starling/starling'
 
 export interface Node {
     name: string;
@@ -13,22 +14,48 @@ export interface DirectoryNode extends Node {
 })
 export class FileSystem {
   private rootFs: DirectoryNode = {
-    name: 'root',
+    name: 'home',
     parent: null,
     children: [{
+      name: 'about-this-app',
+      parent: null,
+      children: [{
+        name: 'about.txt',
+        parent: null,
+      },{
+        name: 'last-update.txt',
+        parent: null,
+      },{
+        name: 'version.txt',
+        parent: null,
+      }]
+    },{
+      name: 'bin',
+      parent: null,
+      children: [{
+        name: 'whoami',
+        parent: null
+      }]
+    },{
       name: 'desktop',
       parent: null,
       children: [{
-        name: 'cv.pdf',
-        parent: null,
-      },{
         name: 'get-in-touch',
         parent: null,
-        children: [{ name: 'mail.txt', parent: null }, { name: 'linkedin.txt', parent: null }]
+        children: [{ name: 'mail.txt', parent: null }, { name: 'linkedin', parent: null }, { name: 'cv.pdf', parent: null }]
       },{
         name: 'projects',
         parent: null,
-        children: [],
+        children: [{
+          name: 'starling',
+          parent: null,
+        },{
+          name: 'bluelotus',
+          parent: null,
+        }, {
+          name: 'JourneyCraft',
+          parent: null,
+        }],
       }]
     }]
   };
@@ -79,5 +106,12 @@ export class FileSystem {
         return result.reverse().join('/');
       }
     }
+  }
+  public getFileContent(path: string): Type<any> | null{
+    switch(path){
+      case 'home/desktop/projects/starling':
+        return Starling;
+    }
+    return null;
   }
 }
