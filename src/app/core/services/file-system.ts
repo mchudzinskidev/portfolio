@@ -35,6 +35,9 @@ export class FileSystem {
       children: [{
         name: 'whoami',
         parent: null
+      },{
+        name: 'pwd',
+        parent: null
       }]
     },{
       name: 'desktop',
