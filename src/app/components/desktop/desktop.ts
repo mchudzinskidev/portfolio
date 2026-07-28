@@ -24,16 +24,16 @@ export class Desktop {
   public windows: Window[] = [];
   public icons: DesktopIconModel[] = [{
     title: 'LinkedIn',
-    gridPosX: 0,
-    gridPosY: 0,
+    gridPosX: 1,
+    gridPosY: 1,
     icon: 'in',
     gridSize: 128,
     wType: WindowType.in,
     selected: false,
   },{
     title: 'projects',
-    gridPosX: 0,
-    gridPosY: 1,
+    gridPosX: 1,
+    gridPosY: 2,
     icon: 'dir',
     gridSize: 128,
     wType: WindowType.projects,
