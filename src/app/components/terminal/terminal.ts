@@ -25,28 +25,28 @@ export class Terminal implements OnInit{
     this.inputHtmlElement = <HTMLInputElement>document.getElementById("prompt");
     this.focusInput();
     this.inputHtmlElement?.addEventListener("keyup", (event) => {
-        if (event.key === 'Enter' && this.inputHtmlElement !== null && this.inputHtmlElement.value.length > 0 && (this.terminalHistory.length === 0 || this.terminalHistory[this.terminalHistory.length-1].type === 'output')) {
-          this.terminalHistory.push({
-            type: 'prompt',
-            text: this.inputHtmlElement.value,
-            path: this.fs.getPath(this.node),
-          });
-          this.terminalHistory.push({
-            type: 'output',
-            text: this.executeCmd(this.inputHtmlElement.value, this.node),
-          });
-          this.inputHtmlElement.value = '';
-          const wrapper = this.terminalElem.nativeElement;
-          const scrollToBottom = wrapper.scrollTop + wrapper.clientHeight >= wrapper.scrollHeight;
-          if(scrollToBottom){
-            setTimeout(() => {
-              wrapper.scrollTo({
-                top: wrapper.scrollHeight,
-                behaviour: 'smooth',
-              });
+      if (event.key === 'Enter' && this.inputHtmlElement !== null && this.inputHtmlElement.value.length > 0 && (this.terminalHistory.length === 0 || this.terminalHistory[this.terminalHistory.length-1].type === 'output')) {
+        this.terminalHistory.push({
+          type: 'prompt',
+          text: this.inputHtmlElement.value,
+          path: this.fs.getPath(this.node),
+        });
+        this.terminalHistory.push({
+          type: 'output',
+          text: this.executeCmd(this.inputHtmlElement.value, this.node),
+        });
+        this.inputHtmlElement.value = '';
+        const wrapper = this.terminalElem.nativeElement;
+        const scrollToBottom = wrapper.scrollTop + wrapper.clientHeight >= wrapper.scrollHeight;
+        if(scrollToBottom){
+          setTimeout(() => {
+            wrapper.scrollTo({
+              top: wrapper.scrollHeight,
+              behaviour: 'smooth',
             });
-          }
+          });
         }
+      }
     });
   }
   public focusInput(): void{
