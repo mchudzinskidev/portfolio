@@ -1,0 +1,16 @@
+.dialogBoxContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    gap: 16px;
+    .reloadBtn{
+        background-color: forestgreen;
+        border-radius: 8px;
+        padding: 8px 16px;
+    }
+    .reloadBtn:hover{
+        box-shadow: 0 0 4px #1a1a1a;
+    }
+}

@@ -7,6 +7,9 @@
     box-shadow: 0 0 10px #101010;
     padding: 32px;
     border-radius: 32px;
+    > div {
+        position: relative;
+    }
     .vr{
         background-color: #4a4a4a;
         width: 1px;
@@ -29,6 +32,11 @@
     }
     .leftMenuItem:not(:first-child){
         margin-top: 8px;
+    }
+    .leftMenuItemBtm{
+        position: absolute;
+        bottom: 0;
+        left: 0;
     }
     .rightMenuItem{
         margin-top: 8px;

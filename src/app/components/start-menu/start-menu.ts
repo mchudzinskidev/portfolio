@@ -11,4 +11,5 @@ export class StartMenu {
   public openAboutWindowClicked = output<void>();
   public openTerminalWindowClicked = output<void>();
   public openSettingsWindowClicked = output<void>();
+  public rebootClicked = output<void>();
 }

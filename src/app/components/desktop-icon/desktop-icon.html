@@ -16,6 +16,7 @@
         [class.iconMe]="iconDetails().icon === 'me'"
         [class.iconTerm]="iconDetails().icon === 'term'"
         [class.iconIn]="iconDetails().icon === 'in'"
+        [class.iconOff]="iconDetails().icon === 'off'"
     ></div>
     <div class="center" role="button" (dblclick)="clicked.emit()">{{ iconDetails().title }}</div>
 </div>

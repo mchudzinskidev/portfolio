@@ -9,6 +9,7 @@ import { About } from '../about/about';
 import { Settings } from '../settings/settings';
 import { Browser } from '../browser/browser';
 import { Terminal } from '../terminal/terminal';
+import { RebootDialog } from '../reboot-dialog/reboot-dialog';
 import { WindowType } from '../../core/types/window-types';
 import { DirectoryNode, FileSystem } from '../../core/services/file-system';
 
@@ -76,6 +77,10 @@ export class Desktop {
     let component;
     let icon;
     let title;
+    let innerHeight = 288;
+    let innerWidth = 512;
+    let posX = 64;
+    let posY = 64;
     switch(wType){
       case WindowType.dir: {
         component = FileExplorer;
@@ -126,13 +131,23 @@ export class Desktop {
         title = 'Browser';
         break;
       }
+      case WindowType.off: {
+        component = RebootDialog;
+        icon = 'off';
+        title = 'Dialog';
+        innerHeight = 192;
+        innerWidth = 512;
+        posX = (window.innerWidth - 512) / 2;
+        posY = (window.innerHeight - 192) / 2;
+        break;
+      }
     }
     this.windows.push({
       title: title,
-      posX: 64,
-      posY: 64,
-      innerH: 288,
-      innerW: 512,
+      posX: posX,
+      posY: posY,
+      innerH: innerHeight,
+      innerW: innerWidth,
       zIndex: this.windows.length > 0 ? Math.max(...this.windows.map(win => win.zIndex)) + 1 : 1,
       isFullscreen: false,
       isMinimized: false,

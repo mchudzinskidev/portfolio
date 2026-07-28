@@ -24,6 +24,7 @@
                         [class.iconTerm]="window().icon === 'term'"
                         [class.iconIn]="window().icon === 'in'"
                         [class.iconNet]="window().icon === 'net'"
+                        [class.iconOff]="window().icon === 'off'"
                     ></div>
                     <div class="headerTitle">{{ window().title }}</div>
                     <div role="button" (pointerdown)="$event.stopPropagation(); focused.emit(index())" (click)="minimizeCallback()">&#9472;</div>
