@@ -37,6 +37,7 @@ export class FileSystem {
         { name: 'cls', parent: null },
         { name: 'ls', parent: null },
         { name: 'pwd', parent: null },
+        { name: 'reboot', parent: null },
         { name: 'whoami', parent: null },
       ]
     },{
