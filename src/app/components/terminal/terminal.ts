@@ -72,7 +72,7 @@ export class Terminal implements OnInit{
     const cmd = args.shift();
     switch(cmd){
       case 'help': {
-        return ['available commands:', 'whoami', 'pwd', 'cd', 'ls'].join('\n');
+        return ['available commands:', 'whoami', 'pwd', 'cd', 'ls', 'cls'].join('\n');
       }
       case 'whoami': {
         if(args.length === 0){
@@ -121,6 +121,13 @@ export class Terminal implements OnInit{
             }
             return result;
           }
+        }
+        return 'Bad usage';
+      }
+      case 'cls': {
+        if(args.length === 0){
+          this.terminalHistory = [];
+          return '';
         }
         return 'Bad usage';
       }
