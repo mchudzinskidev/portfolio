@@ -134,7 +134,7 @@ export class Desktop {
       case WindowType.off: {
         component = RebootDialog;
         icon = 'off';
-        title = 'Dialog';
+        title = 'Reboot';
         innerHeight = 192;
         innerWidth = 512;
         posX = (window.innerWidth - 512) / 2;
