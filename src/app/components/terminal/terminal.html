@@ -1,4 +1,4 @@
-<div class="terminal" (pointerup)="focusInput()">
+<div #terminal class="terminal" (pointerup)="focusInput()">
     <div>
         @for(line of terminalHistory; track $index){
             @if('path' in line){

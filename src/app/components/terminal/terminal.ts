@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
 import { Node, FileSystem, DirectoryNode } from '../../core/services/file-system';
 
 interface TerminalEvent {
@@ -14,6 +14,7 @@ interface TerminalEvent {
   styleUrl: './terminal.scss',
 })
 export class Terminal implements OnInit{
+  @ViewChild('terminal') terminalElem!: ElementRef;
   public fs = inject(FileSystem);
   public node: DirectoryNode = this.fs.getFs();
   public username = 'marcin';
@@ -35,6 +36,16 @@ export class Terminal implements OnInit{
             text: this.executeCmd(this.inputHtmlElement.value, this.node),
           });
           this.inputHtmlElement.value = '';
+          const wrapper = this.terminalElem.nativeElement;
+          const scrollToBottom = wrapper.scrollTop + wrapper.clientHeight >= wrapper.scrollHeight;
+          if(scrollToBottom){
+            setTimeout(() => {
+              wrapper.scrollTo({
+                top: wrapper.scrollHeight,
+                behaviour: 'smooth',
+              });
+            });
+          }
         }
     });
   }
