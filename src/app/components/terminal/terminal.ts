@@ -45,6 +45,9 @@ export class Terminal implements OnInit{
     const args = cmdString.split(' ');
     const cmd = args.shift();
     switch(cmd){
+      case 'help': {
+        return ['available commands:', 'whoami', 'pwd', 'cd', 'ls'].join('\n');
+      }
       case 'whoami': {
         if(args.length === 0){
           return this.username;
@@ -69,6 +72,29 @@ export class Terminal implements OnInit{
           }
           this.node = result;
           return '';
+        }
+        return 'Bad usage';
+      }
+      case 'ls': {
+        if(args.length === 0){
+          let result = '';
+          for(let i = 0; i < node.children.length; i++){
+            result += (i === 0 ? '' : '\n') + node.children[i].name;
+          }
+          return result;
+        }else if(args.length === 1){
+          let targetNode = this.fs.resolvePath(args[0], node);
+          if(targetNode === null){
+            return 'no such directory';
+          }else if(!('children' in targetNode)){
+            return `${targetNode.name} is not a directory`;
+          }else{
+            let result = '';
+            for(let i = 0; i < targetNode.children.length; i++){
+              result += (i === 0 ? '' : '\n') + targetNode.children[i].name;
+            }
+            return result;
+          }
         }
         return 'Bad usage';
       }
