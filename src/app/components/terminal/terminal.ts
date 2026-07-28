@@ -20,12 +20,16 @@ export class Terminal implements OnInit{
   public username = 'marcin';
   public hostname = 'localhost';
   public terminalHistory: TerminalEvent[] = [];
+  public commandHistory: string[] = [];
+  public commandHistoryindex: number = -1;
   public inputHtmlElement: HTMLInputElement | null = null;
   ngOnInit(){
     this.inputHtmlElement = <HTMLInputElement>document.getElementById("prompt");
     this.focusInput();
     this.inputHtmlElement?.addEventListener("keyup", (event) => {
       if (event.key === 'Enter' && this.inputHtmlElement !== null && this.inputHtmlElement.value.length > 0 && (this.terminalHistory.length === 0 || this.terminalHistory[this.terminalHistory.length-1].type === 'output')) {
+        this.commandHistory.unshift(this.inputHtmlElement.value);
+        this.commandHistoryindex = -1;
         this.terminalHistory.push({
           type: 'prompt',
           text: this.inputHtmlElement.value,
@@ -45,6 +49,17 @@ export class Terminal implements OnInit{
               behaviour: 'smooth',
             });
           });
+        }
+      }else if(event.key === 'ArrowUp'){
+        this.commandHistoryindex += (this.commandHistory.length-1 > this.commandHistoryindex ? 1 : 0);
+        if(this.inputHtmlElement){
+          this.inputHtmlElement.value = '';
+          this.inputHtmlElement.value = this.commandHistory[this.commandHistoryindex] ?? '';
+        }
+      }else if(event.key === 'ArrowDown'){
+        this.commandHistoryindex -= (-1 < this.commandHistoryindex ? 1 : 0);
+        if(this.inputHtmlElement){
+          this.inputHtmlElement.value = this.commandHistory[this.commandHistoryindex] ?? ''; 
         }
       }
     });
