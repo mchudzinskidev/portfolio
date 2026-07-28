@@ -13,8 +13,8 @@ export class FileExplorer implements OnInit{
   public openBrowserClicked = input<(path: string) => void>(() => {});
   public node: (Node | DirectoryNode) = this.fs.getFs();
   public quickAccessItems: (Node | null)[] = [
-    this.fs.resolvePath('home'),
-    this.fs.resolvePath('home/desktop/projects')
+    this.fs.resolvePath('home', this.fs.getFs()),
+    this.fs.resolvePath('home/desktop/projects', this.fs.getFs())
   ];
   ngOnInit(){
     this.node = this.currentNode();

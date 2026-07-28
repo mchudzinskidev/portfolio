@@ -74,30 +74,38 @@ export class FileSystem {
       }
     }
   }
-  public getFs(): Node{
+  public getFs(): DirectoryNode{
     return this.rootFs;
   }
-  public resolvePath(path: string): DirectoryNode | Node | null {
+  public resolvePath(path: string, base: DirectoryNode): DirectoryNode | Node | null {
     const parts = path.split('/');
-    let nodes: (DirectoryNode | Node)[] = [this.rootFs];
-    for(let i = 0; i < parts.length; i++){
-      let part = parts[i];
-      let node = nodes.find(node => node.name === part);
-      if(node){
-        if(i === parts.length - 1){
-          return node;
-        }else{
-          if('children' in node){
-            nodes = node.children;
-          }else{
-            return null;
-          }
+    let current: DirectoryNode | Node;
+    if (parts[0] === this.rootFs.name) {
+      parts.shift();
+      current = this.rootFs;
+    } else {
+      current = base;
+    }
+    for (const part of parts) {
+      if (part === '' || part === '.') {
+        continue;
+      }
+      if (part === '..') {
+        if (current.parent) {
+          current = current.parent;
         }
-      }else{
+        continue;
+      }
+      if (!('children' in current)) {
         return null;
       }
+      const next = current.children.find(child => child.name === part);
+      if (!next) {
+        return null;
+      }
+      current = next;
     }
-    return null;
+    return current;
   }
   public getPath(node: DirectoryNode | Node): string {
     const result: string[] = [];

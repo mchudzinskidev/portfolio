@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { Node, FileSystem } from '../../core/services/file-system';
+import { Node, FileSystem, DirectoryNode } from '../../core/services/file-system';
 
 interface TerminalEvent {
   type: 'prompt' | 'output';
@@ -15,7 +15,7 @@ interface TerminalEvent {
 })
 export class Terminal implements OnInit{
   public fs = inject(FileSystem);
-  public node: Node = this.fs.getFs();
+  public node: DirectoryNode = this.fs.getFs();
   public username = 'marcin';
   public hostname = 'localhost';
   public terminalHistory: TerminalEvent[] = [];
@@ -41,13 +41,36 @@ export class Terminal implements OnInit{
   public focusInput(): void{
     this.inputHtmlElement?.focus();
   }
-  private executeCmd(cmd: string, node: Node): string{
+  private executeCmd(cmdString: string, node: DirectoryNode): string{
+    const args = cmdString.split(' ');
+    const cmd = args.shift();
     switch(cmd){
       case 'whoami': {
-        return this.username;
+        if(args.length === 0){
+          return this.username;
+        }
+        return 'Bad usage';
       }
       case 'pwd': {
-        return this.fs.getPath(node);
+        if(args.length === 0){
+          return this.fs.getPath(node);
+        }
+        return 'Bad usage';
+      }
+      case 'cd': {
+        if(args.length === 0){
+          return '';
+        }else if(args.length === 1){
+          const result = this.fs.resolvePath(args[0], node);
+          if(result === null){
+            return 'no such directory';
+          }else if(!('children' in result)){
+            return `${result.name} is not a directory`;
+          }
+          this.node = result;
+          return '';
+        }
+        return 'Bad usage';
       }
     }
     return 'Unknown command. Type "help" for list of available commands.'

@@ -137,7 +137,7 @@ export class Desktop {
         icon = 'dir';
         title = 'File Explorer';
         inputs = {
-          currentNode: this.fs.resolvePath('home/desktop/projects'),
+          currentNode: this.fs.resolvePath('home/desktop/projects', this.fs.getFs()),
           openBrowserClicked: (path: string) => { this.newWindow(WindowType.net, { path: path }); }
         };
         break;
