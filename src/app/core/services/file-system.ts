@@ -4,6 +4,7 @@ import { Starling } from '../../components/files/starling/starling'
 export interface Node {
     name: string;
     parent: DirectoryNode | null;
+    favorite: boolean;
 }
 export interface DirectoryNode extends Node {
     children: (DirectoryNode | Node)[];
@@ -16,49 +17,81 @@ export class FileSystem {
   private rootFs: DirectoryNode = {
     name: 'home',
     parent: null,
+    favorite: false,
     children: [{
       name: 'about-this-app',
       parent: null,
+      favorite: false,
       children: [{
         name: 'about.txt',
         parent: null,
+        favorite: false,
       },{
         name: 'last-update.txt',
         parent: null,
+        favorite: false,
       },{
         name: 'version.txt',
         parent: null,
+        favorite: false,
       }]
     },{
       name: 'bin',
       parent: null,
+      favorite: false,
       children: [
-        { name: 'cd', parent: null },
-        { name: 'cls', parent: null },
-        { name: 'ls', parent: null },
-        { name: 'pwd', parent: null },
-        { name: 'reboot', parent: null },
-        { name: 'whoami', parent: null },
+        { name: 'cd', parent: null, favorite: false },
+        { name: 'cls', parent: null, favorite: false },
+        { name: 'ls', parent: null, favorite: false },
+        { name: 'pwd', parent: null, favorite: false },
+        { name: 'reboot', parent: null, favorite: false },
+        { name: 'whoami', parent: null, favorite: false },
       ]
     },{
       name: 'desktop',
       parent: null,
+      favorite: false,
       children: [{
         name: 'get-in-touch',
         parent: null,
-        children: [{ name: 'mail.txt', parent: null }, { name: 'linkedin', parent: null }, { name: 'cv.pdf', parent: null }]
+        favorite: false,
+        children: [
+          { name: 'mail.txt', parent: null, favorite: false  },
+          { name: 'linkedin', parent: null, favorite: true  },
+          { name: 'cv.pdf', parent: null, favorite: false  },
+        ]
       },{
         name: 'projects',
         parent: null,
+        favorite: true,
         children: [{
-          name: 'starling',
+          name: 'bluelotus.pl',
           parent: null,
+          favorite: false,
         },{
-          name: 'bluelotus',
+          name: 'starling - DIY star tracker',
           parent: null,
-        }, {
+          favorite: true,
+        },{
+          name: 'homelab',
+          parent: null,
+          favorite: true,
+        },{
+          name: 'trading bot',
+          parent: null,
+          favorite: false,
+        },{
+          name: 'bsodmaker.net',
+          parent: null,
+          favorite: false,
+        },{
+          name: 'FDD keyboard',
+          parent: null,
+          favorite: false,
+        },{
           name: 'JourneyCraft',
           parent: null,
+          favorite: true,
         }],
       }]
     }]

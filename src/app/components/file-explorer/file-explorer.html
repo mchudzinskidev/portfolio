@@ -31,6 +31,9 @@
                     <div role="button" (click)="openNode(item)">
                         <div [class]="'children' in item ? 'iconDir' : 'iconFile'"></div>
                         <span>{{ item.name }}</span>
+                        @if(item.favorite){
+                            <span class="right">&starf;</span>
+                        }
                     </div>
                 }
                 @if(node.children.length === 0){
