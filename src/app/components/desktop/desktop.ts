@@ -23,33 +23,9 @@ export class Desktop {
   public clock: string = '00:00';
   public windows: Window[] = [];
   public icons: DesktopIconModel[] = [{
-    title: 'Settings',
+    title: 'LinkedIn',
     gridPosX: 0,
     gridPosY: 0,
-    icon: 'gear',
-    gridSize: 128,
-    wType: WindowType.gear,
-    selected: false,
-  },{
-    title: 'Terminal',
-    gridPosX: 1,
-    gridPosY: 1,
-    icon: 'term',
-    gridSize: 128,
-    wType: WindowType.term,
-    selected: false,
-  },{
-    title: 'File Explorer',
-    gridPosX: 3,
-    gridPosY: 2,
-    icon: 'dir',
-    gridSize: 128,
-    wType: WindowType.dir,
-    selected: false,
-  },{
-    title: 'LinkedIn',
-    gridPosX: 3,
-    gridPosY: 1,
     icon: 'in',
     gridSize: 128,
     wType: WindowType.in,
