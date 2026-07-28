@@ -32,13 +32,13 @@ export class FileSystem {
     },{
       name: 'bin',
       parent: null,
-      children: [{
-        name: 'whoami',
-        parent: null
-      },{
-        name: 'pwd',
-        parent: null
-      }]
+      children: [
+        { name: 'cd', parent: null },
+        { name: 'cls', parent: null },
+        { name: 'ls', parent: null },
+        { name: 'pwd', parent: null },
+        { name: 'whoami', parent: null },
+      ]
     },{
       name: 'desktop',
       parent: null,

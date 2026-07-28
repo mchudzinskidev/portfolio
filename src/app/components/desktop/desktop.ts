@@ -10,7 +10,7 @@ import { Settings } from '../settings/settings';
 import { Browser } from '../browser/browser';
 import { Terminal } from '../terminal/terminal';
 import { WindowType } from '../../core/types/window-types';
-import { FileSystem } from '../../core/services/file-system';
+import { DirectoryNode, FileSystem } from '../../core/services/file-system';
 
 @Component({
   selector: 'app-desktop',
@@ -106,7 +106,8 @@ export class Desktop {
         icon = 'dir';
         title = 'File Explorer';
         inputs = {
-          openBrowserClicked: (path: string) => { this.newWindow(WindowType.net, { path: path }); }
+          openBrowserClicked: (path: string) => { this.newWindow(WindowType.net, { path: path }); },
+          openTerminalClicked: (cmd: string, startNode: DirectoryNode) => { this.newWindow(WindowType.term, { startCmd: cmd, startNode: startNode }); },
         };
         break;
       }
@@ -138,7 +139,8 @@ export class Desktop {
         title = 'File Explorer';
         inputs = {
           currentNode: this.fs.resolvePath('home/desktop/projects', this.fs.getFs()),
-          openBrowserClicked: (path: string) => { this.newWindow(WindowType.net, { path: path }); }
+          openBrowserClicked: (path: string) => { this.newWindow(WindowType.net, { path: path }); },
+          openTerminalClicked: (cmd: string, startNode: DirectoryNode) => { this.newWindow(WindowType.term, { startCmd: cmd, startNode: startNode }); },
         };
         break;
       }

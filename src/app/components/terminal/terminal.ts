@@ -1,4 +1,4 @@
-import { Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, inject, input, OnInit, ViewChild } from '@angular/core';
 import { Node, FileSystem, DirectoryNode } from '../../core/services/file-system';
 
 interface TerminalEvent {
@@ -16,7 +16,9 @@ interface TerminalEvent {
 export class Terminal implements OnInit{
   @ViewChild('terminal') terminalElem!: ElementRef;
   public fs = inject(FileSystem);
-  public node: DirectoryNode = this.fs.getFs();
+  public startCmd = input<string>('');
+  public startNode = input<DirectoryNode>(this.fs.getFs());
+  public node = this.startNode();
   public username = 'marcin';
   public hostname = 'localhost';
   public terminalHistory: TerminalEvent[] = [];
@@ -24,8 +26,20 @@ export class Terminal implements OnInit{
   public commandHistoryindex: number = -1;
   public inputHtmlElement: HTMLInputElement | null = null;
   ngOnInit(){
+    this.node = this.startNode();
     this.inputHtmlElement = <HTMLInputElement>document.getElementById("prompt");
     this.focusInput();
+    if(this.startCmd().length > 0){
+      this.terminalHistory.push({
+        type: 'prompt',
+        text: this.startCmd(),
+        path: this.fs.getPath(this.node),
+      });
+      this.terminalHistory.push({
+        type: 'output',
+        text: this.executeCmd(this.startCmd(), this.node),
+      });
+    }
     this.inputHtmlElement?.addEventListener("keyup", (event) => {
       if (event.key === 'Enter' && this.inputHtmlElement !== null && this.inputHtmlElement.value.length > 0 && (this.terminalHistory.length === 0 || this.terminalHistory[this.terminalHistory.length-1].type === 'output')) {
         this.commandHistory.unshift(this.inputHtmlElement.value);
@@ -72,7 +86,7 @@ export class Terminal implements OnInit{
     const cmd = args.shift();
     switch(cmd){
       case 'help': {
-        return ['available commands:', 'whoami', 'pwd', 'cd', 'ls', 'cls'].join('\n');
+        return ['available commands:', 'cd', 'cls', 'ls', 'pwd', 'whoami'].join('\n');
       }
       case 'whoami': {
         if(args.length === 0){

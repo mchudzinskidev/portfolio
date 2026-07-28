@@ -11,6 +11,7 @@ export class FileExplorer implements OnInit{
   public fs = inject(FileSystem);
   public currentNode = input<(Node | DirectoryNode)>(this.fs.getFs());
   public openBrowserClicked = input<(path: string) => void>(() => {});
+  public openTerminalClicked = input<(cmd: string, startNode: DirectoryNode) => void>(() => {});
   public node: (Node | DirectoryNode) = this.fs.getFs();
   public quickAccessItems: (Node | null)[] = [
     this.fs.resolvePath('home', this.fs.getFs()),
@@ -29,7 +30,11 @@ export class FileExplorer implements OnInit{
     if('children' in node){
       this.node = node;
     }else{
-      this.openBrowserClicked()(this.fs.getPath(node));
+      if(node.parent && this.fs.getPath(node.parent) === 'home/bin'){
+        this.openTerminalClicked()(node.name, node.parent);
+      }else{
+        this.openBrowserClicked()(this.fs.getPath(node));
+      }
     }
   }
   public getPathComponents(): Node[]{
