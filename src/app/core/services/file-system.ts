@@ -188,7 +188,7 @@ export class FileSystem {
   }
   public getFileContent(path: string): Type<any> | null{
     switch(path){
-      case 'home/desktop/projects/starling':
+      case 'home/desktop/projects/starling - DIY star tracker':
         return Starling;
     }
     return null;
