@@ -15,6 +15,7 @@ interface TerminalEvent {
 })
 export class Terminal implements OnInit{
   @ViewChild('terminal') terminalElem!: ElementRef;
+  @ViewChild('prompt') promptElem!: ElementRef;
   public fs = inject(FileSystem);
   public startCmd = input<string>('');
   public startNode = input<DirectoryNode>(this.fs.getFs());
@@ -24,10 +25,9 @@ export class Terminal implements OnInit{
   public terminalHistory: TerminalEvent[] = [];
   public commandHistory: string[] = [];
   public commandHistoryindex: number = -1;
-  public inputHtmlElement: HTMLInputElement | null = null;
+
   ngOnInit(){
     this.node = this.startNode();
-    this.inputHtmlElement = <HTMLInputElement>document.getElementById("prompt");
     this.focusInput();
     if(this.startCmd().length > 0){
       this.terminalHistory.push({
@@ -40,46 +40,46 @@ export class Terminal implements OnInit{
         text: this.executeCmd(this.startCmd(), this.node),
       });
     }
-    this.inputHtmlElement?.addEventListener("keyup", (event) => {
-      if (event.key === 'Enter' && this.inputHtmlElement !== null && this.inputHtmlElement.value.length > 0 && (this.terminalHistory.length === 0 || this.terminalHistory[this.terminalHistory.length-1].type === 'output')) {
-        this.commandHistory.unshift(this.inputHtmlElement.value);
-        this.commandHistoryindex = -1;
-        this.terminalHistory.push({
-          type: 'prompt',
-          text: this.inputHtmlElement.value,
-          path: this.fs.getPath(this.node),
-        });
-        this.terminalHistory.push({
-          type: 'output',
-          text: this.executeCmd(this.inputHtmlElement.value, this.node),
-        });
-        this.inputHtmlElement.value = '';
-        const wrapper = this.terminalElem.nativeElement;
-        const scrollToBottom = wrapper.scrollTop + wrapper.clientHeight >= wrapper.scrollHeight;
-        if(scrollToBottom){
-          setTimeout(() => {
-            wrapper.scrollTo({
-              top: wrapper.scrollHeight,
-              behaviour: 'smooth',
-            });
-          });
-        }
-      }else if(event.key === 'ArrowUp'){
-        this.commandHistoryindex += (this.commandHistory.length-1 > this.commandHistoryindex ? 1 : 0);
-        if(this.inputHtmlElement){
-          this.inputHtmlElement.value = '';
-          this.inputHtmlElement.value = this.commandHistory[this.commandHistoryindex] ?? '';
-        }
-      }else if(event.key === 'ArrowDown'){
-        this.commandHistoryindex -= (-1 < this.commandHistoryindex ? 1 : 0);
-        if(this.inputHtmlElement){
-          this.inputHtmlElement.value = this.commandHistory[this.commandHistoryindex] ?? ''; 
-        }
-      }
-    });
   }
+
+  public handlePromptKeyup(event: KeyboardEvent): void {
+    const promptElement = this.promptElem.nativeElement as HTMLInputElement;
+
+    if (event.key === 'Enter' && promptElement.value.length > 0 && (this.terminalHistory.length === 0 || this.terminalHistory[this.terminalHistory.length - 1].type === 'output')) {
+      this.commandHistory.unshift(promptElement.value);
+      this.commandHistoryindex = -1;
+      this.terminalHistory.push({
+        type: 'prompt',
+        text: promptElement.value,
+        path: this.fs.getPath(this.node),
+      });
+      this.terminalHistory.push({
+        type: 'output',
+        text: this.executeCmd(promptElement.value, this.node),
+      });
+      promptElement.value = '';
+      const wrapper = this.terminalElem.nativeElement;
+      const scrollToBottom = wrapper.scrollTop + wrapper.clientHeight >= wrapper.scrollHeight;
+      if(scrollToBottom){
+        setTimeout(() => {
+          wrapper.scrollTo({
+            top: wrapper.scrollHeight,
+            behavior: 'smooth',
+          });
+        });
+      }
+    } else if(event.key === 'ArrowUp'){
+      this.commandHistoryindex += (this.commandHistory.length-1 > this.commandHistoryindex ? 1 : 0);
+      promptElement.value = '';
+      promptElement.value = this.commandHistory[this.commandHistoryindex] ?? '';
+    } else if(event.key === 'ArrowDown'){
+      this.commandHistoryindex -= (-1 < this.commandHistoryindex ? 1 : 0);
+      promptElement.value = this.commandHistory[this.commandHistoryindex] ?? '';
+    }
+  }
+
   public focusInput(): void{
-    this.inputHtmlElement?.focus();
+    this.promptElem?.nativeElement?.focus();
   }
   private executeCmd(cmdString: string, node: DirectoryNode): string{
     const args = cmdString.split(' ');

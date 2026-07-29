@@ -11,6 +11,6 @@
     <pre></pre>
     <div class="promptContainer">
         <div><span class="colorGreen">{{ username }}@{{ hostname }}</span>:<span class="colorBlue">{{ fs.getPath(node) }}</span>$</div>
-        <input id="prompt" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus>
+        <input #prompt type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus (keyup)="handlePromptKeyup($event)">
     </div>
 </div>
