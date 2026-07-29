@@ -1,5 +1,9 @@
 import { Injectable, Type } from '@angular/core';
 import { Starling } from '../../components/files/starling/starling'
+import { AboutApp } from '../../components/files/about-app/about-app'
+import { LastUpdate } from '../../components/files/last-update/last-update'
+import { Version } from '../../components/files/version/version'
+
 
 export interface Node {
     name: string;
@@ -64,7 +68,7 @@ export class FileSystem {
     },{
       name: 'desktop',
       parent: null,
-      favorite: false,
+      favorite: true,
       created: '2026',
       modified: '2026',
       children: [{
@@ -190,6 +194,18 @@ export class FileSystem {
     switch(path){
       case 'home/desktop/projects/starling - DIY star tracker':
         return Starling;
+    }
+    switch(path){
+      case 'home/about-this-app/about.txt':
+        return AboutApp;
+    }
+    switch(path){
+      case 'home/about-this-app/last-update.txt':
+        return LastUpdate;
+    }
+    switch(path){
+      case 'home/about-this-app/version.txt':
+        return Version;
     }
     return null;
   }
