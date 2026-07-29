@@ -13,8 +13,14 @@ export class RebootDialog {
   public content = inject(Content).getHome().rebootDialog;
   public showRestartRequiredMsg = input<boolean>(false);
   public reloadPage(): void {
-    console.log(this.showRestartRequiredMsg());
-    const newPath = window.location.pathname.replace(/^\/(en|pl)(?=\/|$)/,`/${this.ls.newLangAfterReload}`);
-    window.location.href = newPath + window.location.search + window.location.hash;
+    const segments = window.location.pathname.split('/');
+    const index = segments.findIndex(s => s === 'en' || s === 'pl');
+    if (index !== -1) {
+      segments[index] = this.ls.newLangAfterReload;
+    }
+    window.location.href =
+      segments.join('/') +
+      window.location.search +
+      window.location.hash;
   }
 }
