@@ -5,6 +5,8 @@ export interface Node {
     name: string;
     parent: DirectoryNode | null;
     favorite: boolean;
+    created: string;
+    modified: string;
 }
 export interface DirectoryNode extends Node {
     children: (DirectoryNode | Node)[];
@@ -18,82 +20,114 @@ export class FileSystem {
     name: 'home',
     parent: null,
     favorite: false,
+    created: '2026',
+    modified: '2026',
     children: [{
       name: 'about-this-app',
       parent: null,
       favorite: false,
+      created: '2026',
+      modified: '2026',
       children: [{
         name: 'about.txt',
         parent: null,
         favorite: false,
+        created: '2026',
+        modified: '2026',
       },{
         name: 'last-update.txt',
         parent: null,
         favorite: false,
+        created: '2026',
+        modified: '2026',
       },{
         name: 'version.txt',
         parent: null,
         favorite: false,
+        created: '2026',
+        modified: '2026',
       }]
     },{
       name: 'bin',
       parent: null,
       favorite: false,
+      created: '2026',
+      modified: '2026',
       children: [
-        { name: 'cd', parent: null, favorite: false },
-        { name: 'cls', parent: null, favorite: false },
-        { name: 'ls', parent: null, favorite: false },
-        { name: 'pwd', parent: null, favorite: false },
-        { name: 'reboot', parent: null, favorite: false },
-        { name: 'whoami', parent: null, favorite: false },
+        { name: 'cd', parent: null, favorite: false, created: '2026', modified: '2026' },
+        { name: 'cls', parent: null, favorite: false, created: '2026', modified: '2026' },
+        { name: 'ls', parent: null, favorite: false, created: '2026', modified: '2026' },
+        { name: 'pwd', parent: null, favorite: false, created: '2026', modified: '2026' },
+        { name: 'reboot', parent: null, favorite: false, created: '2026', modified: '2026' },
+        { name: 'whoami', parent: null, favorite: false, created: '2026', modified: '2026' },
       ]
     },{
       name: 'desktop',
       parent: null,
       favorite: false,
+      created: '2026',
+      modified: '2026',
       children: [{
-        name: 'get-in-touch',
-        parent: null,
-        favorite: false,
-        children: [
-          { name: 'mail.txt', parent: null, favorite: false  },
-          { name: 'linkedin', parent: null, favorite: true  },
-          { name: 'cv.pdf', parent: null, favorite: false  },
-        ]
-      },{
         name: 'projects',
         parent: null,
         favorite: true,
+        created: '2019',
+        modified: '2026',
         children: [{
           name: 'bluelotus.pl',
           parent: null,
           favorite: false,
+          created: '2024',
+          modified: '2026',
         },{
           name: 'starling - DIY star tracker',
           parent: null,
           favorite: true,
+          created: '2023',
+          modified: '2026',
         },{
           name: 'homelab',
           parent: null,
           favorite: true,
+          created: '2020',
+          modified: '2026',
         },{
           name: 'trading bot',
           parent: null,
           favorite: false,
+          created: '2023',
+          modified: '2025',
         },{
           name: 'bsodmaker.net',
           parent: null,
           favorite: false,
+          created: '2024',
+          modified: '2024',
         },{
           name: 'FDD keyboard',
           parent: null,
           favorite: false,
+          created: '2020',
+          modified: '2024',
         },{
           name: 'JourneyCraft',
           parent: null,
           favorite: true,
+          created: '2020',
+          modified: '2021',
         }],
       }]
+    },{
+      name: 'get-in-touch',
+      parent: null,
+      favorite: false,
+      created: '2026',
+      modified: '2026',
+      children: [
+        { name: 'mail.txt', parent: null, favorite: false, created: '2026', modified: '2026'  },
+        { name: 'linkedin', parent: null, favorite: true, created: '2026', modified: '2026'  },
+        { name: 'cv.pdf', parent: null, favorite: false, created: '2026', modified: '2026'  },
+      ]
     }]
   };
   constructor(){

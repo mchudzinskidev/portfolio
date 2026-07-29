@@ -27,17 +27,31 @@
         <div class="vr"></div>
         <div class="content">
             @if('children' in node){
-                @for (item of node.children; track $index) {
-                    <div role="button" (click)="openNode(item)">
-                        <div [class]="'children' in item ? 'iconDir' : 'iconFile'"></div>
-                        <span>{{ item.name }}</span>
-                        @if(item.favorite){
-                            <span class="right">&starf;</span>
-                        }
-                    </div>
-                }
                 @if(node.children.length === 0){
                     <span class="emptyInd center">This folder is empty</span>
+                }@else{
+                    <table class="center">
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Created</th>
+                            <th>Modified</th>
+                            <th>Starred</th>
+                        </tr>
+                        @for (item of node.children; track $index) {
+                            <tr role="button" (click)="openNode(item)">
+                                <td [class]="'children' in item ? 'iconDir' : 'iconFile'"></td>
+                                <td class="filename">{{ item.name }}</td>
+                                <td>{{ item.created }}</td>
+                                <td>{{ item.modified }}</td>
+                                @if(item.favorite){
+                                    <td>&starf;</td>
+                                }@else {
+                                    <td></td>
+                                }
+                            </tr>
+                        }
+                    </table>
                 }
             }
         </div>
