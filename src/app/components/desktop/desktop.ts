@@ -12,6 +12,9 @@ import { Terminal } from '../terminal/terminal';
 import { RebootDialog } from '../reboot-dialog/reboot-dialog';
 import { WindowType } from '../../core/types/window-types';
 import { DirectoryNode, FileSystem } from '../../core/services/file-system';
+import { Language } from '../../core/services/language';
+import { Language as Lang} from '../../core/types/language'
+import { Content } from '../../core/services/content';
 
 @Component({
   selector: 'app-desktop',
@@ -21,6 +24,9 @@ import { DirectoryNode, FileSystem } from '../../core/services/file-system';
 })
 export class Desktop {
   private fs = inject(FileSystem);
+  public ls = inject(Language);
+  private cs = inject(Content);
+  public showLangDropdown: boolean = false;
   public clock: string = '00:00';
   public windows: Window[] = [];
   public icons: DesktopIconModel[] = [{
@@ -64,6 +70,7 @@ export class Desktop {
   @HostListener('document:pointerdown')
   public closeMenu(): void {
     this.showStartMenu = false;
+    this.showLangDropdown = false;
   }
   @HostListener('document:pointerup')
   public stopDrag(): void {
@@ -293,5 +300,11 @@ export class Desktop {
   }
   private isOutsideScreen(icon: DesktopIconModel): boolean {
     return icon.gridPosX < 0 || icon.gridPosY < 0;
+  }
+  public changeLang(lang: Lang){
+    if(this.ls.newLangAfterReload !== lang){
+      this.ls.newLangAfterReload = lang;
+      this.newWindow(WindowType.off, { showRestartRequiredMsg: true });
+    }
   }
 }

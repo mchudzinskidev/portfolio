@@ -70,7 +70,17 @@
                 ></div>
             </div>
         }
-        <div class="right">
+        <div class="right noselect">
+            @if(showLangDropdown){
+                <div class="langDropdown">
+                    @for(lang of ls.languages; track $index){
+                        <div role="button" (pointerdown)="changeLang(lang)">
+                            {{ lang.toUpperCase() }}
+                        </div>
+                    }
+                </div>
+            }
+            <div class="langBtn" role="button" (click)="showLangDropdown = !showLangDropdown" (pointerdown)="$event.stopPropagation()">{{ ls.language().toUpperCase() }}</div>
             <div>{{ clock }}</div>
         </div>
     </div>

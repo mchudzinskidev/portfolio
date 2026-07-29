@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
+import { Language } from '../../core/services/language';
 
 @Component({
   selector: 'app-reboot-dialog',
@@ -7,7 +8,11 @@ import { Component } from '@angular/core';
   styleUrl: './reboot-dialog.scss',
 })
 export class RebootDialog {
-  public reloadPage(): void{
-    window.location.reload();
+  public ls = inject(Language);
+  public showRestartRequiredMsg = input<boolean>(false);
+  public reloadPage(): void {
+    console.log(this.showRestartRequiredMsg());
+    const newPath = window.location.pathname.replace(/^\/(en|pl)(?=\/|$)/,`/${this.ls.newLangAfterReload}`);
+    window.location.href = newPath + window.location.search + window.location.hash;
   }
 }

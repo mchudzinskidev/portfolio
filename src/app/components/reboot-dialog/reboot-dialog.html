@@ -1,4 +1,7 @@
 <div class="dialogBoxContainer">
+    @if(showRestartRequiredMsg()){
+        <div class="center">System restart required</div>
+    }
     <div class="center">Are you sure you want to reload your desktop?<br>All changes will be lost</div>
     <div class="reloadBtn" role="button" (click)="reloadPage()">Reload</div>
 </div>
