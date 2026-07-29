@@ -56,6 +56,7 @@ export class Desktop {
   public dragStartX = 0;
   public dragStartY = 0;
   public initialIconPositions = new Map<number, { x: number, y: number }>();
+  public showFly: boolean = true;
   constructor(){
     this.updateClock();
     setInterval(() => { this.updateClock(); }, 1000);

@@ -77,3 +77,12 @@
         border: 2px solid rgba(255, 255, 255, 0.2);
     }
 }
+.fly{
+    z-index: 999999;
+    position: fixed;
+    top: 64px;
+    right: 128px;
+    height: 39px;
+    width: 50px;
+    background-image: url(../../../assets/images/fly.png);
+}
