@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './settings.scss',
 })
 export class Settings {
-
+  get isFullscreen() {
+    return document.fullscreenElement;
+  }
+  public toggleFullscreen() {
+    document.fullscreenElement ? document.exitFullscreen() : document.querySelector('body')?.requestFullscreen();
+  }
 }
