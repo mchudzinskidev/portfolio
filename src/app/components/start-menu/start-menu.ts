@@ -1,4 +1,5 @@
-import { Component, output } from '@angular/core';
+import { Component, inject, output } from '@angular/core';
+import { Content } from '../../core/services/content';
 
 @Component({
   selector: 'app-start-menu',
@@ -7,6 +8,7 @@ import { Component, output } from '@angular/core';
   styleUrl: './start-menu.scss',
 })
 export class StartMenu {
+  public cs = inject(Content);
   public openFileExplorerWindowClicked = output<void>();
   public openAboutWindowClicked = output<void>();
   public openTerminalWindowClicked = output<void>();

@@ -1,5 +1,6 @@
 import { Component, inject, input, OnInit } from '@angular/core';
 import { DirectoryNode, FileSystem, Node } from '../../core/services/file-system';
+import { Content } from '../../core/services/content';
 
 @Component({
   selector: 'app-file-explorer',
@@ -9,6 +10,7 @@ import { DirectoryNode, FileSystem, Node } from '../../core/services/file-system
 })
 export class FileExplorer implements OnInit{
   public fs = inject(FileSystem);
+  public content = inject(Content).getHome().fileExplorer;
   public currentNode = input<(Node | DirectoryNode)>(this.fs.getFs());
   public openBrowserClicked = input<(path: string) => void>(() => {});
   public openTerminalClicked = input<(cmd: string, startNode: DirectoryNode) => void>(() => {});

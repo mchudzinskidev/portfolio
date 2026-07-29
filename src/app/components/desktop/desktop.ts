@@ -25,7 +25,7 @@ import { Content } from '../../core/services/content';
 export class Desktop {
   private fs = inject(FileSystem);
   public ls = inject(Language);
-  private cs = inject(Content);
+  private content = inject(Content).getHome();
   public showLangDropdown: boolean = false;
   public clock: string = '00:00';
   public windows: Window[] = [];
@@ -38,7 +38,7 @@ export class Desktop {
     wType: WindowType.in,
     selected: false,
   },{
-    title: 'projects',
+    title: this.content.desktop.projects,
     gridPosX: 1,
     gridPosY: 2,
     icon: 'dir',
@@ -93,7 +93,7 @@ export class Desktop {
       case WindowType.dir: {
         component = FileExplorer;
         icon = 'dir';
-        title = 'File Explorer';
+        title = this.content.generic.fileExplorer;
         innerHeight = 512;
         innerWidth = 768;
         inputs = {
@@ -105,19 +105,19 @@ export class Desktop {
       case WindowType.me: {
         component = About;
         icon = 'me';
-        title = 'About';
+        title = this.content.generic.aboutMe;
         break;
       }
       case WindowType.gear: {
         component = Settings;
         icon = 'gear';
-        title = 'Settings';
+        title = this.content.generic.settings;
         break;
       }
       case WindowType.term: {
         component = Terminal;
         icon = 'term';
-        title = 'Terminal';
+        title = this.content.generic.terminal;
         break;
       }
       case WindowType.in: {
@@ -127,7 +127,7 @@ export class Desktop {
       case WindowType.projects: {
         component = FileExplorer;
         icon = 'dir';
-        title = 'File Explorer';
+        title = this.content.generic.fileExplorer;
         innerHeight = 512;
         innerWidth = 768;
         inputs = {
@@ -140,13 +140,13 @@ export class Desktop {
       case WindowType.net: {
         component = Browser;
         icon = 'net';
-        title = 'Browser';
+        title = this.content.generic.browser;
         break;
       }
       case WindowType.off: {
         component = RebootDialog;
         icon = 'off';
-        title = 'Reboot';
+        title = this.content.desktop.reboot;
         innerHeight = 192;
         innerWidth = 512;
         posX = (window.innerWidth - 512) / 2;

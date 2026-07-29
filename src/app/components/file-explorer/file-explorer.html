@@ -14,7 +14,7 @@
     </div>
     <div class="mainWindow">
         <div class="quickAccess">
-            <div>Quick Access</div>
+            <div>{{ content.quickAccess }}</div>
             @for(item of quickAccessItems; track $index){
                 @if(item !== null){
                     <div role="button" (click)="openNode(item)">
@@ -28,15 +28,15 @@
         <div class="content">
             @if('children' in node){
                 @if(node.children.length === 0){
-                    <span class="emptyInd center">This folder is empty</span>
+                    <span class="emptyInd center">{{ content.emptyFolderMsg }}</span>
                 }@else{
                     <table class="center">
                         <tr>
                             <th></th>
-                            <th>Name</th>
-                            <th>Created</th>
-                            <th>Modified</th>
-                            <th>Starred</th>
+                            <th>{{ content.name }}</th>
+                            <th>{{ content.created }}</th>
+                            <th>{{ content.modified }}</th>
+                            <th>{{ content.starred }}</th>
                         </tr>
                         @for (item of node.children; track $index) {
                             <tr role="button" (click)="openNode(item)">

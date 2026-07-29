@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Content } from '../../core/services/content';
 
 @Component({
   selector: 'app-settings',
@@ -7,6 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './settings.scss',
 })
 export class Settings {
+  public content = inject(Content).getHome().settings;
   get isFullscreen() {
     return document.fullscreenElement;
   }
