@@ -1,5 +1,11 @@
 import { Injectable, Type } from '@angular/core';
+import { Bluelotus } from '../../components/files/bluelotus/bluelotus'
 import { Starling } from '../../components/files/starling/starling'
+import { Homelab } from '../../components/files/homelab/homelab'
+import { Tradingbot } from '../../components/files/tradingbot/tradingbot'
+import { Bsodmaker } from '../../components/files/bsodmaker/bsodmaker'
+import { Fdd } from '../../components/files/fdd/fdd'
+import { Journeycraft } from '../../components/files/journeycraft/journeycraft'
 import { AboutApp } from '../../components/files/about-app/about-app'
 import { LastUpdate } from '../../components/files/last-update/last-update'
 import { Version } from '../../components/files/version/version'
@@ -192,18 +198,24 @@ export class FileSystem {
   }
   public getFileContent(path: string): Type<any> | null{
     switch(path){
+      case 'home/desktop/projects/bluelotus.pl':
+        return Bluelotus;
       case 'home/desktop/projects/starling - DIY star tracker':
         return Starling;
-    }
-    switch(path){
+      case 'home/desktop/projects/homelab':
+        return Homelab;
+      case 'home/desktop/projects/trading bot':
+        return Tradingbot;
+      case 'home/desktop/projects/bsodmaker.net':
+        return Bsodmaker;
+      case 'home/desktop/projects/FDD keyboard':
+        return Fdd;
+      case 'home/desktop/projects/JourneyCraft':
+        return Journeycraft;
       case 'home/about-this-app/about.txt':
         return AboutApp;
-    }
-    switch(path){
       case 'home/about-this-app/last-update.txt':
         return LastUpdate;
-    }
-    switch(path){
       case 'home/about-this-app/version.txt':
         return Version;
     }
