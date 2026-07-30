@@ -1,0 +1,9 @@
+<div class="biosSplashScreen">
+    <div>BIOS v1.0.0 2026</div>
+    <div>Copyright (C) 2026 Marcin Chudziński</div>
+    <br>
+    @for (message of displayedMessages; track $index) {
+        <div>{{ message }}</div>
+    }
+    <div [class.blink]="messages.length === displayedMessages.length">█</div>
+</div>
