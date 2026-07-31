@@ -1,0 +1,73 @@
+.fileExplorer{
+    .iconDir, .iconFile{
+        height: 22px;
+        width: 22px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .topBar{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 4px 8px;
+        background-color: #3a3a3a;
+        > div[role=button]{
+            background-color: #2a2a2a;
+            border-radius: 50%;
+            height: 32px;
+            width: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .topBarPath{
+            margin-left: 8px;
+        }
+    }
+    .mainWindow{
+        display: flex;
+        padding: 16px 32px;
+        white-space: nowrap;
+        .quickAccess > div:not(:first-child){
+            position: relative;
+            left: -8px;
+            margin-top: 4px;
+            padding: 4px 8px;
+            border-radius: 8px;
+            display: flex;
+            gap: 4px;
+        }
+        .quickAccess > div:not(:first-child):hover{
+            background-color: #4a4a4a;
+        }
+        .vr{
+            background-color: #4a4a4a;
+            width: 1px;
+            margin: 0 32px;
+        }
+        .content{
+            width: 100%;
+            table{
+                border-collapse: collapse;
+                th{
+                    font-weight: normal;
+                    color: #afafaf
+                }
+                td, th{
+                    padding: 1px 8px;
+                }
+                .filename{
+                    text-align: left;
+                    width: 100%;
+                }
+                tr:hover{
+                    background-color: #4a4a4a;
+                }
+            }
+            .emptyInd{
+                display: block;
+                color: #696969;
+            }
+        }
+    }
+}

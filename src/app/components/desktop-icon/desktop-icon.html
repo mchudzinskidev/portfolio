@@ -1,0 +1,22 @@
+<div
+    class="desktopIconContainer noselect"
+    [class.selected]="iconDetails().selected"
+    [style.height.px]="iconDetails().gridSize"
+    [style.width.px]="iconDetails().gridSize"
+    [style.left.px]="iconDetails().gridPosX * iconDetails().gridSize"
+    [style.top.px]="iconDetails().gridPosY * iconDetails().gridSize"
+    (click)="selected.emit()"
+>
+    <div
+        class="desktopIcon"
+        role="button"
+        (dblclick)="clicked.emit()"
+        [class.iconGear]="iconDetails().icon === 'gear'"
+        [class.iconDir]="iconDetails().icon === 'dir'"
+        [class.iconMe]="iconDetails().icon === 'me'"
+        [class.iconTerm]="iconDetails().icon === 'term'"
+        [class.iconIn]="iconDetails().icon === 'in'"
+        [class.iconOff]="iconDetails().icon === 'off'"
+    ></div>
+    <div class="center" role="button" (dblclick)="clicked.emit()">{{ iconDetails().title }}</div>
+</div>

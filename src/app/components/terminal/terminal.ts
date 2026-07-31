@@ -1,0 +1,158 @@
+import { Component, ElementRef, inject, input, OnInit, ViewChild } from '@angular/core';
+import { Node, FileSystem, DirectoryNode } from '../../core/services/file-system';
+
+interface TerminalEvent {
+  type: 'prompt' | 'output';
+  text: string;
+  path?: string;
+}
+
+@Component({
+  selector: 'app-terminal',
+  imports: [],
+  templateUrl: './terminal.html',
+  styleUrl: './terminal.scss',
+})
+export class Terminal implements OnInit{
+  @ViewChild('terminal') terminalElem!: ElementRef;
+  @ViewChild('prompt') promptElem!: ElementRef;
+  public fs = inject(FileSystem);
+  public startCmd = input<string>('');
+  public startNode = input<DirectoryNode>(this.fs.getFs());
+  public node = this.startNode();
+  public username = 'marcin';
+  public hostname = 'localhost';
+  public terminalHistory: TerminalEvent[] = [];
+  public commandHistory: string[] = [];
+  public commandHistoryindex: number = -1;
+
+  ngOnInit(){
+    this.node = this.startNode();
+    this.focusInput();
+    if(this.startCmd().length > 0){
+      this.terminalHistory.push({
+        type: 'prompt',
+        text: this.startCmd(),
+        path: this.fs.getPath(this.node),
+      });
+      this.terminalHistory.push({
+        type: 'output',
+        text: this.executeCmd(this.startCmd(), this.node),
+      });
+    }
+  }
+
+  public handlePromptKeyup(event: KeyboardEvent): void {
+    const promptElement = this.promptElem.nativeElement as HTMLInputElement;
+
+    if (event.key === 'Enter' && promptElement.value.length > 0 && (this.terminalHistory.length === 0 || this.terminalHistory[this.terminalHistory.length - 1].type === 'output')) {
+      this.commandHistory.unshift(promptElement.value);
+      this.commandHistoryindex = -1;
+      this.terminalHistory.push({
+        type: 'prompt',
+        text: promptElement.value,
+        path: this.fs.getPath(this.node),
+      });
+      this.terminalHistory.push({
+        type: 'output',
+        text: this.executeCmd(promptElement.value, this.node),
+      });
+      promptElement.value = '';
+      const wrapper = this.terminalElem.nativeElement;
+      const scrollToBottom = wrapper.scrollTop + wrapper.clientHeight >= wrapper.scrollHeight;
+      if(scrollToBottom){
+        setTimeout(() => {
+          wrapper.scrollTo({
+            top: wrapper.scrollHeight,
+            behavior: 'smooth',
+          });
+        });
+      }
+    } else if(event.key === 'ArrowUp'){
+      this.commandHistoryindex += (this.commandHistory.length-1 > this.commandHistoryindex ? 1 : 0);
+      promptElement.value = '';
+      promptElement.value = this.commandHistory[this.commandHistoryindex] ?? '';
+    } else if(event.key === 'ArrowDown'){
+      this.commandHistoryindex -= (-1 < this.commandHistoryindex ? 1 : 0);
+      promptElement.value = this.commandHistory[this.commandHistoryindex] ?? '';
+    }
+  }
+
+  public focusInput(): void{
+    this.promptElem?.nativeElement?.focus();
+  }
+  private executeCmd(cmdString: string, node: DirectoryNode): string{
+    const args = cmdString.split(' ');
+    const cmd = args.shift();
+    switch(cmd){
+      case 'help': {
+        return ['available commands:', 'cd', 'cls', 'ls', 'pwd', 'reboot', 'whoami'].join('\n');
+      }
+      case 'whoami': {
+        if(args.length === 0){
+          return this.username;
+        }
+        return 'Bad usage';
+      }
+      case 'pwd': {
+        if(args.length === 0){
+          return this.fs.getPath(node);
+        }
+        return 'Bad usage';
+      }
+      case 'cd': {
+        if(args.length === 0){
+          return '';
+        }else if(args.length === 1){
+          const result = this.fs.resolvePath(args[0], node);
+          if(result === null){
+            return 'no such directory';
+          }else if(!('children' in result)){
+            return `${result.name} is not a directory`;
+          }
+          this.node = result;
+          return '';
+        }
+        return 'Bad usage';
+      }
+      case 'ls': {
+        if(args.length === 0){
+          let result = '';
+          for(let i = 0; i < node.children.length; i++){
+            result += (i === 0 ? '' : '\n') + node.children[i].name;
+          }
+          return result;
+        }else if(args.length === 1){
+          let targetNode = this.fs.resolvePath(args[0], node);
+          if(targetNode === null){
+            return 'no such directory';
+          }else if(!('children' in targetNode)){
+            return `${targetNode.name} is not a directory`;
+          }else{
+            let result = '';
+            for(let i = 0; i < targetNode.children.length; i++){
+              result += (i === 0 ? '' : '\n') + targetNode.children[i].name;
+            }
+            return result;
+          }
+        }
+        return 'Bad usage';
+      }
+      case 'cls': {
+        if(args.length === 0){
+          this.terminalHistory = [];
+          return '';
+        }
+        return 'Bad usage';
+      }
+      case 'reboot': {
+        if(args.length === 0){
+          window.location.reload();
+          return '';
+        }
+        return 'Bad usage';
+      }
+    }
+    return 'Unknown command. Type "help" for list of available commands.'
+  }
+}

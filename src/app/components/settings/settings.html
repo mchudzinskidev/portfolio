@@ -1,0 +1,10 @@
+<div class="settingsContainer">
+    <table>
+        <tr>
+            <td>{{ content.fullscreen }}</td>
+            <td><div class="toggle" role="button" (click)="toggleFullscreen()">
+                <div [class.toggleToggled]="!isFullscreen"></div>
+            </div></td>
+        </tr>
+    </table>
+</div>

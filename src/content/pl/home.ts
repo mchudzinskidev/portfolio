@@ -1,16 +1,32 @@
 import { HomeContent } from '../../app/core/models/home-content';
 
 export const homeContent: HomeContent = {
-  headerMenu: [
-    {displayName: 'O mnie', link: '#'},
-    {displayName: 'Projekty', subMenu: [
-      {displayName: 'projekt starling', link: '#'},
-      {displayName: 'JourneyCraft', link: '#'}
-    ]},
-    {displayName: 'Kontakt', link: '#'},
-  ],
-  header: {
-    title: 'Goodbye world',
-    subtitle: 'pl'
-  }
+  generic: {
+    fileExplorer: 'Eksplorator Plików',
+    terminal: 'Terminal',
+    aboutMe: 'O Mnie',
+    settings: 'Ustawienia',
+    browser: 'Przeglądarka Plików'
+  },
+  desktop: {
+    projects: "Projekty",
+    reboot: "Restart"
+  },
+  fileExplorer:{
+    quickAccess: 'Szybki Dostęp',
+    emptyFolderMsg: 'Ten folder jest pusty',
+    name: 'Nazwa',
+    created: 'Utworzony',
+    modified: 'Zmodyfikowany',
+    starred: 'Ulubione',
+  },
+  rebootDialog:{
+    line0: 'Wymagany restart',
+    line1: 'Na pewno chcesz zrestartować swój system?',
+    line2: 'Wszystkie zmiany zostaną utracone',
+    reload: 'Restart',
+  },
+  settings:{
+    fullscreen: 'Pełny Ekran',
+  },
 };

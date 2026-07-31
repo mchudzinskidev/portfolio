@@ -1,0 +1,59 @@
+
+<div class="fileExplorer">
+    <div class="topBar">
+        <div role="button" (click)="goToHome()">&#8962;</div>
+        <div role="button" (click)="goToUpperDir()">&#x2191;</div>
+        <div class="topBarPath">
+            @for(item of getPathComponents(); track $index){
+                @if($index !== 0){
+                    <span>/</span>
+                }
+                <span role="button" (click)="openNode(item)">{{ item.name }}</span>
+            }
+        </div>
+    </div>
+    <div class="mainWindow">
+        <div class="quickAccess">
+            <div>{{ content.quickAccess }}</div>
+            @for(item of quickAccessItems; track $index){
+                @if(item !== null){
+                    <div role="button" (click)="openNode(item)">
+                        <div [class]="'children' in item ? 'iconDir' : 'iconFile'"></div>
+                        <span>{{ item.name }}</span>
+                    </div>
+                }
+            }
+        </div>
+        <div class="vr"></div>
+        <div class="content">
+            @if('children' in node){
+                @if(node.children.length === 0){
+                    <span class="emptyInd center">{{ content.emptyFolderMsg }}</span>
+                }@else{
+                    <table class="center">
+                        <tr>
+                            <th></th>
+                            <th>{{ content.name }}</th>
+                            <th>{{ content.created }}</th>
+                            <th>{{ content.modified }}</th>
+                            <th>{{ content.starred }}</th>
+                        </tr>
+                        @for (item of node.children; track $index) {
+                            <tr role="button" (click)="openNode(item)">
+                                <td [class]="'children' in item ? 'iconDir' : 'iconFile'"></td>
+                                <td class="filename">{{ item.name }}</td>
+                                <td>{{ item.created }}</td>
+                                <td>{{ item.modified }}</td>
+                                @if(item.favorite){
+                                    <td>&starf;</td>
+                                }@else {
+                                    <td></td>
+                                }
+                            </tr>
+                        }
+                    </table>
+                }
+            }
+        </div>
+    </div>
+</div>

@@ -1,1 +1,5 @@
-<router-outlet></router-outlet>
+@if(biosService.isBooting){
+    <app-bios></app-bios>
+}@else {
+    <router-outlet></router-outlet>
+}

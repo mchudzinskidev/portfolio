@@ -1,0 +1,7 @@
+<div class="dialogBoxContainer">
+    @if(showRestartRequiredMsg()){
+        <div class="center">{{ content.line0 }}</div>
+    }
+    <div class="center">{{ content.line1 }}<br>{{ content.line2 }}</div>
+    <div class="reloadBtn" role="button" (click)="reloadPage()">{{ content.reload }}</div>
+</div>

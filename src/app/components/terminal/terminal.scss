@@ -1,0 +1,29 @@
+.terminal{
+    padding: 8px;
+    height: 100%;
+    overflow-y: scroll;
+    * {
+        font-family: monospace, sans-serif;
+    }
+    pre{
+        white-space: pre-wrap;
+    }
+    .colorGreen{
+        color: limegreen;
+    }
+    .colorBlue{
+        color: skyblue;
+    }
+    .promptContainer{
+        display: flex;
+        gap: 9px;
+        input{
+            background-color: transparent;
+            border: none;
+            outline: none;
+            color: white;
+            width: 100%;
+            font-size: 1em;
+        }
+    }
+}

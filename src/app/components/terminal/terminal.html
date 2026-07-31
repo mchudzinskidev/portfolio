@@ -1,0 +1,16 @@
+<div #terminal class="terminal" (pointerup)="focusInput()">
+    <div>
+        @for(line of terminalHistory; track $index){
+            @if('path' in line){
+                <span class="colorGreen">{{ username }}@{{ hostname }}</span>:<span class="colorBlue">{{ line.path }}</span>$&nbsp;{{ line.text }}
+            }@else{
+                <pre>{{ line.text }}</pre>
+            }
+        }
+    </div>
+    <pre></pre>
+    <div class="promptContainer">
+        <div><span class="colorGreen">{{ username }}@{{ hostname }}</span>:<span class="colorBlue">{{ fs.getPath(node) }}</span>$</div>
+        <input #prompt type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus (keyup)="handlePromptKeyup($event)">
+    </div>
+</div>

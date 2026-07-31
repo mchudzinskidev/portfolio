@@ -1,12 +1,14 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Bios as BiosService } from './core/services/bios';
+import { Bios } from './components/bios/bios';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Bios],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('portfolio');
+  public biosService = inject(BiosService);
 }

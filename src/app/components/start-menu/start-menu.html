@@ -1,0 +1,14 @@
+<div class="menuContainer noselect">
+    <div>
+        <div class="leftMenuItem" role="button" (click)="openFileExplorerWindowClicked.emit()">{{ cs.getHome().generic.fileExplorer }}</div>
+        <div class="leftMenuItem" role="button" (click)="openTerminalWindowClicked.emit()">{{ cs.getHome().generic.terminal }}</div>
+        <div class="leftMenuItem leftMenuItemBtm" role="button" (click)="rebootClicked.emit()">&#8634;</div>
+    </div>
+    <div class="vr"></div>
+    <div>
+        <div class="profilePicture"></div>
+        <div class="center">Marcin Chudziński</div>
+        <div class="rightMenuItem center" role="button" (click)="openAboutWindowClicked.emit()">{{ cs.getHome().generic.aboutMe }}</div>
+        <div class="rightMenuItem center" role="button" (click)="openSettingsWindowClicked.emit()">{{ cs.getHome().generic.settings }}</div>
+    </div>
+</div>

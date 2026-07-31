@@ -11,7 +11,7 @@ export class Content {
 	constructor(
 		private language: Language
 	) { }
-	public getHome(): HomeContent {
+	getHome(): HomeContent {
 		switch (this.language.language()) {
 			case 'pl': {
 				return plHomeContent;
