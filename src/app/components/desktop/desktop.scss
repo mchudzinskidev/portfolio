@@ -1,4 +1,10 @@
 .desktopContainer{
+    animation-name: boot;
+    animation-duration: 0.5s;
+    @keyframes boot {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
     background-color: black;
     overflow: hidden;
     height: 100vh;
