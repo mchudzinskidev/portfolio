@@ -1,1 +1,176 @@
-<p style="padding: 8px;">TODO</p>
+<div class="projectWrapper">
+    <div class="mainArticle selectable">
+        <article>
+            <section>
+                <header class="intro center">
+                    <div>
+                        <p class="mainIntro">JourneyCraft</p>
+                        <div class="hr"></div>
+                        <p class="sectionName">projekt</p>
+                    </div>
+                    <div class="flexRow">
+                        <div>
+                            <p class="secondaryIntro">Pierwszy serwer Minecraft z trybem Journey Mode</p>
+                            <div class="hr"></div>
+                            <p class="sectionName">opis</p>
+                        </div>
+                        <div>
+                            <p class="secondaryIntro">2020-2021</p>
+                            <div class="hr"></div>
+                            <p class="sectionName">czas</p>
+                        </div>
+                        <div>
+                            <p class="secondaryIntro">zarchiwizowany</p>
+                            <div class="hr"></div>
+                            <p class="sectionName">status</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="secondaryIntro stack">
+                            <div>Java</div>
+                            <div>Node.js</div>
+                            <div>Discord API</div>
+                            <div>HTML</div>
+                            <div>JS</div>
+                            <div>CSS</div>
+                            <div>MySQL</div>
+                            <div>Git</div>
+                            <div>Linux</div>
+                        </div>
+                        <div class="hr"></div>
+                        <p class="sectionName">technologie</p>
+                    </div>
+                </header>
+            </section>
+            <!-- <section>
+                <div>
+                    <p>Spis treści</p>
+                    <ol>
+                        <li>
+                            <p>Intro</p>
+                            <ul>
+                                <li>W skrócie</li>
+                                <li>Tło projektu</li>
+                                <li>Timeline</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Szczegóły projektu</p>
+                            <ul>
+                                <li>Jak działa Journey Mode?</li>
+                                <li>Integracja z Discordem</li>
+                                <li>Strona internetowa</li>
+                                <li>Infrstruktura</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Podsumowanie</p>
+                            <ul>
+                                <li>JourneyCraft z perspektywy czasu</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </section> -->
+            <section>
+                <p class="mainSectionHeader"><span class="codeLine">01</span><br>Intro</p>
+                <div>
+                    <p class="sectionHeader">W skrócie</p>
+                    <p class="sectionText">JourneyCraft to cały ekosystem utworzony wokół Minecrafta. Własne pluginy, integracja z Discordem, strona internetowa - wszystko zbudowane samodzielnie i hostowane na własnej infrastrukturze.</p>
+                    <figure>
+                        <img src="./projects/jc/spawn.jpg" alt="Miejsce spawnu graczy na serwerze JourneyCraft">
+                        <figcaption>Miejsce spawnu graczy na serwerze JourneyCraft</figcaption>
+                    </figure>
+                </div>
+                <div>
+                    <p class="sectionHeader">Tło projektu</p>
+                    <p class="sectionText">Wszystko zaczęło się w grudniu 2020 roku, kiedy w zaledwie kilka dni powstał plugin wprowadzający do Minecrafta nowy tryb gry - Journey Mode (JM), inspirowany tym, wprowadzonym w maju tego samego roku do gry Terraria. Początkowo był to tylko mały serwer dla znajomych. Jeden z nich - Dominik - zainteresował się projektem i zaproponował współpracę przy większym, publicznym serwerze opartym o mój plugin. Nie byłbym sobą, gdybym się nie zgodził.</p>
+                </div>
+                <div>
+                    <p class="sectionHeader">timeline</p>
+                    <div class="timeline">
+                        <div class="tlDot endDot"></div>
+                        <div class="tlYear">2020</div>
+                        <div class="tlPath"></div>
+                        <div class="tlDot">
+                            <div class="tlEvent">
+                                <div class="tlEventTitle">grudzień 2020</div>
+                                <div class="tlEventDesc">pierwsza grywalna wersja Journey Mode</div>
+                            </div>
+                        </div>
+                        <div class="tlPath"></div>
+                        <div class="tlDot">
+                            <div class="tlEvent">
+                                <div class="tlEventTitle">grudzień 2020</div>
+                                <div class="tlEventDesc">rozpoczęcie pracy nad projektemn JourneyCraft</div>
+                            </div>
+                        </div>
+                        <div class="tlPath"></div>
+                        <div class="tlYear">2021</div>
+                        <div class="tlPath"></div>
+                        <div class="tlDot">
+                            <div class="tlEvent">
+                                <div class="tlEventTitle">sierpień 2021</div>
+                                <div class="tlEventDesc">publiczne otwarcie serwera</div>
+                            </div>
+                        </div>
+                        <div class="tlPath"></div>
+                        <div class="tlDot">
+                            <div class="tlEvent">
+                                <div class="tlEventTitle">wrzesień 2021</div>
+                                <div class="tlEventDesc">zakończenie działalności serwera</div>
+                            </div>
+                        </div>
+                        <div class="tlPath"></div>
+                        <div class="tlDot endDot"></div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <p class="mainSectionHeader"><span class="codeLine">02</span><br>Szczegóły projektu</p>
+                <div>
+                    <p class="sectionHeader">Jak działa Journey Mode?</p>
+                    <p class="sectionText">Journey Mode łączy w sobie cechy trybu kreatywnego i przetrwania. Gracz zbiera materiały podobnie jak na survivalu, ale po zebraniu jego określonej ilości może go odblokować - wtedy zyskuje nieograniczony dostęp do tego surowca. Mechanika odblokowywania przedmiotów wprowadza do gry zupełnie nowe wyzwanie - odblokowanie możliwie jak najwięcej.</p>
+                    <p class="sectionText">Cała mechanika była obsługiwana za pomocą trzech podstawowych komend. Gracz za pomocą <span class="codeLine">/j status</span> może wyświetlić interfejs graficzny zawierający informację, jakie przedmioty dostępne są do odblokowania i ile trzeba ich zebrać. Dzięki <span class="codeLine">/j unlock</span> możliwe jest odblokowanie przedmiotów. Po użyciu tej komendy plugin sprawdza, czy w ekwipunku gracza są zablokowane przedmioty w ilości wymaganej do ich odblokowania - jeżeli tak, zapisuje w bazie danych stosowną informację, a gracz może do woli korzystać z nowych zasobów. Odblokowanie przedmiotu nie dodawało go bezpośrednio do ekwipunku - gracz zyskiwał możliwość pobierania go bez ograniczeń za pomocą <span class="codeLine">/j give</span>. Komenda działa w dwóch trybach - tekstowym (np. <span class="codeLine">/j give stone 64</span> - daje graczowi stack kamienia) lub graficznym (<span class="codeLine">/j give</span> - otwiera interfejs, podobny do tego z trybu kreatywnego).</p>
+                    <figure>
+                        <img src="./projects/jc/journey_inventory.jpg" alt="Journey inventory, uruchomione komendą /j give">
+                        <figcaption>Journey inventory, uruchomione komendą /j give</figcaption>
+                    </figure>
+                </div>
+                <div>
+                    <p class="sectionHeader">Integracja z Discordem</p>
+                    <p class="sectionText">Jedną z wyróżniajacych funkcji serwera była integracja z Discordem. Ja stworzyłem dedykowanego discordowego bota, a Dominik napisał plugin do Minecrafta - dzięki wzajemnej komunikacji obu programów możliwa była synchronizacja danych gracza (nick, status, ranga, statystyki), a także informacji o samym serwerze gry (status, liczba graczy). Zarówno bot jak i plugin miały swoje HTTP API, za pomocą których odbywała się wzajemna komunikacja. Stworzenie takiego systemu było wymagającym, ale bardzo ciekawym wyzwaniem - wymagało od nas ścisłej współpracy.</p>
+                    <figure>
+                        <img src="./projects/jc/player_stats.jpg" alt="Statystyki gracza przesłane przez JourneyBota">
+                        <figcaption>Statystyki gracza przesłane przez JourneyBota</figcaption>
+                    </figure>
+                    <p class="sectionText">Proces powiązania konta gracza z kontem Discord zaczynał się na serwerze Minecraft. Gracz wpisywał komendę <span class="codeLine">/discord [nick]</span> następnie plugin Dominika wysyłał zapytanie do bota. Ten sprawdzał, czy taki gracz jest u nas na serwerze - jeżeli tak, to wysyłał na Discordzie wiadomość do tego użytkownika. Ten miał kilkadziesiąt sekund na dodanie reakcji pod wiadomością bota. Po upływie tego czasu lub w momencie zostawienia reakcji bot odsyłał do API pluginu informację o tym, czy weryfikacja się powiodła. Gracz otrzymywał stosowny komunikat, a w przypadku pomyślnej werfyfikacji - dane były zapisywane w bazie. Od tego momentu aktywność gracza na serwerze gry była przesyłana do API bota, a ten modyfikował dane użytkownika na naszym serwerze Discord.</p>
+                </div>
+                <div>
+                    <p class="sectionHeader">Strona internetowa JC</p>
+                    <p class="sectionText"><a href="https://journeycraft.mchudzinski.dev/" target="_blank">https://journeycraft.mchudzinski.dev/</a></p>
+                    <p class="sectionText">Projekt nie byłby kompletny bez własnej witryny internetowej. Wprowadzał do gry zupełnie nowy tryb oraz wyjątkowe funkcjonalności, z ktorymi gracze Minecrafta mogli nie mieć wcześniej styczności. Dlatego tak ważne było przygotowanie strony, ze szczególnie dopracowaną sekcją Wiki. Gracze mogli przeczytać tam jak dokładnie działa JM oraz zapoznać się z innymi mechanikami, unikalnymi dla naszego serwera. Dodatkowo strona prezentowała statystki graczy. Wizualnie witryna była silnie inspirowana grą. Strona dostępna była pod adresem journeycraft.pl, aktualnie jej archiwalna wersja dostępna jest <a href="https://journeycraft.mchudzinski.dev/" target="_blank">tutaj</a>. Witryna w całości była zaprojektowana i wykonana przeze mnie.</p>
+                    <figure>
+                        <img src="./projects/jc/wiki_discontinued.jpg" alt="Wygląd strony Wiki, zanim zdecydowałem się na aktualny design">
+                        <figcaption>Wygląd strony Wiki, zanim zdecydowałem się na aktualny design</figcaption>
+                    </figure>
+                </div>
+                <div>
+                    <p class="sectionHeader">Infrastruktura</p>
+                    <p class="sectionText">Pierwszy serwer z Journey Mode był hostowany na komputerze z odzysku pod kontrolą Ubuntu Server. Nie był to demon szybkości, ale umożliwiał płynną rozgrywkę mi i grupce znajomych. Pozwolił mi przećwiczyć w praktyce mechanizmy działania Linuxa oraz sieci komputerowych, które dotychczas znałem tylko w teorii. Z czasem jak projekt się rozrósł, serwer Minecraft i baza danych zostały przeniesione na mocniejszą maszynę Dominika, a bot oraz strona internetowa dostępne były na moim sprzęcie.</p>
+                    <figure>
+                        <img src="./projects/jc/first_hosting.jpg" alt="Moje pierwsze podejście do hostingu Minecrafta - laptop w roli serwera">
+                        <figcaption>Moje pierwsze podejście do hostingu Minecrafta - laptop w roli serwera</figcaption>
+                    </figure>
+                </div>
+            </section>
+            <section>
+                <p class="mainSectionHeader"><span class="codeLine">03</span><br>Podsumowanie</p>
+                <div>
+                    <p class="sectionHeader">JourneyCraft z perspektywy czasu</p>
+                    <p class="sectionText">Wspaniale było cofnąć się nieco w czasie i powspominać pracę nad JC. Ten projekt to były moje pierwsze kroki w bardzo wielu dziedzinach. Po raz pierwszy musiałem sprawić, żeby kilka niezależnych systemów współpracowało ze sobą i pierwszy raz projektowałem API. Dziś wiele rzeczy zrobiłbym inaczej - na pewno chętniej korzystał z GITa, czy zupełnie inaczej stworzyłbym strukturę kodu. Mimo tego, uważam projekt za bardzo udany.</p>
+                </div>
+            </section>
+        </article>
+    </div>
+</div>
