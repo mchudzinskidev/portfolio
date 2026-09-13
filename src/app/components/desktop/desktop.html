@@ -27,8 +27,7 @@
     </div>
     <div class="desktop">
         @for (window of windows; track $index) {
-            @if(!window.isMinimized){
-                <app-window
+            <app-window
                 [window]="window"
                 [index]="$index"
                 (focused)="focusCallback($event)"
@@ -36,7 +35,6 @@
                 (closed)="closeWindowCallback($event);"
                 [isFocused]="window.zIndex === getMaxWindowZindex()"
             ></app-window>
-            }
         }
     </div>
     <div class="desktopToolbar">

@@ -89,6 +89,7 @@ export class Desktop {
     let innerWidth = 512;
     let posX = 64;
     let posY = 64;
+    let isFullscreen = false;
     switch(wType){
       case WindowType.dir: {
         component = FileExplorer;
@@ -139,6 +140,11 @@ export class Desktop {
       }
       case WindowType.net: {
         component = Browser;
+        if((inputs?.['path'] as string)?.startsWith('home/desktop/projects/')){
+          posX = 0;
+          posY = 0;
+          isFullscreen = true;
+        }
         icon = 'net';
         title = this.content.generic.browser;
         break;
@@ -161,7 +167,7 @@ export class Desktop {
       innerH: innerHeight,
       innerW: innerWidth,
       zIndex: this.windows.length > 0 ? Math.max(...this.windows.map(win => win.zIndex)) + 1 : 1,
-      isFullscreen: false,
+      isFullscreen: isFullscreen,
       isMinimized: false,
       icon: icon,
       component: component,

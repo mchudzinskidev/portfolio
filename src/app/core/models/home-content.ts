@@ -1,30 +1,102 @@
 export interface HomeContent {
   generic: {
-    fileExplorer: string;
-    terminal: string;
-    aboutMe: string;
-    settings: string;
-    browser: string;
-  };
+    fileExplorer: string,
+    terminal: string,
+    aboutMe: string,
+    settings: string,
+    browser: string,
+    months: {
+      jan: string,
+      feb: string,
+      mar: string,
+      apr: string,
+      may: string,
+      jun: string,
+      jul: string,
+      aug: string,
+      sep: string,
+      oct: string,
+      nov: string,
+      dec: string,
+    },
+  },
   desktop: {
-    projects: string;
-    reboot: string;
-  };
+    projects: string,
+    reboot: string,
+  },
   fileExplorer:{
-    quickAccess: string;
-    emptyFolderMsg: string;
-    name: string;
-    created: string;
-    modified: string;
-    starred: string;
-  };
+    quickAccess: string,
+    emptyFolderMsg: string,
+    name: string,
+    created: string,
+    modified: string,
+    starred: string,
+  },
   rebootDialog:{
-    line0: string;
-    line1: string;
-    line2: string;
-    reload: string;
-  };
+    line0: string,
+    line1: string,
+    line2: string,
+    reload: string,
+  },
   settings:{
-    fullscreen: string;
+    fullscreen: string,
   }
+  projects:{
+    journeycraft:{
+      introduction:{
+        project: string,
+        desc: string,
+        descValue: string,
+        time: string,
+        status: string,
+        statusValue: string,
+        techStack: string,
+      },
+      intro:{
+        header: string,
+        inShort: string,
+        inShortVal: string,
+        inShortImg: string,
+        bg: string,
+        bgVal: string,
+        timeline: {
+          header: string,
+          item1: string,
+          item2: string,
+          item3: string,
+          item4: string,
+        },
+      },
+      details:{
+        header: string,
+        aboutJM: string,
+        aboutJMval1: string,
+        aboutJMval2: string,
+        aboutJMval3: string,
+        aboutJMval4: string,
+        aboutJMval5: string,
+        aboutJMval6: string,
+        aboutJMval7: string,
+        aboutJMimg: string,
+        discordIntegration: string,
+        discordIntegrationVal1: string,
+        discordIntegrationImg: string,
+        discordIntegrationVal2: string,
+        discordIntegrationVal3: string,
+        website: string,
+        websiteVal1: string,
+        websiteVal2: string,
+        websiteVal3: string,
+        websiteImg: string,
+        infrastructure: string,
+        infrastructureVal: string,
+        infrastructureImg: string,
+      },
+      summary:{
+        header: string,
+        jcNow: string,
+        jcNowVal: string,
+      },
+    },
+  },
 }
