@@ -50,11 +50,13 @@
                 align-items: center;
                 justify-content: center;
                 gap: 16px;
+                flex-wrap: wrap;
                 > div{
                     padding: 2px 8px;
                     border-radius: 8px;
                     background-color: rgba(0, 255, 0, 0.24);
                     margin-bottom: 8px;
+                    white-space: nowrap;
                 }
             }
         }
