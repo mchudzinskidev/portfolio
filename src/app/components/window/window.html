@@ -5,6 +5,7 @@
     [style.z-index]="window().zIndex"
     (pointerdown)="focused.emit(index())"
     [class.fullscreen]="window().isFullscreen"
+    [class.minimized]="window().isMinimized"
 >
     <table class="table">
         <tr>
