@@ -57,6 +57,31 @@
         overflow: auto;
         background-color: #2a2a2a;
     }
+    .scrolltop{
+        position: absolute;
+        bottom: 48px;
+        right: 48px;
+        height: 64px;
+        width: 64px;
+        cursor: pointer;
+        background-color: rgba(48, 48, 48, 0.9);
+        box-shadow: 0 0 10px #101010;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .iconArrowUp{
+            background-size: cover;
+            height: 32px;
+            width: 32px;
+        }
+    }
+    .scrolltop:hover{
+        background-color: #4a4a4a;
+    }
+    .scrolltopFullscreen{
+        bottom: 128px;
+    }
 }
 .fullscreen{
     height: 100vh;

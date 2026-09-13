@@ -33,12 +33,19 @@
                     <div role="button" (pointerdown)="$event.stopPropagation(); focused.emit(index())" (click)="closeClick()">&#10005;</div>
                 </div>
                 <div
+                    #scrollContainer
+                    (scroll)="onScroll()" 
                     class="content"
                     [style.height]="window().isFullscreen ? 'calc(100vh - 34px)' : window().innerH + 'px'"
                     [style.width]="window().isFullscreen ? 'calc(100vw - 4px)' : window().innerW + 'px'"
                 >
                     <ng-container *ngComponentOutlet="window().component; inputs: window().inputs"></ng-container>
                 </div>
+                @if(showScrollTopBtn){
+                    <div class="scrolltop" [class.scrolltopFullscreen]="window().isFullscreen" (click)="scrollToTop()">
+                        <div class="iconArrowUp"></div>
+                    </div>
+                }
             </td>
             <td class="resizeHorizontal" (pointerdown)="startResize($event, 'e')"></td>
         </tr>

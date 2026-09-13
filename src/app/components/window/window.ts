@@ -1,9 +1,11 @@
 import {
   Component,
   computed,
+  ElementRef,
   HostListener,
   input,
   output,
+  ViewChild,
 } from '@angular/core';
 
 import { Window as WindowModel } from '../../core/models/window';
@@ -42,6 +44,9 @@ export class Window {
   private startHeight = 0;
   private readonly minWidth = 288;
   private readonly minHeight = 192;
+
+  @ViewChild('scrollContainer') scrollContainer!: ElementRef<HTMLDivElement>;
+  public showScrollTopBtn = false;
 
   public startDrag(event: PointerEvent): void {
     if (event.button !== 0) {
@@ -182,5 +187,14 @@ export class Window {
     this.window().posX = 0;
     this.window().posY = 0;
     this.window().isFullscreen = true;
+  }
+  public onScroll(): void {
+    this.showScrollTopBtn = this.scrollContainer.nativeElement.scrollTop > 0;
+  }
+  public scrollToTop(): void {
+    this.scrollContainer.nativeElement.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   }
 }
