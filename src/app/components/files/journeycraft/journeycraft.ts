@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './journeycraft.scss',
 })
 export class Journeycraft {
-
+  
 }
