@@ -10,7 +10,7 @@
     </div>
     <pre></pre>
     <div class="promptContainer">
-        <div><span class="colorGreen">{{ username }}@{{ hostname }}</span>:<span class="colorBlue">{{ fs.getPath(node) }}</span>$</div>
+        <div class="nowrap"><span class="colorGreen">{{ username }}@{{ hostname }}</span>:<span class="colorBlue">{{ fs.getPath(node) }}</span>$</div>
         <input #prompt type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus (keyup)="handlePromptKeyup($event)">
     </div>
 </div>

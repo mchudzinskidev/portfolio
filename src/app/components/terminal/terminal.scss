@@ -17,6 +17,9 @@
     .promptContainer{
         display: flex;
         gap: 9px;
+        .nowrap{
+            white-space: nowrap;
+        }
         input{
             background-color: transparent;
             border: none;
