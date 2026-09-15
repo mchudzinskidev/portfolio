@@ -60,7 +60,7 @@
                     text-align: left;
                     width: 100%;
                 }
-                tr:hover{
+                tr:not(:first-child):hover{
                     background-color: #4a4a4a;
                 }
             }
