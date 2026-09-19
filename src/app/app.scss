@@ -119,17 +119,23 @@
         .sectionText{
             margin-top: 16px;
         }
+        .sectionList{
+            margin-top: 16px;
+            list-style-position: inside;
+        }
         .codeLine{
             background-color: #1a1a1a;
             font-family: monospace, sans-serif;
         }
-        figure{
+        figure, .projectVideWrapper{
             background-color: white;
             padding: 8px;
             width: fit-content;
             max-width: 724px;
-            margin-top: 16px;
-            img {
+            margin-top: 32px;
+            color: black;
+            text-align: center;
+            img, video {
                 width: auto;
                 max-width: 100%;
                 height: auto;
