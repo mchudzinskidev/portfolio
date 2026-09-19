@@ -26,7 +26,7 @@ export const homeContent: HomeContent = {
     projects: "Projects",
     reboot: "Reboot"
   },
-  fileExplorer:{
+  fileExplorer: {
     quickAccess: 'Quick Access',
     emptyFolderMsg: 'This folder is empty',
     name: 'Name',
@@ -34,18 +34,18 @@ export const homeContent: HomeContent = {
     modified: 'Modified',
     starred: 'Starred',
   },
-  rebootDialog:{
+  rebootDialog: {
     line0: 'System restart required',
     line1: 'Are you sure you want to reload your system?',
     line2: 'All changes will be lost',
     reload: 'Reload',
   },
-  settings:{
+  settings: {
     fullscreen: 'Fullscreen',
   },
-  projects:{
-    journeycraft:{
-      introduction:{
+  projects: {
+    journeycraft: {
+      introduction: {
         project: "project",
         desc: "description",
         descValue: "The first Minecraft server featuring Journey Mode",
@@ -54,7 +54,7 @@ export const homeContent: HomeContent = {
         statusValue: "archived",
         techStack: "tech stack",
       },
-      intro:{
+      intro: {
         header: "Intro",
         inShort: "In short",
         inShortVal: "JourneyCraft is an entire ecosystem built around Minecraft. Custom plugins, Discord integration, a website - everything built from scratch and hosted on our own infrastructure.",
@@ -69,7 +69,7 @@ export const homeContent: HomeContent = {
           item4: "server shuts down",
         },
       },
-      details:{
+      details: {
         header: "Project Details",
         aboutJM: "How does Journey Mode work?",
         aboutJMval1: "Journey Mode combines elements of Creative and Survival modes. Players collect materials just like in Survival, but after collecting a certain amount, they can unlock them, gaining unlimited access to that resource. The item unlocking mechanic introduces a completely new challenge to the game - unlocking as many items as possible.",
@@ -94,10 +94,86 @@ export const homeContent: HomeContent = {
         infrastructureVal: "The first Journey Mode server was hosted on an old computer running Ubuntu Server. It was no speed demon, but it provided a smooth experience for me and a small group of friends. It also gave me an opportunity to gain hands-on experience with Linux and computer networking, which until then I had only known in theory. As the project grew, the Minecraft server and database were moved to a more powerful machine owned by Dominik, while the bot and website were hosted on my own hardware.",
         infrastructureImg: "My first attempt at hosting a Minecraft server - a laptop serving as the game server",
       },
-      summary:{
+      summary: {
         header: "Summary",
         jcNow: "JourneyCraft in Retrospect",
         jcNowVal: "It was great to take a step back in time and reminisce about working on JC. This project was my first experience in many different areas. For the first time, I had to make several independent systems work together, and I designed an API for the first time. Looking back, there are many things I would do differently today - I would certainly make more use of Git, for example, and I would structure the code completely differently. Despite that, I consider the project a great success.",
+      },
+    },
+    fdd: {
+      stack:{
+        electronics: "circuit design",
+        soldering: "soldering",
+      },
+      introduction: {
+        project: "project",
+        desc: "description",
+        descValue: "Floppy disk drives as a musical instrument",
+        time: "time",
+        status: "status",
+        statusValue: "completed",
+        techStack: "technologies",
+      },
+      intro: {
+        header: "Intro",
+        inShort: "In short",
+        inShortVal: "This project is an attempt to turn an simple toy into an unusual musical instrument. It combines electronics, programming, and a slightly unconventional approach to making music.",
+        video1Caption: 'A theme from "Blinding Lights" - The Weeknd',
+        bg: "Project background",
+        bgVal: "Inspired by videos I had seen online, I decided to build my own setup for making floppy disk drives play music. Initially, it was simply a way to start learning Arduino programming - a fun project I could also show off at school. The original controller simply had a melody programmed into it, which it played through the FDD. A few years later, however, I returned to the project with new skills and a new idea - this time, I wanted to turn the floppy disk drives into a fully-fledged, interactive instrument that could actually be played.",
+        video2Caption: '"Barka" played on one of the first versions of the project from 2020',
+        finalVersionImg: "Final version of the project - interactive instrument",
+        timeline: {
+          header: "timeline",
+          item1: "Creating the first version of an Arduino library for playing music using an FDD",
+          item2: 'Returning to the project to record "Habits" for a school project',
+          item3: "Returning to the project after several years and starting work on modifying the keyboard",
+          item4: "Completing the instrument and finishing the project",
+        },
+      },
+      firstVersion: {
+        header: "First version of the project",
+        howItWorks: "How does a floppy disk drive become an instrument?",
+        howItWorksVal1: "Floppy disk drives are equipped with stepper motors that control the movement of the read/write head. When the motor takes steps at a specific frequency, it produces a sound at the corresponding pitch. By controlling the motor's speed, we can control the pitch of the sound.",
+        howItWorksVal2: "Floppy disk drives have a 34-pin connector, four of which are particularly important when it comes to playing music:",
+        howItWorksList1: "enables the FDD if pulled down",
+        howItWorksList2: "direction of head movement",
+        howItWorksList3: "one motor step",
+        howItWorksList4: "track zero detection",
+        biggestChallenge: "The biggest challenge - one core, two drives",
+        biggestChallengeVal1: "I wanted two floppy disk drives to be able to play independently, controlled by a single-core Atmega. With one drive, everything was simple - all I had to do was use the",
+        biggestChallengeVal2: " function, since blocking the main thread wasn't an issue. Things became a little more complicated when adding a second drive. In addition to playing a sound at a specific frequency, I also had to control the position of both heads.",
+        biggestChallengeVal3: "The solution was a single loop for the main thread, running at the processor's clock speed with no delays. The main loop repeatedly checked whether it was time to generate the next step for either of the drives. The same loop also controlled the position of the head (the state of the",
+        biggestChallengeVal4: " pin) and changed the state of the",
+        biggestChallengeVal5: " pin when necessary. This made it possible to handle additional drives without having to create a separate thread for each one.",
+        videoCaption: 'Tove Lo "Habits" - Hippie Sabotage Remix',
+      },
+      keyboard: {
+        header: "Keyboard",
+        keyHandling: "Key handling",
+        keyHandlingVal: "The keyboard of my instrument works similarly to a typical computer membrane keyboard. Each key had a membrane underneath it that connected two traces - a column and a row. To determine which keys are pressed, the controller applies a high signal to each row in sequence and checks which column returns a logical 1. The remaining row pins must be left in a high-impedance state, while the columns are configured as inputs with pull-up resistors. I used both cores of the microcontroller - one generated signals for the FDDs, while the other handled the keyboard.",
+        prototypeImg: "Prototype on a breadboard",
+        electronics: "Electronics",
+        electronicsVal: "The mainboard for this project was relatively simple - but at the same time, it was one of the first boards I had designed and built. It contains a microcontroller - a Raspberry Pi Pico with an RP2040 chip, a logic level converter (floppy disk drives operate at 5V, while the RPi uses 3.3V), a UCY7402 chip (NOR gates connected in a way that makes them function as NOT gates), as well as a capacitor and connectors for the power supply (from an ATX computer power supply), keyboard, and FDDs. I made the traces by soldering them directly onto a prototyping board.",
+        motherboardFrontImg: "Mainboard - top",
+        motherboardBackImg: "Mainboard - bottom",
+        improvements: "Improvements over the previous version",
+        improvementsVal: "The first version of the project had two main drawbacks: I had to keep track of the direction of the head, and the drive produced a \"clicking\" sound whenever the direction changed. I solved both problems with a single modification - shorting the",
+        improvementsVal2: " and",
+        improvementsVal3: " pins. Thanks to this modification, when the head was on track 0, the",
+        improvementsVal4: " pin pulled the",
+        improvementsVal5: " pin low, causing the head to move away from the motor. A single step was enough for the",
+        improvementsVal6: " pin to return to a logical 1 - at that point, the head reversed direction towards the motor, moving back onto track zero. As a result, the controller no longer had to keep track of the head's position at all - this simplified both the code and the mainboard, and the controller only needed a single wire to control the floppy disk drive.",
+        connectorImg: "Clever short between the Direction and Track 0 pins",
+        insideImg: "Inside the modified keyboard",
+        finalVideoCaption: 'A theme from "Shelter" by Porter Robinson & Madeon',
+      },
+      summary: {
+        header: "Summary",
+        lesson: "A lesson beyond music",
+        lessonVal1: "Working on this project was both enjoyable and educational. I had to do some research online to figure out the pinout of floppy disk drives, and I also had to think carefully about the algorithms used to play the melodies. The controller board was one of the first boards I had ever built, giving me practical skills that later proved useful when building more complex circuits.",
+        lessonVal2: "Perhaps unsurprisingly, there are some things I would do differently today. Above all, I would improve the aesthetics of the instrument. Today, I have access to 3D printing, which offers almost unlimited possibilities for creating enclosures, mounts, and covers.",
+        finalVideoCaption: 'A theme from "Faded" by Alan Walker',
       },
     },
   },

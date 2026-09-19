@@ -1,1 +1,201 @@
-<p style="padding: 8px;">TODO</p>
+<div class="projectWrapper">
+    <div class="mainArticle selectable">
+        <article>
+            <section>
+                <header class="intro center">
+                    <div>
+                        <p class="mainIntro">FDD keyboard</p>
+                        <div class="hr"></div>
+                        <p class="sectionName">{{ content.projects.fdd.introduction.project }}</p>
+                    </div>
+                    <div class="flexRow">
+                        <div>
+                            <p class="secondaryIntro">{{ content.projects.fdd.introduction.descValue }}</p>
+                            <div class="hr"></div>
+                            <p class="sectionName">{{ content.projects.fdd.introduction.desc }}</p>
+                        </div>
+                        <div>
+                            <p class="secondaryIntro">2019-2020, 2024</p>
+                            <div class="hr"></div>
+                            <p class="sectionName">{{ content.projects.fdd.introduction.time }}</p>
+                        </div>
+                        <div>
+                            <p class="secondaryIntro">{{ content.projects.fdd.introduction.statusValue }}</p>
+                            <div class="hr"></div>
+                            <p class="sectionName">{{ content.projects.fdd.introduction.status }}</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="secondaryIntro stack">
+                            <div>RP2040</div>
+                            <div>MicroPython</div>
+                            <div>Arduino</div>
+                            <div>C++</div>
+                            <div>{{ content.projects.fdd.stack.electronics }}</div>
+                            <div>{{ content.projects.fdd.stack.soldering }}</div>
+                        </div>
+                        <div class="hr"></div>
+                        <p class="sectionName">{{ content.projects.fdd.introduction.techStack }}</p>
+                    </div>
+                </header>
+            </section>
+
+            <section>
+                <p class="mainSectionHeader"><span class="codeLine">01</span><br>{{ content.projects.fdd.intro.header }}</p>
+                <div>
+                    <p class="sectionHeader">{{ content.projects.fdd.intro.inShort }}</p>
+                    <p class="sectionText">{{ content.projects.fdd.intro.inShortVal }}</p>
+                </div>
+                <div class="projectVideWrapper">
+                    <video controls preload="metadata" playsinline>
+                        <source src="./projects/fdd/blinding_lights.mp4" type="video/mp4"/>
+                        Twoja przeglądarka nie wspiera plików wideo
+                    </video>
+                    {{ content.projects.fdd.intro.video1Caption }}
+                </div>
+                <div>
+                    <p class="sectionHeader">{{ content.projects.fdd.intro.bg }}</p>
+                    <p class="sectionText">{{ content.projects.fdd.intro.bgVal }}</p>
+                </div>
+                <div class="projectVideWrapper">
+                    <video controls preload="metadata" playsinline>
+                        <source src="./projects/fdd/barka.mp4" type="video/mp4"/>
+                        Twoja przeglądarka nie wspiera plików wideo
+                    </video>
+                    {{ content.projects.fdd.intro.video2Caption }}
+                </div>
+                <figure>
+                    <img src="./projects/fdd/keyboard.jpg" [alt]="content.projects.fdd.intro.finalVersionImg">
+                    <figcaption>{{ content.projects.fdd.intro.finalVersionImg }}</figcaption>
+                </figure>
+                <div>
+                    <p class="sectionHeader">{{ content.projects.fdd.intro.timeline.header }}</p>
+                    <div class="timeline">
+                        <div class="tlDot endDot"></div>
+                        <div class="tlYear">2019</div>
+                        <div class="tlPath"></div>
+                        <div class="tlDot">
+                            <div class="tlEvent">
+                                <div class="tlEventTitle">{{ content.generic.months.oct }} 2019</div>
+                                <div class="tlEventDesc">{{ content.projects.fdd.intro.timeline.item1 }}</div>
+                            </div>
+                        </div>
+                        <div class="tlPath"></div>
+                        <div class="tlYear">2020</div>
+                        <div class="tlPath"></div>
+                        <div class="tlDot">
+                            <div class="tlEvent">
+                                <div class="tlEventTitle">{{ content.generic.months.may }} 2020</div>
+                                <div class="tlEventDesc">{{ content.projects.fdd.intro.timeline.item2 }}</div>
+                            </div>
+                        </div>
+                        <div class="tlPath"></div>
+                        <div class="tlYear">2024</div>
+                        <div class="tlPath"></div>
+                        <div class="tlDot">
+                            <div class="tlEvent">
+                                <div class="tlEventTitle">{{ content.generic.months.jun }} 2024</div>
+                                <div class="tlEventDesc">{{ content.projects.fdd.intro.timeline.item3 }}</div>
+                            </div>
+                        </div>
+                        <div class="tlPath"></div>
+                        <div class="tlDot">
+                            <div class="tlEvent">
+                                <div class="tlEventTitle">{{ content.generic.months.jun }} 2024</div>
+                                <div class="tlEventDesc">{{ content.projects.fdd.intro.timeline.item4 }}</div>
+                            </div>
+                        </div>
+                        <div class="tlPath"></div>
+                        <div class="tlDot endDot"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <p class="mainSectionHeader"><span class="codeLine">02</span><br>{{ content.projects.fdd.firstVersion.header }}</p>
+                <div>
+                    <p class="sectionHeader">{{ content.projects.fdd.firstVersion.howItWorks }}</p>
+                    <p class="sectionText">{{ content.projects.fdd.firstVersion.howItWorksVal1 }}</p>
+                    <p class="sectionText">{{ content.projects.fdd.firstVersion.howItWorksVal2 }}</p>
+                    <ul class="sectionList">
+                        <li>Pin #12 - Device Select 1 - {{ content.projects.fdd.firstVersion.howItWorksList1 }}</li>
+                        <li>Pin #18 - Direction - {{ content.projects.fdd.firstVersion.howItWorksList2 }}</li>
+                        <li>Pin #20 - Motor Step - {{ content.projects.fdd.firstVersion.howItWorksList3 }}</li>
+                        <li>Pin #26 - Track 0 - {{ content.projects.fdd.firstVersion.howItWorksList4 }}</li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="sectionHeader">{{ content.projects.fdd.firstVersion.biggestChallenge }}</p>
+                    <p class="sectionText">{{ content.projects.fdd.firstVersion.biggestChallengeVal1 }} <span class="codeLine">delay()</span>{{ content.projects.fdd.firstVersion.biggestChallengeVal2 }}</p>
+                    <p class="sectionText">{{ content.projects.fdd.firstVersion.biggestChallengeVal3 }} <span class="codeLine">Track 0</span>{{ content.projects.fdd.firstVersion.biggestChallengeVal4 }} <span class="codeLine">Direction</span>{{ content.projects.fdd.firstVersion.biggestChallengeVal5 }}</p>
+                </div>
+                <div class="projectVideWrapper">
+                    <video controls preload="metadata" playsinline>
+                        <source src="./projects/fdd/habits.mp4" type="video/mp4"/>
+                        Twoja przeglądarka nie wspiera plików wideo
+                    </video>
+                    {{ content.projects.fdd.firstVersion.videoCaption }}
+                </div>
+            </section>
+
+            <section>
+                <p class="mainSectionHeader"><span class="codeLine">03</span><br>{{ content.projects.fdd.keyboard.header }}</p>
+                <div>
+                    <p class="sectionHeader">{{ content.projects.fdd.keyboard.keyHandling }}</p>
+                    <p class="sectionText">{{ content.projects.fdd.keyboard.keyHandlingVal }}</p>
+                </div>
+                <figure>
+                    <img src="./projects/fdd/prototype.jpg" [alt]="content.projects.fdd.keyboard.prototypeImg">
+                    <figcaption>{{ content.projects.fdd.keyboard.prototypeImg }}</figcaption>
+                </figure>
+                <div>
+                    <p class="sectionHeader">{{ content.projects.fdd.keyboard.electronics }}</p>
+                    <p class="sectionText">{{ content.projects.fdd.keyboard.electronicsVal }}</p>
+                </div>
+                <figure>
+                    <img src="./projects/fdd/motherboard_front.jpg" [alt]="content.projects.fdd.keyboard.motherboardFrontImg">
+                    <figcaption>{{ content.projects.fdd.keyboard.motherboardFrontImg }}</figcaption>
+                </figure>
+                <figure>
+                    <img src="./projects/fdd/motherboard_back.jpg" [alt]="content.projects.fdd.keyboard.motherboardBackImg">
+                    <figcaption>{{ content.projects.fdd.keyboard.motherboardBackImg }}</figcaption>
+                </figure>
+                <div>
+                    <p class="sectionHeader">{{ content.projects.fdd.keyboard.improvements }}</p>
+                    <p class="sectionText">{{ content.projects.fdd.keyboard.improvementsVal }} <span class="codeLine">Track 0</span> {{ content.projects.fdd.keyboard.improvementsVal2 }} <span class="codeLine">Direction</span>{{ content.projects.fdd.keyboard.improvementsVal3 }} <span class="codeLine">Track 0</span>{{ content.projects.fdd.keyboard.improvementsVal4 }} <span class="codeLine">Direction</span>{{ content.projects.fdd.keyboard.improvementsVal5 }} <span class="codeLine">Track 0</span>{{ content.projects.fdd.keyboard.improvementsVal6 }}</p>
+                </div>
+                <figure>
+                    <img src="./projects/fdd/connector.jpg" [alt]="content.projects.fdd.keyboard.connectorImg">
+                    <figcaption>{{ content.projects.fdd.keyboard.connectorImg }}</figcaption>
+                </figure>
+                <figure>
+                    <img src="./projects/fdd/inside.jpg" [alt]="content.projects.fdd.keyboard.insideImg">
+                    <figcaption>{{ content.projects.fdd.keyboard.insideImg }}</figcaption>
+                </figure>
+                <div class="projectVideWrapper">
+                    <video controls preload="metadata" playsinline>
+                        <source src="./projects/fdd/shelter.mp4" type="video/mp4"/>
+                        Twoja przeglądarka nie wspiera plików wideo
+                    </video>
+                    {{ content.projects.fdd.keyboard.finalVideoCaption }}
+                </div>
+            </section>
+
+            <section>
+                <p class="mainSectionHeader"><span class="codeLine">04</span><br>{{ content.projects.fdd.summary.header }}</p>
+                <div>
+                    <p class="sectionHeader">{{ content.projects.fdd.summary.lesson }}</p>
+                    <p class="sectionText">{{ content.projects.fdd.summary.lessonVal1 }}</p>
+                    <p class="sectionText">{{ content.projects.fdd.summary.lessonVal2 }}</p>
+                </div>
+                <div class="projectVideWrapper">
+                    <video controls preload="metadata" playsinline>
+                        <source src="./projects/fdd/faded.mp4" type="video/mp4"/>
+                        Twoja przeglądarka nie wspiera plików wideo
+                    </video>
+                    {{ content.projects.fdd.summary.finalVideoCaption }}
+                </div>
+            </section>
+        </article>
+    </div>
+</div>

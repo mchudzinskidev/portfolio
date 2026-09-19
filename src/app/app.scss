@@ -25,3 +25,174 @@
 ::ng-deep .iconArrowUp{
     background-image: url(../assets/images/icons/arrow_up.png);
 }
+// -------- <projects> --------
+
+::ng-deep .projectWrapper{
+    display: flex;
+    height: 100%;
+    background-image: url(../assets/images/noise_2a2a2a.jpg);
+    > *{
+        padding: 64px 16px;
+    }
+    .mainArticle{
+        width: 100%;
+        > article{
+            max-width: 1000px;
+            margin: auto;
+        }
+        > *:last-child{
+            padding-bottom: 256px;
+        }
+        .intro{
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+            background-color: #1a1a1a;
+            padding: 32px;
+            border-radius: 32px;
+            *{
+                font-family: monospace, sans-serif;
+            }
+            .hr{
+                border-bottom: 1px solid #7a7a7a;
+            }
+            .flexRow{
+                display: flex;
+                justify-content: space-between;
+                gap: 32px;
+            }
+            .mainIntro{
+                font-size: 2.4em;
+                padding: 0 16px;
+                color: gold;
+            }
+            .secondaryIntro{
+                font-size: 1.2em;
+                padding: 0 16px;
+            }
+            .sectionName{
+                text-align: center;
+                color: #7a7a7a;
+            }
+            .stack{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 16px;
+                flex-wrap: wrap;
+                > div{
+                    padding: 2px 8px;
+                    border-radius: 8px;
+                    background-color: rgba(0, 255, 0, 0.24);
+                    margin-bottom: 8px;
+                    white-space: nowrap;
+                }
+            }
+        }
+        ol { 
+            list-style-type: decimal-leading-zero;
+            li{
+                font-family: monospace, sans-serif;
+            }
+        }
+        .mainSectionHeader{
+            color: gold;
+            background-color: #1a1a1a;
+            padding: 32px;
+            font-size: 1.4em;
+            font-family: monospace, sans-serif;
+            border-radius: 32px;
+            margin-top: 64px;
+            span{
+                font-size: 2em;
+                font-family: monospace, sans-serif;
+            }
+        }
+        .sectionHeader{
+            font-size: 1.4em;
+            padding-left: 8px;
+            font-family: monospace, sans-serif;
+            border-bottom: 2px solid #7a7a7a;
+            margin-top: 32px;
+            color: gold;
+        }
+        .sectionText{
+            margin-top: 16px;
+        }
+        .sectionList{
+            margin-top: 16px;
+            list-style-position: inside;
+        }
+        .codeLine{
+            background-color: #1a1a1a;
+            font-family: monospace, sans-serif;
+        }
+        figure, .projectVideWrapper{
+            background-color: white;
+            padding: 8px;
+            width: fit-content;
+            max-width: 724px;
+            margin-top: 32px;
+            color: black;
+            text-align: center;
+            img, video {
+                width: auto;
+                max-width: 100%;
+                height: auto;
+            }
+            *{
+                color: black;
+                text-align: center;
+            }
+        }
+        .timeline{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 38px;
+            margin-top: 16px;
+            > *:not(:last-child){
+                margin-bottom: 4px;
+            }
+            .tlDot{
+                background-color: forestgreen;
+                height: 16px;
+                width: 16px;
+                border-radius: 50%;
+                position: relative;
+                .tlEvent{
+                    position: absolute;
+                    left: 32px;
+                    top: -16px;
+                    width: max-content;
+                    .tlEventTitle{
+                        border-bottom: 1px solid #7a7a7a;
+                        color: gold;
+                        display: inline-block;
+                        min-width: 128px;
+                        padding-bottom: 2px;
+                    }
+                    .tlEventDesc{
+                        font-size: 1.2em;
+                        padding-top: 2px;
+                    }
+                }
+            }
+            .endDot{
+                background-color: rgb(20, 81, 20);
+            }
+            .tlPath{
+                background-color: rgb(20, 81, 20);
+                height: 48px;
+                width: 12px;
+                border-radius: 4px;
+            }
+            .tlYear{
+                font-size: 1.6em;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+// -------- </projects> --------
