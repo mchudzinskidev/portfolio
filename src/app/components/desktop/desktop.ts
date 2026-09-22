@@ -15,6 +15,7 @@ import { DirectoryNode, FileSystem } from '../../core/services/file-system';
 import { Language } from '../../core/services/language';
 import { Language as Lang} from '../../core/types/language'
 import { Content } from '../../core/services/content';
+import { Hashi } from '../hashi/hashi';
 
 @Component({
   selector: 'app-desktop',
@@ -44,6 +45,14 @@ export class Desktop {
     icon: 'dir',
     gridSize: 128,
     wType: WindowType.projects,
+    selected: false,
+  },{
+    title: this.content.desktop.hashi,
+    gridPosX: 4,
+    gridPosY: 1,
+    icon: 'term',
+    gridSize: 128,
+    wType: WindowType.hashi,
     selected: false,
   }];
   public selection = {
@@ -100,6 +109,17 @@ export class Desktop {
         inputs = {
           openBrowserClicked: (path: string) => { this.newWindow(WindowType.net, { path: path }); },
           openTerminalClicked: (cmd: string, startNode: DirectoryNode) => { this.newWindow(WindowType.term, { startCmd: cmd, startNode: startNode }); },
+          openAppClicked: (path: string) => { 
+            switch(path){
+              case 'home/desktop/hashi.exe':{
+                this.newWindow(WindowType.hashi);
+                break;
+              }
+              default:{
+                this.newWindow(WindowType.net, { path: path });
+              }
+            }
+          },
         };
         break;
       }
@@ -135,6 +155,17 @@ export class Desktop {
           currentNode: this.fs.resolvePath('home/desktop/projects', this.fs.getFs()),
           openBrowserClicked: (path: string) => { this.newWindow(WindowType.net, { path: path }); },
           openTerminalClicked: (cmd: string, startNode: DirectoryNode) => { this.newWindow(WindowType.term, { startCmd: cmd, startNode: startNode }); },
+          openAppClicked: (path: string) => { 
+            switch(path){
+              case 'home/desktop/hashi.exe':{
+                this.newWindow(WindowType.hashi);
+                break;
+              }
+              default:{
+                this.newWindow(WindowType.net, { path: path });
+              }
+            }
+          },
         };
         break;
       }
@@ -157,6 +188,16 @@ export class Desktop {
         innerWidth = 512;
         posX = (window.innerWidth - 512) / 2;
         posY = (window.innerHeight - 192) / 2;
+        break;
+      }
+      case WindowType.hashi: {
+        component = Hashi;
+        icon = 'term';
+        title = this.content.desktop.hashi;
+        innerHeight = 384;
+        innerWidth = 512;
+        posX = (window.innerWidth - 512) / 2;
+        posY = (window.innerHeight - 384) / 2;
         break;
       }
     }

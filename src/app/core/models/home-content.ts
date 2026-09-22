@@ -23,6 +23,7 @@ export interface HomeContent {
   desktop: {
     projects: string,
     reboot: string,
+    hashi: string,
   },
   fileExplorer:{
     quickAccess: string,

@@ -78,6 +78,12 @@ export class FileSystem {
       created: '2026',
       modified: '2026',
       children: [{
+        name: 'hashi.exe',
+        parent: null,
+        favorite: false,
+        created: '2026',
+        modified: '2026',
+      },{
         name: 'projects',
         parent: null,
         favorite: true,

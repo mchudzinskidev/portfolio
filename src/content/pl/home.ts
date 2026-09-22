@@ -24,7 +24,8 @@ export const homeContent: HomeContent = {
   },
   desktop: {
     projects: "Projekty",
-    reboot: "Restart"
+    reboot: "Restart",
+    hashi: "hashi.exe",
   },
   fileExplorer:{
     quickAccess: 'Szybki Dostęp',
