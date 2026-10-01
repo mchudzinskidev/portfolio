@@ -96,6 +96,12 @@ export class FileSystem {
           created: '2024',
           modified: '2026',
         },{
+          name: 'bsodmaker.net',
+          parent: null,
+          favorite: false,
+          created: '2024',
+          modified: '2026',
+        },{
           name: 'starling - DIY star tracker',
           parent: null,
           favorite: true,
@@ -113,12 +119,6 @@ export class FileSystem {
           favorite: false,
           created: '2023',
           modified: '2025',
-        },{
-          name: 'bsodmaker.net',
-          parent: null,
-          favorite: false,
-          created: '2024',
-          modified: '2024',
         },{
           name: 'FDD keyboard',
           parent: null,
