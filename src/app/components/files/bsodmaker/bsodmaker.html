@@ -1,1 +1,209 @@
-<p style="padding: 8px;">TODO</p>
+<div class="projectWrapper">
+    <div class="mainArticle selectable">
+        <article>
+            <section>
+                <header class="intro center">
+                    <div>
+                        <p class="mainIntro">bsodmaker.net</p>
+                        <div class="hr"></div>
+                        <p class="sectionName">{{ content.projects.bsodmaker.introduction.project }}</p>
+                    </div>
+                    <div class="flexRow">
+                        <div>
+                            <p class="secondaryIntro">{{ content.projects.bsodmaker.introduction.descValue }}</p>
+                            <div class="hr"></div>
+                            <p class="sectionName">{{ content.projects.bsodmaker.introduction.desc }}</p>
+                        </div>
+                        <div>
+                            <p class="secondaryIntro">2024, 2026</p>
+                            <div class="hr"></div>
+                            <p class="sectionName">{{ content.projects.bsodmaker.introduction.time }}</p>
+                        </div>
+                        <div>
+                            <p class="secondaryIntro">{{ content.projects.bsodmaker.introduction.statusValue }}</p>
+                            <div class="hr"></div>
+                            <p class="sectionName">{{ content.projects.bsodmaker.introduction.status }}</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="secondaryIntro stack">
+                            <div>HTML</div>
+                            <div>JS</div>
+                            <div>CSS</div>
+                            <div>jQuery</div>
+                        </div>
+                        <div class="hr"></div>
+                        <p class="sectionName">{{ content.projects.bsodmaker.introduction.techStack }}</p>
+                    </div>
+                </header>
+            </section>
+            <section>
+                <p class="mainSectionHeader"><span class="codeLine">01</span><br>{{
+                    content.projects.bsodmaker.intro.header }}</p>
+                <div>
+                    <p class="sectionHeader">{{ content.projects.bsodmaker.intro.inShort }}</p>
+                    <p class="sectionText">{{ content.projects.bsodmaker.intro.inShortVal }}</p>
+                    <p class="sectionText"><a [href]="content.projects.bsodmaker.intro.website" target="_blank">{{
+                            content.projects.bsodmaker.intro.website }}</a></p>
+                </div>
+                <figure>
+                    <img src="./projects/bsodmaker/bsod.jpg" [alt]="content.projects.bsodmaker.intro.bsodImg">
+                    <figcaption>{{ content.projects.bsodmaker.intro.bsodImgCaption }}</figcaption>
+                </figure>
+                <div>
+                    <p class="sectionHeader">{{ content.projects.bsodmaker.intro.bg }}</p>
+                    <p class="sectionText">{{ content.projects.bsodmaker.intro.bgVal }}</p>
+                </div>
+                <div>
+                    <p class="sectionHeader">{{ content.projects.bsodmaker.intro.timeline.header }}</p>
+                    <div class="timeline">
+                        <div class="tlDot endDot"></div>
+                        <div class="tlYear">2024</div>
+                        <div class="tlPath"></div>
+                        <div class="tlDot">
+                            <div class="tlEvent">
+                                <div class="tlEventTitle">{{ content.generic.months.feb }} 2024</div>
+                                <div class="tlEventDesc">{{ content.projects.bsodmaker.intro.timeline.item1 }}</div>
+                            </div>
+                        </div>
+                        <div class="tlPath"></div>
+                        <div class="tlDot">
+                            <div class="tlEvent">
+                                <div class="tlEventTitle">{{ content.generic.months.feb }} 2024</div>
+                                <div class="tlEventDesc">{{ content.projects.bsodmaker.intro.timeline.item2 }}</div>
+                            </div>
+                        </div>
+                        <div class="tlPath"></div>
+                        <div class="tlDot">
+                            <div class="tlEvent">
+                                <div class="tlEventTitle">{{ content.generic.months.mar }} 2024</div>
+                                <div class="tlEventDesc">{{ content.projects.bsodmaker.intro.timeline.item3 }}</div>
+                            </div>
+                        </div>
+                        <div class="tlPath"></div>
+                        <div class="tlYear">2026</div>
+                        <div class="tlPath"></div>
+                        <div class="tlDot">
+                            <div class="tlEvent">
+                                <div class="tlEventTitle">{{ content.generic.months.feb }} 2026</div>
+                                <div class="tlEventDesc">{{ content.projects.bsodmaker.intro.timeline.item4 }}</div>
+                            </div>
+                        </div>
+                        <div class="tlPath"></div>
+                        <div class="tlDot">
+                            <div class="tlEvent">
+                                <div class="tlEventTitle">{{ content.generic.months.sep }} 2026</div>
+                                <div class="tlEventDesc">{{ content.projects.bsodmaker.intro.timeline.item5 }}</div>
+                            </div>
+                        </div>
+                        <div class="tlPath"></div>
+                        <div class="tlDot endDot"></div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <p class="mainSectionHeader"><span class="codeLine">02</span><br>{{
+                    content.projects.bsodmaker.features.header }}</p>
+                <div>
+                    <p class="sectionHeader">{{ content.projects.bsodmaker.features.bsodEditor }}</p>
+                    <p class="sectionText">
+                        {{ content.projects.bsodmaker.features.bsodEditorVal }}
+                        <span class="codeLine">contenteditable="true"</span>
+                        {{ content.projects.bsodmaker.features.bsodEditorVal2 }}
+                    </p>
+                </div>
+                <div>
+                    <p class="sectionHeader">
+                        {{ content.projects.bsodmaker.features.windowsUI }}
+                    </p>
+                    <p class="sectionText">
+                        {{ content.projects.bsodmaker.features.windowsUIVal }}
+                    </p>
+                </div>
+                <figure>
+                    <img src="./projects/bsodmaker/bsodmaker_ui.jpg"
+                        [alt]="content.projects.bsodmaker.features.windowsUIImg">
+                    <figcaption>
+                        {{ content.projects.bsodmaker.features.windowsUIImg }}
+                    </figcaption>
+                </figure>
+                <div>
+                    <p class="sectionHeader">
+                        {{ content.projects.bsodmaker.features.prank }}
+                    </p>
+                    <p class="sectionText">
+                        {{ content.projects.bsodmaker.features.prankVal1 }}
+                        <span class="codeLine">html2canvas</span>
+                        {{ content.projects.bsodmaker.features.prankVal2 }}
+                    </p>
+                    <p class="sectionText">
+                        {{ content.projects.bsodmaker.features.prankVal3 }}
+                        <span class="codeLine">tab</span>
+                        {{ content.projects.bsodmaker.features.prankVal4 }}
+                    </p>
+                </div>
+                <div>
+                    <p class="sectionHeader">
+                        {{ content.projects.bsodmaker.features.mobileLinux }}
+                    </p>
+                    <p class="sectionText">
+                        {{ content.projects.bsodmaker.features.mobileLinuxVal1 }}
+                    </p>
+                    <p class="sectionText">
+                        {{ content.projects.bsodmaker.features.mobileLinuxVal2 }}
+                        <span class="codeLine">Segoe UI</span>
+                        {{ content.projects.bsodmaker.features.mobileLinuxVal3 }}
+                        <span class="codeLine">Open Sans</span>
+                        {{ content.projects.bsodmaker.features.mobileLinuxVal4 }}
+                    </p>
+                </div>
+            </section>
+            <section>
+                <p class="mainSectionHeader">
+                    <span class="codeLine">03</span><br>
+                    {{ content.projects.bsodmaker.summary.header }}
+                </p>
+                <div>
+                    <p class="sectionHeader">
+                        {{ content.projects.bsodmaker.summary.statistics }}
+                    </p>
+
+                    <p class="sectionText">
+                        {{ content.projects.bsodmaker.summary.statisticsVal1 }}
+                    </p>
+                    <p class="sectionText">
+                        {{ content.projects.bsodmaker.summary.statisticsVal2 }}
+                        <a href="https://buymeacoffee.com/mchudzinskidev" target="_blank">
+                            {{ content.projects.bsodmaker.summary.buyMeACoffee }}
+                        </a>.
+                        {{ content.projects.bsodmaker.summary.statisticsVal3 }}
+                    </p>
+                    <p class="sectionText">
+                        {{ content.projects.bsodmaker.summary.statisticsVal4 }}
+                        <a href="https://korben.info/en/bsodmaker-create-your-own-blue-screens-of-death.html"
+                            target="_blank">
+                            {{ content.projects.bsodmaker.summary.korbenArticle }}
+                        </a>
+                        {{ content.projects.bsodmaker.summary.statisticsVal5 }}
+                    </p>
+                </div>
+                <div>
+                    <p class="sectionHeader">
+                        {{ content.projects.bsodmaker.summary.domain }}
+                    </p>
+                    <p class="sectionText">
+                        {{ content.projects.bsodmaker.summary.domainVal }}
+                    </p>
+                </div>
+                <div>
+                    <p class="sectionHeader">
+                        {{ content.projects.bsodmaker.summary.retrospective }}
+                    </p>
+                    <p class="sectionText">
+                        {{ content.projects.bsodmaker.summary.retrospectiveVal }}
+                    </p>
+                </div>
+            </section>
+        </article>
+    </div>
+</div>

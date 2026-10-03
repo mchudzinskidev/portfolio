@@ -78,6 +78,12 @@ export class FileSystem {
       created: '2026',
       modified: '2026',
       children: [{
+        name: 'hashi.exe',
+        parent: null,
+        favorite: false,
+        created: '2026',
+        modified: '2026',
+      },{
         name: 'projects',
         parent: null,
         favorite: true,
@@ -90,9 +96,21 @@ export class FileSystem {
           created: '2024',
           modified: '2026',
         },{
+          name: 'bsodmaker.net',
+          parent: null,
+          favorite: false,
+          created: '2024',
+          modified: '2026',
+        },{
           name: 'starling - DIY star tracker',
           parent: null,
           favorite: true,
+          created: '2023',
+          modified: '2026',
+        },{
+          name: 'trading bot',
+          parent: null,
+          favorite: false,
           created: '2023',
           modified: '2026',
         },{
@@ -101,18 +119,6 @@ export class FileSystem {
           favorite: true,
           created: '2020',
           modified: '2026',
-        },{
-          name: 'trading bot',
-          parent: null,
-          favorite: false,
-          created: '2023',
-          modified: '2025',
-        },{
-          name: 'bsodmaker.net',
-          parent: null,
-          favorite: false,
-          created: '2024',
-          modified: '2024',
         },{
           name: 'FDD keyboard',
           parent: null,

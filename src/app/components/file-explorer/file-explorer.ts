@@ -14,6 +14,7 @@ export class FileExplorer implements OnInit{
   public currentNode = input<(Node | DirectoryNode)>(this.fs.getFs());
   public openBrowserClicked = input<(path: string) => void>(() => {});
   public openTerminalClicked = input<(cmd: string, startNode: DirectoryNode) => void>(() => {});
+  public openAppClicked = input<(path: string) => void>(() => {});
   public node: (Node | DirectoryNode) = this.fs.getFs();
   public quickAccessItems: (Node | null)[] = [
     this.fs.resolvePath('home', this.fs.getFs()),
@@ -34,6 +35,8 @@ export class FileExplorer implements OnInit{
     }else{
       if(node.parent && this.fs.getPath(node.parent) === 'home/bin'){
         this.openTerminalClicked()(node.name, node.parent);
+      }else if(this.fs.getPath(node) === 'home/desktop/hashi.exe'){
+        this.openAppClicked()(this.fs.getPath(node));
       }else{
         this.openBrowserClicked()(this.fs.getPath(node));
       }

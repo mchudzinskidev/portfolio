@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Content } from '../../../core/services/content';
 
 @Component({
   selector: 'app-tradingbot',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './tradingbot.scss',
 })
 export class Tradingbot {
-
+  public content = inject(Content).getHome();
 }
