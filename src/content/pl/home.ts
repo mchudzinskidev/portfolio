@@ -27,7 +27,7 @@ export const homeContent: HomeContent = {
     reboot: "Restart",
     hashi: "hashi.exe",
   },
-  fileExplorer:{
+  fileExplorer: {
     quickAccess: 'Szybki Dostęp',
     emptyFolderMsg: 'Ten folder jest pusty',
     name: 'Nazwa',
@@ -35,18 +35,18 @@ export const homeContent: HomeContent = {
     modified: 'Zmodyfikowany',
     starred: 'Ulubione',
   },
-  rebootDialog:{
+  rebootDialog: {
     line0: 'Wymagany restart',
     line1: 'Na pewno chcesz zrestartować swój system?',
     line2: 'Wszystkie zmiany zostaną utracone',
     reload: 'Restart',
   },
-  settings:{
+  settings: {
     fullscreen: 'Pełny Ekran',
   },
-  projects:{
-    journeycraft:{
-      introduction:{
+  projects: {
+    journeycraft: {
+      introduction: {
         project: "projekt",
         desc: "opis",
         descValue: "Pierwszy serwer Minecraft z trybem Journey Mode",
@@ -55,7 +55,7 @@ export const homeContent: HomeContent = {
         statusValue: "zarchiwizowany",
         techStack: "technologie",
       },
-      intro:{
+      intro: {
         header: "Intro",
         inShort: "W skrócie",
         inShortVal: "JourneyCraft to cały ekosystem utworzony wokół Minecrafta. Własne pluginy, integracja z Discordem, strona internetowa - wszystko zbudowane samodzielnie i hostowane na własnej infrastrukturze.",
@@ -70,7 +70,7 @@ export const homeContent: HomeContent = {
           item4: "zakończenie działalności serwera",
         },
       },
-      details:{
+      details: {
         header: "Szczegóły projektu",
         aboutJM: "Jak działa Journey Mode?",
         aboutJMval1: "Journey Mode łączy w sobie cechy trybu kreatywnego i przetrwania. Gracz zbiera materiały podobnie jak na survivalu, ale po zebraniu jego określonej ilości może go odblokować - wtedy zyskuje nieograniczony dostęp do tego surowca. Mechanika odblokowywania przedmiotów wprowadza do gry zupełnie nowe wyzwanie - odblokowanie możliwie jak najwięcej.",
@@ -95,18 +95,18 @@ export const homeContent: HomeContent = {
         infrastructureVal: "Pierwszy serwer z Journey Mode był hostowany na komputerze z odzysku pod kontrolą Ubuntu Server. Nie był to demon szybkości, ale umożliwiał płynną rozgrywkę mi i grupce znajomych. Pozwolił mi przećwiczyć w praktyce mechanizmy działania Linuxa oraz sieci komputerowych, które dotychczas znałem tylko w teorii. Z czasem jak projekt się rozrósł, serwer Minecraft i baza danych zostały przeniesione na mocniejszą maszynę Dominika, a bot oraz strona internetowa dostępne były na moim sprzęcie.",
         infrastructureImg: "Moje pierwsze podejście do hostingu Minecrafta - laptop w roli serwera",
       },
-      summary:{
+      summary: {
         header: "Podsumowanie",
         jcNow: "JourneyCraft z perspektywy czasu",
         jcNowVal: "Wspaniale było cofnąć się nieco w czasie i powspominać pracę nad JC. Ten projekt to były moje pierwsze kroki w bardzo wielu dziedzinach. Po raz pierwszy musiałem sprawić, żeby kilka niezależnych systemów współpracowało ze sobą i pierwszy raz projektowałem API. Dziś wiele rzeczy zrobiłbym inaczej - na pewno chętniej korzystał z Git-a, czy zupełnie inaczej stworzyłbym strukturę kodu. Mimo tego, uważam projekt za bardzo udany.",
       },
     },
-    fdd:{
-      stack:{
+    fdd: {
+      stack: {
         electronics: "projektowanie elektroniki",
         soldering: "lutowanie",
       },
-      introduction:{
+      introduction: {
         project: "projekt",
         desc: "opis",
         descValue: "Stacje dyskietek jako instrument muzyczny",
@@ -115,7 +115,7 @@ export const homeContent: HomeContent = {
         statusValue: "zakończony",
         techStack: "technologie",
       },
-      intro:{
+      intro: {
         header: "Intro",
         inShort: "W skrócie",
         inShortVal: "Ten projekt to próba zmienienia niepozornej zabawki w nietypowy instrument muzyczny. Projekt łączy elektronikę, programowanie i odrobinę nietypowego podejścia do tworzenia muzyki.",
@@ -124,7 +124,7 @@ export const homeContent: HomeContent = {
         bgVal: "Zainspirowany oglądanymi w internecie filmami postanowiłem samodzielnie zmusić stacje dyskietek do grania muzyki. Początkowo był to pretekst do rozpoczęcia nauki programowania z Arduino - zabawny projekt, którym mogłem pochwalić się w szkole. Pierwotnie to kontroler miał zaprogramowaną melodię, którą grał na FDD. Jednak parę lat później wróciłem do projektu z nowymi umiejętnościami i nowym pomysłem - tym razem chciałem przekształcić stacje dyskietek w pełnoprawny, interaktywny instrument, na którym można rzeczywiście grać.",
         video2Caption: '"Barka" zagrana na jednej z pierwszych wersji projektu z 2020',
         finalVersionImg: "Finalna wersja projektu - interaktywny instrument",
-        timeline:{
+        timeline: {
           header: "timeline",
           item1: "Tworzę pierwszą wersję biblioteki do Arduino umożliwiającej grę na FDD",
           item2: 'Powrót do projektu, na potrzeby szkolne nagrywam utwór "Habits"',
@@ -132,7 +132,7 @@ export const homeContent: HomeContent = {
           item4: "Ukończenie instrumentu, zakończenie projektu",
         },
       },
-      firstVersion:{
+      firstVersion: {
         header: "Pierwsza wersja projektu",
         howItWorks: "Jak stacja dyskietek staje się instrumentem",
         howItWorksVal1: "Stacje dyskietek wyposażone są w silniki krokowe, sterujące ruchem głowicy odczytującej i zapisującej dane. Gdy silnik wykonuje kroki z określoną częstotliwością, wydaje dźwięk o tej samej wysokości. Kontrolując prędkość silnika, można decydować o wysokości granego dźwięku.",
@@ -149,7 +149,7 @@ export const homeContent: HomeContent = {
         biggestChallengeVal5: ". W ten sposób można było obsługiwać kolejne stacje bez konieczności tworzenia osobnego wątku dla każdej z nich.",
         videoCaption: 'Tove Lo "Habits" - Hippie Sabotage Remix',
       },
-      keyboard:{
+      keyboard: {
         header: "Keyboard",
         keyHandling: "Obsługa klawiszy",
         keyHandlingVal: "Klawiatura mojego keyboarda była skonstruowana w podobny sposób, jak zwykła komputerowa klawiatura membranowa. Każdy klawisz miał pod sobą membranę, która zwierała ze sobą dwie ścieżki - kolumnę i rząd. Aby sprawdzić, które przyciski są aktualnie wciśnięte, należy na kolejne rzędy podawać stan wysoki i sprawdzić, na której kolumnie pojawi się logiczne 1. Oczywiście, w takiej sytuacji ważne jest pozostawienie pozostałych pinów w rzędzie w stanie wysokiej impedancji oraz skonfigurowanie kolumn jako wejścia z rezystorem pull-up. Wykorzystałem oba rdzenie mikrokontrolera - jeden generował sygnały dla FDD, drugi obsługiwał klawiaturę.",
@@ -169,7 +169,7 @@ export const homeContent: HomeContent = {
         insideImg: "Wnętrze zmodyfikowanego keyboarda",
         finalVideoCaption: 'Motyw z "Shelter" od Portera Robinsona & Madeon\'a',
       },
-      summary:{
+      summary: {
         header: "Podsumowanie",
         lesson: "Lekcja nie tylko muzyki",
         lessonVal1: "Praca przy tym projekcie była bardzo przyjemna, ale i pouczająca. Musiałem trochę poszperać w internecie w związku z oznaczeniami pinów stacji dyskietek, trzeba było też wysilić umysł podczas tworzenia algorytmów odpowiedzialnych za granie melodii. Płytka sterująca była jedną z pierwszych, jakie wykonałem, co dało praktyczne umiejętności potrzebne przy późniejszym budowaniu bardziej skomplikowanych obwodów.",
@@ -177,8 +177,8 @@ export const homeContent: HomeContent = {
         finalVideoCaption: 'Motyw z "Faded" od Alana Walkera',
       },
     },
-    bsodmaker:{
-      introduction:{
+    bsodmaker: {
+      introduction: {
         project: "projekt",
         desc: "opis",
         descValue: "Doświadczenie Windowsa 10 w przeglądarce",
@@ -187,7 +187,7 @@ export const homeContent: HomeContent = {
         statusValue: "zakończony",
         techStack: "technologie",
       },
-      intro:{
+      intro: {
         header: "Intro",
         inShort: "W skrócie",
         inShortVal: "Bsodmaker to nietypowy eksperyment frontendowy - wierna, interaktywna imitacja interfejsu Windowsa 10 oraz w pełni edytowalny bluescreen - niebieski ekran śmierci.",
@@ -205,7 +205,7 @@ export const homeContent: HomeContent = {
           item5: "Migracja projektu pod aktualny adres - bsodmaker.mchudzinski.dev",
         },
       },
-      features:{
+      features: {
         header: "Funkcjonalności",
         bsodEditor: "Edycja bluescreenów",
         bsodEditorVal: "Podstawową funkcją narzędzia jest edytor BSoD-ów. Dzięki wykorzystaniu",
@@ -224,7 +224,7 @@ export const homeContent: HomeContent = {
         mobileLinuxVal3: "która jest dostępna systemowo w Windowsie, ale nie mogłem po prostu dołączyć jej pliku do projektu i udostępnić go użytkownikom innych systemów. Rozwiązaniem okazało się użycie fontu",
         mobileLinuxVal4: "jako fallback - wygląda podobnie, a licencja nie ogranicza wykorzystania jej we własnych projektach.",
       },
-      summary:{
+      summary: {
         header: "Podsumowanie",
         statistics: "Statystyki",
         statisticsVal1: "Od początku istnienia strony zbierałem statystyki odwiedzin. Na dzień pisania tego wpisu (30.09.2026) uzbierało się ponad 390000 wizyt, w tym około 260000 to unikalni użytkownicy.",
@@ -238,6 +238,77 @@ export const homeContent: HomeContent = {
         domainVal: "Byłem właścicielem tej domeny przez 2 lata. Po upływie tego okresu zdecydowałem się przenieść bsodmakera pod inny adres, który i tak utrzymuję. Aktualnie z domeny korzysta ktoś inny, kto udostępnia podobne narzędzie.",
         retrospective: "Bsodmaker z perspektywy czasu",
         retrospectiveVal: "Patrząc na projekt przez pryzmat moich obecnych umiejętności, bsodmaker aż prosi się o wykorzystanie Angulara. W 2024 nie wiedziałem nawet, że istnieje rozwiązanie, które dzisiaj uznałbym za naturalne. Chociaż wizualnie efekt byłby bardzo podobny, na pewno kod byłby czystszy i czytelniejszy.",
+      },
+    },
+    tradingbot: {
+      introduction: {
+        project: "projekt",
+        desc: "opis",
+        descValue: "Autonomiczny bot handlujący kryptowalutami",
+        time: "czas",
+        status: "status",
+        statusValue: "zarchiwizowany",
+        techStack: "technologie",
+      },
+      intro: {
+        header: "Intro",
+        inShort: "W skrócie",
+        inShortVal: "Kto by nie chciał mieć dużo pieniędzy? Trading bot miał być jedną z dróg do pomnażania kapitału. Łączył się z giełdą, pobierał dane, otwierał zlecenie i... ponosił straty. Mimo, że nie zrobił ze mnie milionera, stanowił interesujące wyzwanie programistyczne.",
+        inShortImg: "Strata około 20 USDT w ciągu jednego z pierwszych miesięcy działania bota",
+        bg: "Tło projektu",
+        bgVal: "Projekt został utworzony w jednym celu - miał na siebie zarobić. Plan zakładał utworzenie bota, który autonomicznie, z minimalnym nadzorem, będzie obracał kryptoaktywami. Rzeczywistość zweryfikowała ten pomysł, a projekt okazał się dużo bardziej złożony, zarówno pod względem kodu, jak i - przede wszystkim - wymyślenia odpowiedniej strategii.",
+        timeline: {
+          header: "timeline",
+          item1: "Rozpoczęcie pracy nad projektem, pierwsze eksperymenty z API Binance",
+          item2: "Uruchomienie pierwszej, sterowanej manualnie wersji bota na własnym serwerze",
+          item3: "Stworzenie narzędzi do symulowania pracy bota bez kapitału",
+          item4: "Uruchomienie drugiej, w pełni autonomicznej wersji bota, przekazanie mu większej kwoty",
+          item5: "Bot ponosi duże straty - wyłączenie bota",
+          item6: "Rozpoczęcie kolejnego podejścia do stworzenia aplikacji do półautomatycznego tradingu",
+          item7: "Powstaje kolejny bot - tym razem napisany w TS i korzystający z API Bybit",
+          item8: "Wyłączenie bota, zarchiwizowanie projektu",
+        },
+      },
+      details: {
+        header: "Szczegóły projektu",
+        whatIsTradingBot: "Czym jest trading bot?",
+        whatIsTradingBotVal: "Na giełdzie program nie kupuje po prostu kryptowaluty i nie czeka, aż jej cena wzrośnie. Może otworzyć tak zwaną pozycję - zakład na wzrost lub spadek ceny - a następnie zamknąć ją, gdy spełnione zostaną określone warunki. Każda taka operacja składa się ze zleceń wysyłanych do giełdy. To, co ja nazywam botem, jest niczym innym jak programem, który działa nieprzerwanie i komunikuje się z giełdą kryptowalut (w moim przypadku z Binance i Bybit) za pomocą API. Program analizuje rynek w poszukiwaniu okazji, składa zlecenia i zapisuje rezultaty do późniejszej analizy. Na przestrzeni lat stworzyłem 5 wersji samego bota i niezliczoną liczbę dodatkowych programów analizujących rynek oraz logi.",
+        binanceIntegration: "Integracja z API Binance",
+        binanceIntegrationVal1: "Bot komunikuje się z giełdą różnymi drogami. Podstawową metodą są zapytania HTTP - za ich pomocą można na przykład sprawdzić status pozycji, pobrać historyczne dane lub otworzyć zlecenie. Drugą możliwością jest WebSocket - tą drogą przekazywane są dane w czasie rzeczywistym - każda zmiana ceny czy wypełnienie zlecenia.",
+        binanceIntegrationVal2: "Aby bot mógł komunikować się z giełdą, potrzebny jest klucz API. Za jego pomocą, przy użyciu algorytmu",
+        binanceIntegrationVal3: ", w każdym zapytaniu znajduje się podpis - dowód, że aplikacja ma dostęp do danego zasobu. Nie każde zapytanie wymaga podpisu - przykładowo - dostęp do historycznych danych ceny jest publiczny i ogólnodostępny. Nieco inaczej wygląda to w przypadku WebSocketów. Aby uzyskać dostęp do wrażliwych danych, potrzebny jest listen key, który można otrzymać wykonując odpowiedni request do REST API Binance. Klucz ważny jest przez określony czas i trzeba ponawiać żądanie, aby nie wygasł.",
+        whatDoesTradingBotDo: "Czym zajmuje się trading bot?",
+        whatDoesTradingBotDoIntro: "Próbowałem różnych metod analizy rynku, aby ostatecznie zdecydować się na taki algorytm:",
+        whatDoesTradingBotDoList1: "Jeżeli są jakieś otwarte pozycje - bot je zamyka i zapisuje logi z transakcji",
+        whatDoesTradingBotDoList2: "Pobierane dane historyczne - typowo kilkanaście/kilkadziesiąt tygodni wstecz",
+        whatDoesTradingBotDoList3: "Dane są analizowane w poszukiwaniu sygnału do kupna/sprzedaży",
+        whatDoesTradingBotDoList4: "Jeżeli taki sygnał zostanie znaleziony, obliczane są parametry pozycji tak, aby kontrolować ryzyko",
+        whatDoesTradingBotDoList5: "Bot wysyła zlecenie na giełdę",
+        whatDoesTradingBotDoVal1: "Powyższa sekwencja wykonywała się codziennie o północy UTC. Takie podejście bardzo ułatwiało analizę wyników oraz tworzenie symulacji, służących do testowania strategii na historycznych danych.",
+        whatDoesTradingBotDoVal2: "Nie jest to jedyny algorytm, którego próbowałem. Testowałem też inne rozwiązania - częstszą analizę rynku i zlecenia trailing stop loss. Zlecenie stop loss służy do ograniczania strat - jeżeli cena aktywa podąży w przeciwną do planowanej stronę, aktywuje się takie zlecenie, zamykając pozycję z akceptowalną stratą. W tej strategii bot analizował rynek w poszukiwaniu okazji co kilka minut, a po otwarciu pozycji w czasie rzeczywistym śledził cenę danego aktywa i przesuwał zlecenie stop loss.",
+        trailingStopLossVideoCaption: "Bot aktywnie zarządzający pozycją short",
+        semiAutomatic: "Wariant półautomatyczny",
+        semiAutomaticVal: "Bot miał swoje API HTTP, pozwalające na sterowanie nim z poziomu przeglądarki. Użytkownik (czyli ja) dostosowywał parametry pozycji i wysyłał do bota odpowiednie żądanie. Bot otwierał pozycję i śledził ją, jak również zapisywał logi, jednak to decyzja czy i kiedy wejść na rynek pozostawała po mojej stronie.",
+        interfaceImg1: "Jeden z pierwszych wariantów interfejsu webowego, jaki stworzyłem",
+        interfaceImg2: "Nowszy interfejs do sterowania botem, większość parametrów pozycji obliczana była automatycznie",
+      },
+      tools: {
+        header: "Dodatkowe narzędzia",
+        dataAnalysis: "Analiza danych",
+        dataAnalysisVal1: "Chciałem stworzyć autonomicznego tradera. Bardzo szybko okazało się, że napisanie programu komunikującego się z giełdą jest stosunkowo prostą częścią problemu. Znacznie trudniejsze okazało się znalezienie strategii, która rzeczywiście działa. Kolejne lata były więc serią eksperymentów mających odpowiedzieć na pytanie: jak sprawdzić, czy dana strategia ma w ogóle sens?",
+        dataAnalysisVal2: "Trading na giełdzie bez odpowiedniej strategii to proszenie się o straty, dlatego stworzyłem wiele narzędzi, które pozwalają na podstawie danych historycznych dobierać parametry pozycji. Zebrane dane wykorzystywane były do symulowania pracy bota, dzięki czemu wiedziałem co ma szansę zadziałać, a co nie. Oprócz tego, bot tworzył też duże ilości logów, przede wszystkim zawierające informacje o otwartych i zamkniętych pozycjach. Potrzebowałem narzędzia, które zbierze i zestawi te dane.",
+        strategySearch: "W poszukiwaniu najlepszej strategii",
+        strategySearchVal: "Do wyszukiwania strategii wykorzystywałem skrypty pisane w Pythonie, dzięki czemu mogłem szybko tworzyć nowe sposoby na szukanie rynkowych zależności. Oprogramowanie umożliwiało również wykonywanie prostych symulacji na danych historycznych.",
+        heatmapImg: "Analiza wyników strategii dla różnych parametrów i interwałów czasowych",
+        marketSimulation: "Symulacja rynku",
+        marketSimulationVal: "Aby sprawdzić, czy dana strategia działa, musiałem wykonać tak zwane backtesty - czyli symulację na danych historycznych. Program do przeprowadzania takich testów napisałem w języku JavaScript - tym samym, w którym napisany jest główny kod bota. Dzięki modułowej konstrukcji kodu bota, możliwe było zamienienie jednego pliku, aby zamiast łączyć się z prawdziwą giełdą \"handlował\" na danych historycznych.",
+      },
+      summary: {
+        header: "Podsumowanie",
+        result: "Rezultat",
+        resultVal: "Czy osiągnąłem zamierzony cel? Zdecydowanie nie. Bot poniósł łączną stratę o równowartości około $60.",
+        retrospective: "Trading bot z perspektywy czasu",
+        retrospectiveVal: "Powrót do tego projektu z pewnością nie był łatwy, ponieważ mimo ogromnych starań, nie udało się osiągnąć zaplanowanego rezultatu. Z drugiej strony, patrząc na kod stworzony na przestrzeni lat widzę, że był on coraz lepszy i czystszy. Cieszy mnie, że pod koniec projektu przekonałem się do języka TypeScript. Nie udało mi się stworzyć programu, który zarabiałby pieniądze. Udało mi się za to stworzyć program, który potrafił je tracić na zaskakująco wiele sposobów.",
       },
     },
   },

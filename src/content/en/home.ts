@@ -61,7 +61,7 @@ export const homeContent: HomeContent = {
         inShortVal: "JourneyCraft is an entire ecosystem built around Minecraft. Custom plugins, Discord integration, a website - everything built from scratch and hosted on our own infrastructure.",
         inShortImg: "JourneyCraft players' spawn area",
         bg: "Project background",
-        bgVal: "Everything started in December 2020, when, in just a few days, I created a plugin that introduced a new game mode to Minecraft - Journey Mode (JM), inspired by the one introduced to Terraria in May of the same year. Initially, it was just a small server for friends. One of them - Dominik - became interested in the project and suggested working together on a larger, public server built around my plugin. I wouldn’t be myself if I had said no.",
+        bgVal: "Everything started in December 2020, when, in just a few days, I created a plugin that introduced a new game mode to Minecraft - Journey Mode (JM), inspired by the one introduced to Terraria in May of the same year. Initially, it was just a small server for friends. One of them - Dominik - became interested in the project and suggested working together on a larger, public server built around my plugin. I wouldn't be myself if I had said no.",
         timeline: {
           header: "timeline",
           item1: "first playable version of Journey Mode",
@@ -113,7 +113,7 @@ export const homeContent: HomeContent = {
         time: "time",
         status: "status",
         statusValue: "completed",
-        techStack: "technologies",
+        techStack: "tech stack",
       },
       intro: {
         header: "Intro",
@@ -177,8 +177,8 @@ export const homeContent: HomeContent = {
         finalVideoCaption: 'A theme from "Faded" by Alan Walker',
       },
     },
-    bsodmaker:{
-      introduction:{
+    bsodmaker: {
+      introduction: {
         project: "project",
         desc: "description",
         descValue: "A Windows 10 experience in your browser",
@@ -187,7 +187,7 @@ export const homeContent: HomeContent = {
         statusValue: "completed",
         techStack: "tech stack",
       },
-      intro:{
+      intro: {
         header: "Intro",
         inShort: "In short",
         inShortVal: "Bsodmaker is an unusual frontend experiment: a faithful, interactive recreation of the Windows 10 interface, paired with a fully editable Blue Screen of Death.",
@@ -205,7 +205,7 @@ export const homeContent: HomeContent = {
           item5: "Project migrated to its current address - bsodmaker.mchudzinski.dev",
         },
       },
-      features:{
+      features: {
         header: "Features",
         bsodEditor: "BSoD editing",
         bsodEditorVal: "The main feature of the tool is its BSoD editor. Using",
@@ -224,7 +224,7 @@ export const homeContent: HomeContent = {
         mobileLinuxVal3: "font, which comes built into Windows, but I couldn't just bundle its file with the project and ship it to users of other systems. The fix was to use",
         mobileLinuxVal4: "as a fallback. It looks similar, and its license doesn't restrict its use in my own projects.",
       },
-      summary:{
+      summary: {
         header: "Summary",
         statistics: "Statistics",
         statisticsVal1: "I've been collecting visitor statistics since the site first went online. As of writing (September 30, 2026), it has had over 390,000 visits, including roughly 260,000 unique visitors.",
@@ -238,6 +238,77 @@ export const homeContent: HomeContent = {
         domainVal: "I owned the domain for two years. After that, I decided to move bsodmaker to another address I already maintain. The domain is now used by someone else, who runs a similar tool there.",
         retrospective: "Bsodmaker in retrospect",
         retrospectiveVal: "With the skills I have today, bsodmaker practically begs to be rebuilt in Angular. Back in 2024, I didn't even know that a solution existed that I'd now consider the obvious choice. The visual result would probably be very similar, but the code would certainly be cleaner and more readable.",
+      },
+    },
+    tradingbot: {
+      introduction: {
+        project: "project",
+        desc: "description",
+        descValue: "Autonomous cryptocurrency trading bot",
+        time: "time",
+        status: "status",
+        statusValue: "archived",
+        techStack: "tech stack",
+      },
+      intro: {
+        header: "Intro",
+        inShort: "In short",
+        inShortVal: "Who wouldn't want to have a lot of money? The trading bot was supposed to be one of the ways to grow my capital. It connected to an exchange, fetched data, placed an order and... lost money. Although it didn't make me a millionaire, it was an interesting programming challenge.",
+        inShortImg: "A loss of around 20 USDT during one of the bot's first months of operation",
+        bg: "Project background",
+        bgVal: "The project was created with one goal - it was supposed to make money on its own. The plan was to build a bot that would autonomously trade crypto assets with minimal supervision. Reality put this idea to the test, and the project turned out to be much more complex, both in the code and, above all, in coming up with the right strategy",
+        timeline: {
+          header: "timeline",
+          item1: "Started working on the project, first experiments with the Binance API",
+          item2: "Launched the first manually controlled version of the bot on my own server",
+          item3: "Created tools for simulating the bot's operation without using any capital",
+          item4: "Launched the second, fully autonomous version of the bot and gave it a larger amount of capital",
+          item5: "The bot suffered significant losses - bot shut down",
+          item6: "Started another attempt at creating a semi-automated trading application",
+          item7: "Another bot was created - this time written in TS and using the Bybit API",
+          item8: "Bot shut down, project archived",
+        },
+      },
+      details: {
+        header: "Project details",
+        whatIsTradingBot: "What is a trading bot?",
+        whatIsTradingBotVal: "On an exchange, a program doesn't simply buy cryptocurrency and wait for its price to increase. It can open a so-called position - a bet on the price going up or down - and then close it when certain conditions are met. Each such operation consists of orders sent to the exchange. What I call a bot is essentially a program that runs continuously and communicates with a cryptocurrency exchange (in my case, Binance and Bybit) through an API. The program analyzes the market looking for opportunities, places orders and records the results for later analysis. Over the years, I created five versions of the bot itself and countless additional programs for analyzing the market and logs.",
+        binanceIntegration: "Binance API integration",
+        binanceIntegrationVal1: "The bot communicates with the exchange in several ways. The primary method is HTTP requests - they can be used, for example, to check the status of a position, retrieve historical data or place an order. Another option is WebSocket - this is how real-time data is delivered, such as every price change or order fill.",
+        binanceIntegrationVal2: "For the bot to communicate with the exchange, an API key is required. Using it and the",
+        binanceIntegrationVal3: "algorithm, every request contains a signature - proof that the application has access to the given resource. Not every request requires a signature - for example, access to historical price data is public and freely available. WebSockets work somewhat differently. To access sensitive data, you need a listen key, which you get by sending the appropriate request to the Binance REST API. The key is valid for a limited time, so the request has to be repeated periodically to keep it from expiring.",
+        whatDoesTradingBotDo: "What does the trading bot do?",
+        whatDoesTradingBotDoIntro: "I tried various methods of market analysis before eventually settling on the following algorithm:",
+        whatDoesTradingBotDoList1: "If there are any open positions, the bot closes them and saves the transaction logs",
+        whatDoesTradingBotDoList2: "Historical data is retrieved - typically going back a dozen to several dozen weeks",
+        whatDoesTradingBotDoList3: "The data is analyzed for a buy/sell signal",
+        whatDoesTradingBotDoList4: "If such a signal is found, the position parameters are calculated to control risk",
+        whatDoesTradingBotDoList5: "The bot sends an order to the exchange",
+        whatDoesTradingBotDoVal1: "The above sequence was executed every day at midnight UTC. This approach made it much easier to analyze the results and create simulations for testing strategies against historical data.",
+        whatDoesTradingBotDoVal2: "This was not the only algorithm I tried. I also tested other approaches - more frequent market analysis and trailing stop-loss orders. A stop-loss order is used to limit losses - if the price of an asset moves against the position, such an order is triggered, closing the position with an acceptable loss. With this strategy, the bot analyzed the market for opportunities every few minutes and, after opening a position, tracked the asset's price in real time and adjusted the stop-loss order.",
+        trailingStopLossVideoCaption: "Bot actively managing a short position",
+        semiAutomatic: "Semi-automatic variant",
+        semiAutomaticVal: "The bot had its own HTTP API, allowing it to be controlled from a web browser. The user (that is, me) adjusted the position parameters and sent the appropriate request to the bot. The bot opened and tracked the position and also recorded logs, but the decision of whether and when to enter the market remained mine.",
+        interfaceImg1: "One of the first versions of the web interface I created",
+        interfaceImg2: "A newer interface for controlling the bot, with most position parameters calculated automatically",
+      },
+      tools: {
+        header: "Additional tools",
+        dataAnalysis: "Data analysis",
+        dataAnalysisVal1: "I wanted to create an autonomous trader. Very quickly, it became clear that writing a program that communicates with an exchange was a relatively simple part of the problem. Finding a strategy that actually worked turned out to be much more difficult. The next few years were a series of experiments aimed at answering one question: how can I determine whether a given strategy makes any sense at all?",
+        dataAnalysisVal2: "Trading on an exchange without an appropriate strategy is a recipe for losing money, so I created many tools that used historical data to determine position parameters. The collected data was used to simulate the bot's operation, allowing me to see what had a chance of working and what didn't. In addition, the bot generated large amounts of logs, primarily containing information about open and closed positions. I needed a tool that could collect and combine this data.",
+        strategySearch: "In search of the best strategy",
+        strategySearchVal: "I used Python scripts to search for strategies, which allowed me to quickly create new ways of looking for market patterns. The software also made it possible to run simple simulations using historical data.",
+        heatmapImg: "Analysis of strategy results for different parameters and time intervals",
+        marketSimulation: "Market simulation",
+        marketSimulationVal: "To determine whether a given strategy worked, I had to perform so-called backtests - simulations using historical data. I wrote the program for running these tests in JavaScript, the same language used for the bot's main code. Thanks to the modular structure of the bot's code, it was possible to replace a single file so that instead of connecting to a real exchange, it would \"trade\" using historical data.",
+      },
+      summary: {
+        header: "Summary",
+        result: "Result",
+        resultVal: "Did I achieve my intended goal? Definitely not. The bot suffered a total loss equivalent to around $60.",
+        retrospective: "The trading bot in retrospect",
+        retrospectiveVal: "Going back to this project certainly wasn't easy, because despite putting in a huge amount of effort, I didn't manage to achieve the planned result. On the other hand, looking at the code I created over the years, I can see that it became progressively better and cleaner. I'm glad that towards the end of the project I warmed up to TypeScript. I didn't manage to create a program that would make money. I did, however, manage to create a program that could lose it in a surprisingly large number of ways.",
       },
     },
   },

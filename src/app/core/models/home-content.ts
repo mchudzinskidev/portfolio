@@ -25,7 +25,7 @@ export interface HomeContent {
     reboot: string,
     hashi: string,
   },
-  fileExplorer:{
+  fileExplorer: {
     quickAccess: string,
     emptyFolderMsg: string,
     name: string,
@@ -33,18 +33,18 @@ export interface HomeContent {
     modified: string,
     starred: string,
   },
-  rebootDialog:{
+  rebootDialog: {
     line0: string,
     line1: string,
     line2: string,
     reload: string,
   },
-  settings:{
+  settings: {
     fullscreen: string,
   },
-  projects:{
-    journeycraft:{
-      introduction:{
+  projects: {
+    journeycraft: {
+      introduction: {
         project: string,
         desc: string,
         descValue: string,
@@ -53,7 +53,7 @@ export interface HomeContent {
         statusValue: string,
         techStack: string,
       },
-      intro:{
+      intro: {
         header: string,
         inShort: string,
         inShortVal: string,
@@ -68,7 +68,7 @@ export interface HomeContent {
           item4: string,
         },
       },
-      details:{
+      details: {
         header: string,
         aboutJM: string,
         aboutJMval1: string,
@@ -93,18 +93,18 @@ export interface HomeContent {
         infrastructureVal: string,
         infrastructureImg: string,
       },
-      summary:{
+      summary: {
         header: string,
         jcNow: string,
         jcNowVal: string,
       },
     },
-    fdd:{
-      stack:{
+    fdd: {
+      stack: {
         electronics: string,
         soldering: string,
       },
-      introduction:{
+      introduction: {
         project: string,
         desc: string,
         descValue: string,
@@ -113,7 +113,7 @@ export interface HomeContent {
         statusValue: string,
         techStack: string,
       },
-      intro:{
+      intro: {
         header: string,
         inShort: string,
         inShortVal: string,
@@ -122,7 +122,7 @@ export interface HomeContent {
         bgVal: string,
         video2Caption: string,
         finalVersionImg: string,
-        timeline:{
+        timeline: {
           header: string,
           item1: string,
           item2: string,
@@ -130,7 +130,7 @@ export interface HomeContent {
           item4: string,
         },
       },
-      firstVersion:{
+      firstVersion: {
         header: string,
         howItWorks: string,
         howItWorksVal1: string,
@@ -147,7 +147,7 @@ export interface HomeContent {
         biggestChallengeVal5: string,
         videoCaption: string,
       },
-      keyboard:{
+      keyboard: {
         header: string,
         keyHandling: string,
         keyHandlingVal: string,
@@ -167,7 +167,7 @@ export interface HomeContent {
         insideImg: string,
         finalVideoCaption: string,
       },
-      summary:{
+      summary: {
         header: string,
         lesson: string,
         lessonVal1: string,
@@ -175,8 +175,8 @@ export interface HomeContent {
         finalVideoCaption: string,
       },
     },
-    bsodmaker:{
-      introduction:{
+    bsodmaker: {
+      introduction: {
         project: string,
         desc: string,
         descValue: string,
@@ -185,7 +185,7 @@ export interface HomeContent {
         statusValue: string,
         techStack: string,
       },
-      intro:{
+      intro: {
         header: string,
         inShort: string,
         inShortVal: string,
@@ -194,7 +194,7 @@ export interface HomeContent {
         bsodImgCaption: string,
         bg: string,
         bgVal: string,
-        timeline:{
+        timeline: {
           header: string,
           item1: string,
           item2: string,
@@ -203,7 +203,7 @@ export interface HomeContent {
           item5: string,
         },
       },
-      features:{
+      features: {
         header: string,
         bsodEditor: string,
         bsodEditorVal: string,
@@ -222,7 +222,7 @@ export interface HomeContent {
         mobileLinuxVal3: string,
         mobileLinuxVal4: string,
       },
-      summary:{
+      summary: {
         header: string,
         statistics: string,
         statisticsVal1: string,
@@ -234,6 +234,77 @@ export interface HomeContent {
         korbenArticle: string,
         domain: string,
         domainVal: string,
+        retrospective: string,
+        retrospectiveVal: string,
+      },
+    },
+    tradingbot: {
+      introduction: {
+        project: string,
+        desc: string,
+        descValue: string,
+        time: string,
+        status: string,
+        statusValue: string,
+        techStack: string,
+      },
+      intro: {
+        header: string,
+        inShort: string,
+        inShortVal: string,
+        inShortImg: string,
+        bg: string,
+        bgVal: string,
+        timeline: {
+          header: string,
+          item1: string,
+          item2: string,
+          item3: string,
+          item4: string,
+          item5: string,
+          item6: string,
+          item7: string,
+          item8: string,
+        },
+      },
+      details: {
+        header: string,
+        whatIsTradingBot: string,
+        whatIsTradingBotVal: string,
+        binanceIntegration: string,
+        binanceIntegrationVal1: string,
+        binanceIntegrationVal2: string,
+        binanceIntegrationVal3: string,
+        whatDoesTradingBotDo: string,
+        whatDoesTradingBotDoIntro: string,
+        whatDoesTradingBotDoList1: string,
+        whatDoesTradingBotDoList2: string,
+        whatDoesTradingBotDoList3: string,
+        whatDoesTradingBotDoList4: string,
+        whatDoesTradingBotDoList5: string,
+        whatDoesTradingBotDoVal1: string,
+        whatDoesTradingBotDoVal2: string,
+        trailingStopLossVideoCaption: string,
+        semiAutomatic: string,
+        semiAutomaticVal: string,
+        interfaceImg1: string,
+        interfaceImg2: string,
+      },
+      tools: {
+        header: string,
+        dataAnalysis: string,
+        dataAnalysisVal1: string,
+        dataAnalysisVal2: string,
+        strategySearch: string,
+        strategySearchVal: string,
+        heatmapImg: string,
+        marketSimulation: string,
+        marketSimulationVal: string,
+      },
+      summary: {
+        header: string,
+        result: string,
+        resultVal: string,
         retrospective: string,
         retrospectiveVal: string,
       },

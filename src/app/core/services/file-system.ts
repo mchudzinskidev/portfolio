@@ -108,17 +108,17 @@ export class FileSystem {
           created: '2023',
           modified: '2026',
         },{
+          name: 'trading bot',
+          parent: null,
+          favorite: false,
+          created: '2023',
+          modified: '2026',
+        },{
           name: 'homelab',
           parent: null,
           favorite: true,
           created: '2020',
           modified: '2026',
-        },{
-          name: 'trading bot',
-          parent: null,
-          favorite: false,
-          created: '2023',
-          modified: '2025',
         },{
           name: 'FDD keyboard',
           parent: null,
