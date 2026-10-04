@@ -1,1 +1,436 @@
-<p style="padding: 8px;">TODO</p>
+<div class="projectWrapper">
+    <div class="mainArticle selectable">
+        <article>
+            <section>
+                <header class="intro center">
+                    <div>
+                        <p class="mainIntro">starling - DIY star tracker</p>
+                        <div class="hr"></div>
+                        <p class="sectionName">{{ content.projects.starling.introduction.project }}</p>
+                    </div>
+                    <div class="flexRow">
+                        <div>
+                            <p class="secondaryIntro">{{ content.projects.starling.introduction.descValue }}</p>
+                            <div class="hr"></div>
+                            <p class="sectionName">{{ content.projects.starling.introduction.desc }}</p>
+                        </div>
+                        <div>
+                            <p class="secondaryIntro">od 2023</p>
+                            <div class="hr"></div>
+                            <p class="sectionName">{{ content.projects.starling.introduction.time }}</p>
+                        </div>
+                        <div>
+                            <p class="secondaryIntro">{{ content.projects.starling.introduction.statusValue }}</p>
+                            <div class="hr"></div>
+                            <p class="sectionName">{{ content.projects.starling.introduction.status }}</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="secondaryIntro stack">
+                            <div>RP2040</div>
+                            <div>{{ content.projects.starling.stack.electronics }}</div>
+                            <div>{{ content.projects.starling.stack.mechanics }}</div>
+                            <div>{{ content.projects.starling.stack.print }}</div>
+                            <div>MicroPython</div>
+                            <div>Raspberry Pi</div>
+                            <div>ESP32</div>
+                            <div>Python</div>
+                            <div>FreeCAD</div>
+                            <div>Java</div>
+                            <div>HTML</div>
+                            <div>JS</div>
+                            <div>CSS</div>
+                        </div>
+                        <div class="hr"></div>
+                        <p class="sectionName">{{ content.projects.starling.introduction.techStack }}</p>
+                    </div>
+                </header>
+            </section>
+
+            <section>
+                <p class="mainSectionHeader"><span class="codeLine">01</span><br>{{ content.projects.starling.intro.header }}</p>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.starling.intro.inShort }}</p>
+                    <p class="sectionText">{{ content.projects.starling.intro.inShortVal }}</p>
+                </div>
+
+                <figure>
+                    <img src="./projects/starling/m31.jpg" [alt]="content.projects.starling.intro.inShortImgAlt">
+                    <figcaption>{{ content.projects.starling.intro.inShortImg }}</figcaption>
+                </figure>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.starling.intro.bg }}</p>
+                    <p class="sectionText">{{ content.projects.starling.intro.bgVal }}</p>
+                </div>
+
+                <figure class="sectionImageVertical">
+                    <img src="./projects/starling/starling5.jpg" [alt]="content.projects.starling.intro.bgImgAlt">
+                    <figcaption>{{ content.projects.starling.intro.bgImg }}</figcaption>
+                </figure>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.starling.intro.timeline.header }}</p>
+                    <div class="timeline">
+                        <div class="tlDot endDot"></div>
+
+                        <div class="tlYear">2023</div>
+                        <div class="tlPath"></div>
+
+                        <div class="tlDot">
+                            <div class="tlEvent">
+                                <div class="tlEventTitle">{{ content.generic.months.mar }} 2023</div>
+                                <div class="tlEventDesc">{{ content.projects.starling.intro.timeline.item1 }}</div>
+                            </div>
+                        </div>
+
+                        <div class="tlPath"></div>
+
+                        <div class="tlDot">
+                            <div class="tlEvent">
+                                <div class="tlEventTitle">{{ content.generic.months.aug }} 2023</div>
+                                <div class="tlEventDesc">{{ content.projects.starling.intro.timeline.item2 }}</div>
+                            </div>
+                        </div>
+
+                        <div class="tlPath"></div>
+
+                        <div class="tlYear">2024</div>
+                        <div class="tlPath"></div>
+
+                        <div class="tlDot">
+                            <div class="tlEvent">
+                                <div class="tlEventTitle">{{ content.generic.months.may }} 2024</div>
+                                <div class="tlEventDesc">{{ content.projects.starling.intro.timeline.item3 }}</div>
+                            </div>
+                        </div>
+
+                        <div class="tlPath"></div>
+
+                        <div class="tlDot">
+                            <div class="tlEvent">
+                                <div class="tlEventTitle">{{ content.generic.months.oct }} 2024</div>
+                                <div class="tlEventDesc">{{ content.projects.starling.intro.timeline.item4 }}</div>
+                            </div>
+                        </div>
+
+                        <div class="tlPath"></div>
+
+                        <div class="tlYear">2025</div>
+                        <div class="tlPath"></div>
+
+                        <div class="tlDot">
+                            <div class="tlEvent">
+                                <div class="tlEventTitle">{{ content.generic.months.nov }} 2025</div>
+                                <div class="tlEventDesc">{{ content.projects.starling.intro.timeline.item5 }}</div>
+                            </div>
+                        </div>
+
+                        <div class="tlPath"></div>
+
+                        <div class="tlYear">2026</div>
+                        <div class="tlPath"></div>
+
+                        <div class="tlDot">
+                            <div class="tlEvent">
+                                <div class="tlEventTitle">{{ content.generic.months.may }} 2026</div>
+                                <div class="tlEventDesc">{{ content.projects.starling.intro.timeline.item6 }}</div>
+                            </div>
+                        </div>
+
+                        <div class="tlPath"></div>
+
+                        <div class="tlDot">
+                            <div class="tlEvent">
+                                <div class="tlEventTitle">{{ content.generic.months.aug }} 2026</div>
+                                <div class="tlEventDesc">{{ content.projects.starling.intro.timeline.item7 }}</div>
+                            </div>
+                        </div>
+
+                        <div class="tlPath"></div>
+                        <div class="tlDot endDot"></div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.starling.intro.astrophotography }}</p>
+                    <p class="sectionText">{{ content.projects.starling.intro.astrophotographyVal1 }}</p>
+                    <p class="sectionText">{{ content.projects.starling.intro.astrophotographyVal2 }}</p>
+                    <p class="sectionText">{{ content.projects.starling.intro.astrophotographyVal3 }}</p>
+                </div>
+
+                <figure>
+                    <img src="./projects/starling/star_trails.jpg" [alt]="content.projects.starling.intro.astrophotographyImgAlt">
+                    <figcaption>{{ content.projects.starling.intro.astrophotographyImg }}</figcaption>
+                </figure>
+            </section>
+
+            <section>
+                <p class="mainSectionHeader"><span class="codeLine">02</span><br>{{ content.projects.starling.beginnings.header }}</p>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.starling.beginnings.firstGeneration }}</p>
+                    <p class="sectionText">{{ content.projects.starling.beginnings.firstGenerationVal1 }}</p>
+                    <p class="sectionText">{{ content.projects.starling.beginnings.firstGenerationVal2 }}</p>
+                    <p class="sectionText">{{ content.projects.starling.beginnings.firstGenerationVal3 }}</p>
+                    <p class="sectionText">{{ content.projects.starling.beginnings.firstGenerationVal4 }}</p>
+                </div>
+
+                <figure>
+                    <img src="./projects/starling/starling1.jpg" [alt]="content.projects.starling.beginnings.firstGenerationImgAlt">
+                    <figcaption>{{ content.projects.starling.beginnings.firstGenerationImg }}</figcaption>
+                </figure>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.starling.beginnings.secondGeneration }}</p>
+                    <p class="sectionText">{{ content.projects.starling.beginnings.secondGenerationVal1 }}</p>
+                    <p class="sectionText">{{ content.projects.starling.beginnings.secondGenerationVal2 }}</p>
+                    <p class="sectionText">{{ content.projects.starling.beginnings.secondGenerationVal3 }}</p>
+                    <ul class="sectionList">
+                        <li>{{ content.projects.starling.beginnings.secondGenerationList1 }}</li>
+                        <li>{{ content.projects.starling.beginnings.secondGenerationList2 }}</li>
+                        <li>{{ content.projects.starling.beginnings.secondGenerationList3 }}</li>
+                    </ul>
+                    <p class="sectionText">{{ content.projects.starling.beginnings.secondGenerationVal4 }}</p>
+                </div>
+
+                <figure>
+                    <img src="./projects/starling/starling2dc.jpg" [alt]="content.projects.starling.beginnings.secondGenerationImgAlt">
+                    <figcaption>{{ content.projects.starling.beginnings.secondGenerationImg }}</figcaption>
+                </figure>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.starling.beginnings.thirdGeneration }}</p>
+                    <p class="sectionText">{{ content.projects.starling.beginnings.thirdGenerationVal }}</p>
+                </div>
+
+                <figure>
+                    <img src="./projects/starling/mb_starling3.jpg" [alt]="content.projects.starling.beginnings.thirdGenerationImg1Alt">
+                    <figcaption>{{ content.projects.starling.beginnings.thirdGenerationImg1 }}</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="./projects/starling/starling3.jpg" [alt]="content.projects.starling.beginnings.thirdGenerationImg2Alt">
+                    <figcaption>{{ content.projects.starling.beginnings.thirdGenerationImg2 }}</figcaption>
+                </figure>
+            </section>
+
+            <section>
+                <p class="mainSectionHeader"><span class="codeLine">03</span><br>{{ content.projects.starling.threeD.header }}</p>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.starling.threeD.secondStarling3 }}</p>
+                    <p class="sectionText">{{ content.projects.starling.threeD.secondStarling3Val1 }}</p>
+                    <p class="sectionText">{{ content.projects.starling.threeD.secondStarling3Val2 }}</p>
+                    <p class="sectionText">{{ content.projects.starling.threeD.secondStarling3Val3 }}</p>
+                </div>
+
+                <figure>
+                    <img src="./projects/starling/starling3_2_module1.jpg" [alt]="content.projects.starling.threeD.secondStarling3Img1Alt">
+                    <figcaption>{{ content.projects.starling.threeD.secondStarling3Img1 }}</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="./projects/starling/starling3_2_gearbox.jpg" [alt]="content.projects.starling.threeD.secondStarling3Img2Alt">
+                    <figcaption>{{ content.projects.starling.threeD.secondStarling3Img2 }}</figcaption>
+                </figure>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.starling.threeD.fourthGeneration }}</p>
+                    <p class="sectionText">{{ content.projects.starling.threeD.fourthGenerationVal }}</p>
+                </div>
+
+                <figure>
+                    <img src="./projects/starling/starling4_bearing_case.jpg" [alt]="content.projects.starling.threeD.fourthGenerationImgAlt">
+                    <figcaption>{{ content.projects.starling.threeD.fourthGenerationImg }}</figcaption>
+                </figure>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.starling.threeD.fifthGeneration }}</p>
+                    <p class="sectionText">{{ content.projects.starling.threeD.fifthGenerationVal1 }}</p>
+                    <p class="sectionText">{{ content.projects.starling.threeD.fifthGenerationVal2 }}</p>
+                    <p class="sectionText">{{ content.projects.starling.threeD.fifthGenerationVal3 }}</p>
+                </div>
+
+                <figure>
+                    <img src="./projects/starling/starling5_gearbox.jpg" [alt]="content.projects.starling.threeD.fifthGenerationImgAlt">
+                    <figcaption>{{ content.projects.starling.threeD.fifthGenerationImg }}</figcaption>
+                </figure>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.starling.threeD.success }}</p>
+                    <p class="sectionText">{{ content.projects.starling.threeD.successVal1 }}</p>
+                    <p class="sectionText">{{ content.projects.starling.threeD.successVal2 }}</p>
+                </div>
+
+                <figure>
+                    <img src="./projects/starling/starling5_ok.jpg" [alt]="content.projects.starling.threeD.successImg1Alt">
+                    <figcaption>{{ content.projects.starling.threeD.successImg1 }}</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="./projects/starling/cygnus.jpg" [alt]="content.projects.starling.threeD.successImg2Alt">
+                    <figcaption>{{ content.projects.starling.threeD.successImg2 }}</figcaption>
+                </figure>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.starling.threeD.sixthGeneration }}</p>
+                    <p class="sectionText">{{ content.projects.starling.threeD.sixthGenerationVal }}</p>
+                </div>
+
+                <figure class="sectionImageVertical">
+                    <img src="./projects/starling/starling6_work_in_progress.jpg" [alt]="content.projects.starling.threeD.sixthGenerationImgAlt">
+                    <figcaption>{{ content.projects.starling.threeD.sixthGenerationImg }}</figcaption>
+                </figure>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.starling.threeD.mechanics }}</p>
+                    <p class="sectionText">{{ content.projects.starling.threeD.mechanicsVal }}</p>
+                </div>
+
+                <figure>
+                    <img src="./projects/starling/starling6_motor_bracket.jpg" [alt]="content.projects.starling.threeD.mechanicsImgAlt">
+                    <figcaption>{{ content.projects.starling.threeD.mechanicsImg }}</figcaption>
+                </figure>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.starling.threeD.electronics }}</p>
+                    <p class="sectionText">{{ content.projects.starling.threeD.electronicsVal }}</p>
+                </div>
+
+                <figure>
+                    <img src="./projects/starling/mb_starling6_3d_printed.jpg" [alt]="content.projects.starling.threeD.electronicsImg1Alt">
+                    <figcaption>{{ content.projects.starling.threeD.electronicsImg1 }}</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="./projects/starling/mb_starling6.jpg" [alt]="content.projects.starling.threeD.electronicsImg2Alt">
+                    <figcaption>{{ content.projects.starling.threeD.electronicsImg2 }}</figcaption>
+                </figure>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.starling.threeD.software }}</p>
+                    <p class="sectionText">{{ content.projects.starling.threeD.softwareVal }}</p>
+                </div>
+
+                <figure class="sectionImageVertical">
+                    <img src="./projects/starling/starling6_ui.jpg" [alt]="content.projects.starling.threeD.softwareImgAlt">
+                    <figcaption>{{ content.projects.starling.threeD.softwareImg }}</figcaption>
+                </figure>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.starling.threeD.sixthResults }}</p>
+                    <p class="sectionText">{{ content.projects.starling.threeD.sixthResultsVal }}</p>
+                </div>
+
+                <figure class="sectionImageVertical">
+                    <img src="./projects/starling/starling6_ok.jpg" [alt]="content.projects.starling.threeD.sixthResultsImgAlt">
+                    <figcaption>{{ content.projects.starling.threeD.sixthResultsImg }}</figcaption>
+                </figure>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.starling.threeD.seventhGeneration }}</p>
+                    <p class="sectionText">{{ content.projects.starling.threeD.seventhGenerationVal1 }}</p>
+                    <p class="sectionText">{{ content.projects.starling.threeD.seventhGenerationVal2 }}</p>
+                    <p class="sectionText">{{ content.projects.starling.threeD.seventhGenerationVal3 }}</p>
+                </div>
+
+                <figure class="sectionImageVertical">
+                    <img src="./projects/starling/starling7.jpg" [alt]="content.projects.starling.threeD.seventhGenerationImgAlt">
+                    <figcaption>{{ content.projects.starling.threeD.seventhGenerationImg }}</figcaption>
+                </figure>
+            </section>
+
+            <section>
+                <p class="mainSectionHeader"><span class="codeLine">04</span><br>{{ content.projects.starling.accessories.header }}</p>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.starling.accessories.calibrationFrames }}</p>
+                    <p class="sectionText">{{ content.projects.starling.accessories.calibrationFramesVal1 }}</p>
+                    <p class="sectionText">{{ content.projects.starling.accessories.calibrationFramesVal2 }}</p>
+                </div>
+
+                <figure>
+                    <img src="./projects/starling/flat.jpg" [alt]="content.projects.starling.accessories.calibrationFramesImgAlt">
+                    <figcaption>{{ content.projects.starling.accessories.calibrationFramesImg }}</figcaption>
+                </figure>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.starling.accessories.dew }}</p>
+                    <p class="sectionText">{{ content.projects.starling.accessories.dewVal1 }}</p>
+                    <p class="sectionText">{{ content.projects.starling.accessories.dewVal2 }}</p>
+                </div>
+
+                <figure>
+                    <img src="./projects/starling/filter_adapter.jpg" [alt]="content.projects.starling.accessories.dewImgAlt">
+                    <figcaption>{{ content.projects.starling.accessories.dewImg }}</figcaption>
+                </figure>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.starling.accessories.power }}</p>
+                    <p class="sectionText">{{ content.projects.starling.accessories.powerVal }}</p>
+                </div>
+
+                <figure>
+                    <img src="./projects/starling/psu.jpg" [alt]="content.projects.starling.accessories.powerImgAlt">
+                    <figcaption>{{ content.projects.starling.accessories.powerImg }}</figcaption>
+                </figure>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.starling.accessories.starlingPolar }}</p>
+                    <p class="sectionText">{{ content.projects.starling.accessories.starlingPolarVal }}</p>
+                </div>
+
+                <figure class="sectionImageVertical">
+                    <img src="./projects/starling/starling_polar.jpg" [alt]="content.projects.starling.accessories.starlingPolarImgAlt">
+                    <figcaption>{{ content.projects.starling.accessories.starlingPolarImg }}</figcaption>
+                </figure>
+            </section>
+
+            <section>
+                <p class="mainSectionHeader"><span class="codeLine">05</span><br>{{ content.projects.starling.summary.header }}</p>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.starling.summary.statistics }}</p>
+                    <p class="sectionText">{{ content.projects.starling.summary.statisticsVal1 }}</p>
+                    <p class="sectionText">{{ content.projects.starling.summary.statisticsVal2 }}</p>
+                    <ul class="sectionList">
+                        <li>{{ content.projects.starling.summary.statisticsList1 }}</li>
+                        <li>{{ content.projects.starling.summary.statisticsList2 }}</li>
+                        <li>{{ content.projects.starling.summary.statisticsList3 }}</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.starling.summary.trialAndError }}</p>
+                    <p class="sectionText">{{ content.projects.starling.summary.trialAndErrorVal }}</p>
+                </div>
+
+                <figure>
+                    <img src="./projects/starling/fail.jpg" [alt]="content.projects.starling.summary.trialAndErrorImg1Alt">
+                    <figcaption>{{ content.projects.starling.summary.trialAndErrorImg1 }}</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="./projects/starling/scrap.jpg" [alt]="content.projects.starling.summary.trialAndErrorImg2Alt">
+                    <figcaption>{{ content.projects.starling.summary.trialAndErrorImg2 }}</figcaption>
+                </figure>
+            </section>
+
+            <section>
+                <p class="mainSectionHeader"><span class="codeLine">06</span><br>{{ content.projects.starling.future.header }}</p>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.starling.future.notTheEnd }}</p>
+                    <p class="sectionText">{{ content.projects.starling.future.notTheEndVal }}</p>
+                </div>
+
+                <figure class="sectionImageVertical">
+                    <img src="./projects/starling/pleiades.jpg" [alt]="content.projects.starling.future.notTheEndImgAlt">
+                    <figcaption>{{ content.projects.starling.future.notTheEndImg }}</figcaption>
+                </figure>
+            </section>
+        </article>
+    </div>
+</div>
