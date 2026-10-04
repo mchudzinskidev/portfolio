@@ -9,6 +9,7 @@ import { Journeycraft } from '../../components/files/journeycraft/journeycraft'
 import { AboutApp } from '../../components/files/about-app/about-app'
 import { LastUpdate } from '../../components/files/last-update/last-update'
 import { Version } from '../../components/files/version/version'
+import { Mail } from '../../components/files/mail/mail'
 
 
 export interface Node {
@@ -224,6 +225,8 @@ export class FileSystem {
         return LastUpdate;
       case 'home/about-this-app/version.txt':
         return Version;
+      case 'home/get-in-touch/mail.txt':
+        return Mail;
     }
     return null;
   }

@@ -145,6 +145,9 @@
                 text-align: center;
             }
         }
+        .sectionImageVertical img{
+            max-height: 472px;
+        }
         .timeline{
             display: flex;
             flex-direction: column;
