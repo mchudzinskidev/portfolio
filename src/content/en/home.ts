@@ -24,6 +24,7 @@ export const homeContent: HomeContent = {
   },
   desktop: {
     projects: "Projects",
+    getInTouch: "Get in touch",
     reboot: "Reboot",
     hashi: "hashi.exe",
   },

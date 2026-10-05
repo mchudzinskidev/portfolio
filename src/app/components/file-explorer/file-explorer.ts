@@ -37,6 +37,8 @@ export class FileExplorer implements OnInit{
         this.openTerminalClicked()(node.name, node.parent);
       }else if(this.fs.getPath(node) === 'home/desktop/hashi.exe'){
         this.openAppClicked()(this.fs.getPath(node));
+      }else if(this.fs.getPath(node) === 'home/desktop/get-in-touch/linkedin'){
+        this.openAppClicked()(this.fs.getPath(node));
       }else{
         this.openBrowserClicked()(this.fs.getPath(node));
       }

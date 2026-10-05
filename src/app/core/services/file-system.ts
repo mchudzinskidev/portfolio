@@ -85,6 +85,17 @@ export class FileSystem {
         created: '2026',
         modified: '2026',
       },{
+        name: 'get-in-touch',
+        parent: null,
+        favorite: false,
+        created: '2026',
+        modified: '2026',
+        children: [
+          { name: 'mail.txt', parent: null, favorite: true, created: '2026', modified: '2026'  },
+          { name: 'linkedin', parent: null, favorite: false, created: '2023', modified: '2026'  },
+          { name: 'cv.pdf', parent: null, favorite: false, created: '2022', modified: '2026'  },
+        ]
+      },{
         name: 'projects',
         parent: null,
         favorite: true,
@@ -134,17 +145,6 @@ export class FileSystem {
           modified: '2021',
         }],
       }]
-    },{
-      name: 'get-in-touch',
-      parent: null,
-      favorite: false,
-      created: '2026',
-      modified: '2026',
-      children: [
-        { name: 'mail.txt', parent: null, favorite: false, created: '2026', modified: '2026'  },
-        { name: 'linkedin', parent: null, favorite: true, created: '2026', modified: '2026'  },
-        { name: 'cv.pdf', parent: null, favorite: false, created: '2026', modified: '2026'  },
-      ]
     }]
   };
   constructor(){
@@ -225,7 +225,7 @@ export class FileSystem {
         return LastUpdate;
       case 'home/about-this-app/version.txt':
         return Version;
-      case 'home/get-in-touch/mail.txt':
+      case 'home/desktop/get-in-touch/mail.txt':
         return Mail;
     }
     return null;
