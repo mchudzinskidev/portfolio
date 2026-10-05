@@ -92,7 +92,7 @@ export class FileSystem {
         modified: '2026',
         children: [
           { name: 'mail.txt', parent: null, favorite: true, created: '2026', modified: '2026'  },
-          { name: 'linkedin', parent: null, favorite: false, created: '2023', modified: '2026'  },
+          { name: 'linkedin', parent: null, favorite: false, created: '2022', modified: '2026'  },
           { name: 'cv.pdf', parent: null, favorite: false, created: '2022', modified: '2026'  },
         ]
       },{
