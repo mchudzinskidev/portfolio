@@ -13,7 +13,7 @@ import { RebootDialog } from '../reboot-dialog/reboot-dialog';
 import { WindowType } from '../../core/types/window-types';
 import { DirectoryNode, FileSystem } from '../../core/services/file-system';
 import { Language } from '../../core/services/language';
-import { Language as Lang} from '../../core/types/language'
+import { Language as Lang } from '../../core/types/language'
 import { Content } from '../../core/services/content';
 import { Hashi } from '../hashi/hashi';
 
@@ -31,14 +31,14 @@ export class Desktop {
   public clock: string = '00:00';
   public windows: Window[] = [];
   public icons: DesktopIconModel[] = [{
-    title: 'LinkedIn',
+    title: this.content.desktop.getInTouch,
     gridPosX: 1,
     gridPosY: 1,
-    icon: 'in',
+    icon: 'dir',
     gridSize: 128,
-    wType: WindowType.in,
+    wType: WindowType.contact,
     selected: false,
-  },{
+  }, {
     title: this.content.desktop.projects,
     gridPosX: 1,
     gridPosY: 2,
@@ -46,10 +46,10 @@ export class Desktop {
     gridSize: 128,
     wType: WindowType.projects,
     selected: false,
-  },{
+  }, {
     title: this.content.desktop.hashi,
     gridPosX: 4,
-    gridPosY: 1,
+    gridPosY: 3,
     icon: 'term',
     gridSize: 128,
     wType: WindowType.hashi,
@@ -72,7 +72,7 @@ export class Desktop {
   public dragStartY = 0;
   public initialIconPositions = new Map<number, { x: number, y: number }>();
   public showFly: boolean = Math.random() < 0.1;
-  constructor(){
+  constructor() {
     this.updateClock();
     setInterval(() => { this.updateClock(); }, 1000);
   }
@@ -85,11 +85,11 @@ export class Desktop {
   public stopDrag(): void {
     this.icons.forEach(icon => icon.selected = false);
   }
-  private updateClock(): void{
+  private updateClock(): void {
     const now = new Date();
     this.clock = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
   }
-  public newWindow(wType: WindowType, inputs: Record<string, unknown> = {}): void{
+  public newWindow(wType: WindowType, inputs: Record<string, unknown> = {}): void {
     this.showStartMenu = false;
     let component;
     let icon;
@@ -99,7 +99,7 @@ export class Desktop {
     let posX = 64;
     let posY = 64;
     let isFullscreen = false;
-    switch(wType){
+    switch (wType) {
       case WindowType.dir: {
         component = FileExplorer;
         icon = 'dir';
@@ -109,16 +109,8 @@ export class Desktop {
         inputs = {
           openBrowserClicked: (path: string) => { this.newWindow(WindowType.net, { path: path }); },
           openTerminalClicked: (cmd: string, startNode: DirectoryNode) => { this.newWindow(WindowType.term, { startCmd: cmd, startNode: startNode }); },
-          openAppClicked: (path: string) => { 
-            switch(path){
-              case 'home/desktop/hashi.exe':{
-                this.newWindow(WindowType.hashi);
-                break;
-              }
-              default:{
-                this.newWindow(WindowType.net, { path: path });
-              }
-            }
+          openAppClicked: (path: string) => {
+            this.openApp(path);
           },
         };
         break;
@@ -155,23 +147,31 @@ export class Desktop {
           currentNode: this.fs.resolvePath('home/desktop/projects', this.fs.getFs()),
           openBrowserClicked: (path: string) => { this.newWindow(WindowType.net, { path: path }); },
           openTerminalClicked: (cmd: string, startNode: DirectoryNode) => { this.newWindow(WindowType.term, { startCmd: cmd, startNode: startNode }); },
-          openAppClicked: (path: string) => { 
-            switch(path){
-              case 'home/desktop/hashi.exe':{
-                this.newWindow(WindowType.hashi);
-                break;
-              }
-              default:{
-                this.newWindow(WindowType.net, { path: path });
-              }
-            }
+          openAppClicked: (path: string) => {
+            this.openApp(path);
+          },
+        };
+        break;
+      }
+      case WindowType.contact: {
+        component = FileExplorer;
+        icon = 'dir';
+        title = this.content.generic.fileExplorer;
+        innerHeight = 512;
+        innerWidth = 768;
+        inputs = {
+          currentNode: this.fs.resolvePath('home/desktop/get-in-touch', this.fs.getFs()),
+          openBrowserClicked: (path: string) => { this.newWindow(WindowType.net, { path: path }); },
+          openTerminalClicked: (cmd: string, startNode: DirectoryNode) => { this.newWindow(WindowType.term, { startCmd: cmd, startNode: startNode }); },
+          openAppClicked: (path: string) => {
+            this.openApp(path);
           },
         };
         break;
       }
       case WindowType.net: {
         component = Browser;
-        if((inputs?.['path'] as string)?.startsWith('home/desktop/projects/')){
+        if ((inputs?.['path'] as string)?.startsWith('home/desktop/projects/')) {
           posX = 0;
           posY = 0;
           isFullscreen = true;
@@ -215,7 +215,7 @@ export class Desktop {
       inputs: inputs,
     });
   }
-  public getMaxWindowZindex(): number{
+  public getMaxWindowZindex(): number {
     return Math.max(...this.windows.map(win => win.zIndex));
   }
   public focusCallback(id: number): void {
@@ -232,18 +232,18 @@ export class Desktop {
     }
     this.windows[id].zIndex = maxIndex;
   }
-  public dragIndCallback(top: boolean): void{
+  public dragIndCallback(top: boolean): void {
     this.showFullscreenIndicator = top;
   }
-  public closeWindowCallback(id: number): void{
+  public closeWindowCallback(id: number): void {
     this.windows = this.windows.filter((win, index) => index !== id);
   }
-  public toggleStartMenu(): void{
+  public toggleStartMenu(): void {
     this.showStartMenu = !this.showStartMenu;
   }
   public selectionStart(event: PointerEvent): void {
     if (event.target !== event.currentTarget)
-        return;
+      return;
     this.selection.visible = true;
     this.selection.startX = event.clientX;
     this.selection.startY = event.clientY;
@@ -253,7 +253,7 @@ export class Desktop {
     this.selection.height = 0;
   }
   public selectionMove(event: PointerEvent): void {
-    if (!this.selection.visible){
+    if (!this.selection.visible) {
       return;
     }
     const x = event.clientX;
@@ -264,7 +264,7 @@ export class Desktop {
     this.selection.height = Math.abs(y - this.selection.startY);
   }
   public selectionEnd(event: PointerEvent): void {
-    if (!this.selection.visible){
+    if (!this.selection.visible) {
       return;
     }
     event.stopPropagation();
@@ -293,7 +293,7 @@ export class Desktop {
     this.dragStartY = event.clientY;
     this.initialIconPositions.clear();
     this.icons.forEach((ic, id) => {
-      if(ic.selected){
+      if (ic.selected) {
         this.initialIconPositions.set(id, {
           x: ic.gridPosX,
           y: ic.gridPosY
@@ -303,7 +303,7 @@ export class Desktop {
     (event.target as HTMLElement).setPointerCapture(event.pointerId);
   }
   public drag(event: PointerEvent): void {
-    if (!this.dragging){
+    if (!this.dragging) {
       return;
     }
     const dx = event.clientX - this.dragStartX;
@@ -317,7 +317,7 @@ export class Desktop {
     });
   }
   public stopDrag2(event: PointerEvent): void {
-    if(!this.dragging){
+    if (!this.dragging) {
       return;
     }
     const collision = this.icons
@@ -330,7 +330,7 @@ export class Desktop {
       });
     }
     this.dragging = false;
-    for(let key of this.initialIconPositions.keys()){
+    for (let key of this.initialIconPositions.keys()) {
       setTimeout(() => {
         this.icons[key].selected = true;
       });
@@ -348,10 +348,25 @@ export class Desktop {
   private isOutsideScreen(icon: DesktopIconModel): boolean {
     return icon.gridPosX < 0 || icon.gridPosY < 0;
   }
-  public changeLang(lang: Lang){
-    if(this.ls.newLangAfterReload !== lang){
+  public changeLang(lang: Lang) {
+    if (this.ls.newLangAfterReload !== lang) {
       this.ls.newLangAfterReload = lang;
       this.newWindow(WindowType.off, { showRestartRequiredMsg: true });
+    }
+  }
+  private openApp(path: string) {
+    switch (path) {
+      case 'home/desktop/hashi.exe': {
+        this.newWindow(WindowType.hashi);
+        break;
+      }
+      case 'home/desktop/get-in-touch/linkedin': {
+        this.newWindow(WindowType.in);
+        break;
+      }
+      default: {
+        this.newWindow(WindowType.net, { path: path });
+      }
     }
   }
 }

@@ -22,6 +22,7 @@ export interface HomeContent {
   },
   desktop: {
     projects: string,
+    getInTouch: string,
     reboot: string,
     hashi: string,
   },
