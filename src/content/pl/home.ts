@@ -45,6 +45,12 @@ export const homeContent: HomeContent = {
   settings: {
     fullscreen: 'Pełny Ekran',
   },
+  about: {
+    header: "Jestem programistą, choć nie ograniczam się do samego kodu.",
+    p1: "Na co dzień zajmuję się tworzeniem oprogramowania, a poza pracą chętnie eksperymentuję z technologią. Buduję własne projekty - tworzę układy elektroniczne, drukuję części 3D i prowadzę domowy homelab. Interesuję się również astrofotografią, co często staje się pretekstem do stworzenia czegoś własnego.",
+    p2: "Lubię projekty, w których trzeba wyjść poza jedną dziedzinę - nauczyć się nowej technologii, zaprojektować rozwiązanie od podstaw albo połączyć pozornie niezwiązane ze sobą obszary.",
+    p3: "Uczę się samodzielnie poprzez tworzenie - od pomysłu, przez eksperymenty i prototypy, aż po działające rozwiązanie.",
+  },
   projects: {
     journeycraft: {
       introduction: {

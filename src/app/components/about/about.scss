@@ -1,0 +1,21 @@
+.sectionFlex{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    padding: 32px;
+    .profilePicture{
+        background-image: url("../../../assets/images/marcin-chudzinski.jpg");
+        width: 256px;
+        height: 256px;
+        background-size: contain;
+    }
+    .textBox{
+        width: 640px;
+        *:not(:last-child){
+            margin-bottom: 16px;
+        }
+        h1{
+            font-size: 1.2em;
+        }
+    }
+}
