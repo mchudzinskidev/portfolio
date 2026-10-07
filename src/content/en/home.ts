@@ -70,7 +70,7 @@ export const homeContent: HomeContent = {
         bg: "Project background",
         bgVal: "Everything started in December 2020, when, in just a few days, I created a plugin that introduced a new game mode to Minecraft - Journey Mode (JM), inspired by the one introduced to Terraria in May of the same year. Initially, it was just a small server for friends. One of them - Dominik - became interested in the project and suggested working together on a larger, public server built around my plugin. I wouldn't be myself if I had said no.",
         timeline: {
-          header: "timeline",
+          header: "Timeline",
           item1: "first playable version of Journey Mode",
           item2: "work on the JourneyCraft project begins",
           item3: "server opens to the public",
@@ -132,7 +132,7 @@ export const homeContent: HomeContent = {
         video2Caption: '"Barka" played on one of the first versions of the project from 2020',
         finalVersionImg: "Final version of the project - interactive instrument",
         timeline: {
-          header: "timeline",
+          header: "Timeline",
           item1: "Creating the first version of an Arduino library for playing music using an FDD",
           item2: 'Returning to the project to record "Habits" for a school project',
           item3: "Returning to the project after several years and starting work on modifying the keyboard",
@@ -265,7 +265,7 @@ export const homeContent: HomeContent = {
         bg: "Project background",
         bgVal: "The project was created with one goal - it was supposed to make money on its own. The plan was to build a bot that would autonomously trade crypto assets with minimal supervision. Reality put this idea to the test, and the project turned out to be much more complex, both in the code and, above all, in coming up with the right strategy",
         timeline: {
-          header: "timeline",
+          header: "Timeline",
           item1: "Started working on the project, first experiments with the Binance API",
           item2: "Launched the first manually controlled version of the bot on my own server",
           item3: "Created tools for simulating the bot's operation without using any capital",
@@ -344,7 +344,7 @@ export const homeContent: HomeContent = {
         bgImg: "Starling 5 during a field session",
         bgImgAlt: "Starling 5 during a field session",
         timeline: {
-          header: "timeline",
+          header: "Timeline",
           item1: "Project started",
           item2: "Starling 1 completed",
           item3: "Starling 3 completed",
@@ -506,7 +506,7 @@ export const homeContent: HomeContent = {
         bgVal1: "The homelab was never a goal in itself. It started with Minecraft servers and hosting a website for the JourneyCraft project. Over time, the infrastructure grew along with my needs - the network evolved, more servers were added, and a small computer eventually gave way to a full-sized rack.",
         bgVal2: "The server room has been in the same room where I sleep from the start, which was an important factor when choosing the hardware. Some of the machines also run 24/7, so power consumption is something I have to keep in mind.",
         timeline: {
-          header: "timeline",
+          header: "Timeline",
           item1Date: "January 2020",
           item1: "First attempts at hosting a website on my own hardware",
           item2Date: "March 2021",

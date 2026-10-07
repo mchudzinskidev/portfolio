@@ -70,7 +70,7 @@ export const homeContent: HomeContent = {
         bg: "Tło projektu",
         bgVal: "Wszystko zaczęło się w grudniu 2020 roku, kiedy w zaledwie kilka dni powstał plugin wprowadzający do Minecrafta nowy tryb gry - Journey Mode (JM), inspirowany tym, wprowadzonym w maju tego samego roku do gry Terraria. Początkowo był to tylko mały serwer dla znajomych. Jeden z nich - Dominik - zainteresował się projektem i zaproponował współpracę przy większym, publicznym serwerze opartym o mój plugin. Nie byłbym sobą, gdybym się nie zgodził.",
         timeline: {
-          header: "timeline",
+          header: "Timeline",
           item1: "pierwsza grywalna wersja Journey Mode",
           item2: "rozpoczęcie pracy nad projektemn JourneyCraft",
           item3: "publiczne otwarcie serwera",
@@ -132,7 +132,7 @@ export const homeContent: HomeContent = {
         video2Caption: '"Barka" zagrana na jednej z pierwszych wersji projektu z 2020',
         finalVersionImg: "Finalna wersja projektu - interaktywny instrument",
         timeline: {
-          header: "timeline",
+          header: "Timeline",
           item1: "Tworzę pierwszą wersję biblioteki do Arduino umożliwiającej grę na FDD",
           item2: 'Powrót do projektu, na potrzeby szkolne nagrywam utwór "Habits"',
           item3: "Powrót do projektu po latach, rozpoczęcie pracy nad przerabianiem keyboarda",
@@ -265,7 +265,7 @@ export const homeContent: HomeContent = {
         bg: "Tło projektu",
         bgVal: "Projekt został utworzony w jednym celu - miał na siebie zarobić. Plan zakładał utworzenie bota, który autonomicznie, z minimalnym nadzorem, będzie obracał kryptoaktywami. Rzeczywistość zweryfikowała ten pomysł, a projekt okazał się dużo bardziej złożony, zarówno pod względem kodu, jak i - przede wszystkim - wymyślenia odpowiedniej strategii.",
         timeline: {
-          header: "timeline",
+          header: "Timeline",
           item1: "Rozpoczęcie pracy nad projektem, pierwsze eksperymenty z API Binance",
           item2: "Uruchomienie pierwszej, sterowanej manualnie wersji bota na własnym serwerze",
           item3: "Stworzenie narzędzi do symulowania pracy bota bez kapitału",
@@ -344,7 +344,7 @@ export const homeContent: HomeContent = {
         bgImg: "Starling 5 podczas sesji w terenie",
         bgImgAlt: "Starling 5 podczas sesji w terenie",
         timeline: {
-          header: "timeline",
+          header: "Timeline",
           item1: "Rozpoczęcie pracy nad projektem",
           item2: "Ukończenie starlinga 1",
           item3: "Ukończenie starlinga 3",
@@ -506,7 +506,7 @@ export const homeContent: HomeContent = {
         bgVal1: "Homelab nigdy nie był celem samym w sobie. Zaczęło się od serwerów Minecraft i hostingu strony dla projektu JourneyCraft. Z czasem infrastruktura rosła wraz z moimi potrzebami - zmieniała się sieć, pojawiały się kolejne serwery, a niewielki komputer ustąpił miejsca pełnej szafie rack.",
         bgVal2: "Serwerownia od początku mieściła się w tym samym pokoju, w którym śpię. Stanowiło to ważny aspekt przy wyborze sprzętu. Dodatkowo, część maszyn pracuje całą dobę, więc muszę mieć na uwadze zużycie energii.",
         timeline: {
-          header: "timeline",
+          header: "Timeline",
           item1Date: "styczeń 2020",
           item1: "Pierwsze próby samodzielnego hostowania strony internetowej na własnym sprzęcie",
           item2Date: "marzec 2021",
