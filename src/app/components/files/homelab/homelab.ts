@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Content } from '../../../core/services/content';
 
 @Component({
   selector: 'app-homelab',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './homelab.scss',
 })
 export class Homelab {
-
+  public content = inject(Content).getHome();
 }

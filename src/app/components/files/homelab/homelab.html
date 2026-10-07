@@ -1,1 +1,224 @@
-<p style="padding: 8px;">TODO</p>
+<div class="projectWrapper">
+    <div class="mainArticle selectable">
+        <article>
+            <section>
+                <header class="intro center">
+                    <div>
+                        <p class="mainIntro">homelab</p>
+                        <div class="hr"></div>
+                        <p class="sectionName">{{ content.projects.homelab.introduction.project }}</p>
+                    </div>
+                    <div class="flexRow">
+                        <div>
+                            <p class="secondaryIntro">{{ content.projects.homelab.introduction.descValue }}</p>
+                            <div class="hr"></div>
+                            <p class="sectionName">{{ content.projects.homelab.introduction.desc }}</p>
+                        </div>
+                        <div>
+                            <p class="secondaryIntro">{{ content.projects.homelab.introduction.timeValue }}</p>
+                            <div class="hr"></div>
+                            <p class="sectionName">{{ content.projects.homelab.introduction.time }}</p>
+                        </div>
+                        <div>
+                            <p class="secondaryIntro">{{ content.projects.homelab.introduction.statusValue }}</p>
+                            <div class="hr"></div>
+                            <p class="sectionName">{{ content.projects.homelab.introduction.status }}</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="secondaryIntro stack">
+                            <div>Linux</div>
+                            <div>MikroTik</div>
+                            <div>Cisco</div>
+                            <div>OpenWRT</div>
+                            <div>Networking</div>
+                            <div>Hardware</div>
+                            <div>Apache2</div>
+                            <div>VPN</div>
+                            <div>SMB</div>
+                        </div>
+                        <div class="hr"></div>
+                        <p class="sectionName">{{ content.projects.homelab.introduction.techStack }}</p>
+                    </div>
+                </header>
+            </section>
+
+            <section>
+                <p class="mainSectionHeader"><span class="codeLine">01</span><br>{{ content.projects.homelab.intro.header }}</p>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.homelab.intro.inShort }}</p>
+                    <p class="sectionText">{{ content.projects.homelab.intro.inShortVal }}</p>
+                </div>
+
+                <figure class="sectionImageVertical">
+                    <img src="./projects/homelab/rack_cabinet_2026.jpg" [alt]="content.projects.homelab.intro.inShortImg">
+                    <figcaption>{{ content.projects.homelab.intro.inShortImg }}</figcaption>
+                </figure>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.homelab.intro.bg }}</p>
+                    <p class="sectionText">{{ content.projects.homelab.intro.bgVal1 }}</p>
+                    <p class="sectionText">{{ content.projects.homelab.intro.bgVal2 }}</p>
+                </div>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.homelab.intro.timeline.header }}</p>
+                    <div class="timeline">
+                        <div class="tlDot endDot"></div>
+                        <div class="tlYear">2020</div>
+                        <div class="tlPath"></div>
+                        <div class="tlDot">
+                            <div class="tlEvent">
+                                <div class="tlEventTitle">{{ content.projects.homelab.intro.timeline.item1Date }}</div>
+                                <div class="tlEventDesc">{{ content.projects.homelab.intro.timeline.item1 }}</div>
+                            </div>
+                        </div>
+                        <div class="tlPath"></div>
+                        <div class="tlYear">2021</div>
+                        <div class="tlPath"></div>
+                        <div class="tlDot">
+                            <div class="tlEvent">
+                                <div class="tlEventTitle">{{ content.projects.homelab.intro.timeline.item2Date }}</div>
+                                <div class="tlEventDesc">{{ content.projects.homelab.intro.timeline.item2 }}</div>
+                            </div>
+                        </div>
+                        <div class="tlPath"></div>
+                        <div class="tlDot">
+                            <div class="tlEvent">
+                                <div class="tlEventTitle">{{ content.projects.homelab.intro.timeline.item3Date }}</div>
+                                <div class="tlEventDesc">{{ content.projects.homelab.intro.timeline.item3 }}</div>
+                            </div>
+                        </div>
+                        <div class="tlPath"></div>
+                        <div class="tlYear">2022</div>
+                        <div class="tlPath"></div>
+                        <div class="tlDot">
+                            <div class="tlEvent">
+                                <div class="tlEventTitle">{{ content.projects.homelab.intro.timeline.item4Date }}</div>
+                                <div class="tlEventDesc">{{ content.projects.homelab.intro.timeline.item4 }}</div>
+                            </div>
+                        </div>
+                        <div class="tlPath"></div>
+                        <div class="tlYear">2026</div>
+                        <div class="tlPath"></div>
+                        <div class="tlDot">
+                            <div class="tlEvent">
+                                <div class="tlEventTitle">{{ content.projects.homelab.intro.timeline.item5Date }}</div>
+                                <div class="tlEventDesc">{{ content.projects.homelab.intro.timeline.item5 }}</div>
+                            </div>
+                        </div>
+                        <div class="tlPath"></div>
+                        <div class="tlDot endDot"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <p class="mainSectionHeader"><span class="codeLine">02</span><br>{{ content.projects.homelab.beginning.header }}</p>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.homelab.beginning.why.header }}</p>
+                    <p class="sectionText">{{ content.projects.homelab.beginning.why.value }}</p>
+                </div>
+
+                <figure>
+                    <img src="./projects/homelab/my_first_ever_self_hosted_website.jpg" [alt]="content.projects.homelab.beginning.why.img">
+                    <figcaption>{{ content.projects.homelab.beginning.why.img }}</figcaption>
+                </figure>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.homelab.beginning.start.header }}</p>
+                    <p class="sectionText">{{ content.projects.homelab.beginning.start.value1 }}</p>
+                    <p class="sectionText">{{ content.projects.homelab.beginning.start.value2 }}</p>
+                </div>
+
+                <figure>
+                    <img src="./projects/homelab/raspberry_pi_1b.jpg" [alt]="content.projects.homelab.beginning.start.img">
+                    <figcaption>{{ content.projects.homelab.beginning.start.img }}</figcaption>
+                </figure>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.homelab.beginning.network.header }}</p>
+                    <p class="sectionText">{{ content.projects.homelab.beginning.network.value1 }}</p>
+                    <p class="sectionText">{{ content.projects.homelab.beginning.network.value2 }}</p>
+                </div>
+
+                <figure>
+                    <img src="./projects/homelab/wol.jpg" [alt]="content.projects.homelab.beginning.network.img">
+                    <figcaption>{{ content.projects.homelab.beginning.network.img }}</figcaption>
+                </figure>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.homelab.beginning.mikrotik.header }}</p>
+                    <p class="sectionText">{{ content.projects.homelab.beginning.mikrotik.value }}</p>
+                </div>
+
+                <figure>
+                    <img src="./projects/homelab/rb2011.jpg" [alt]="content.projects.homelab.beginning.mikrotik.img">
+                    <figcaption>{{ content.projects.homelab.beginning.mikrotik.img }}</figcaption>
+                </figure>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.homelab.beginning.infrastructure.header }}</p>
+                    <p class="sectionText">{{ content.projects.homelab.beginning.infrastructure.value1 }}</p>
+                    <p class="sectionText">{{ content.projects.homelab.beginning.infrastructure.value2 }}</p>
+                </div>
+
+                <figure>
+                    <img src="./projects/homelab/power_switch.jpg" [alt]="content.projects.homelab.beginning.infrastructure.img">
+                    <figcaption>{{ content.projects.homelab.beginning.infrastructure.img }}</figcaption>
+                </figure>
+            </section>
+
+            <section>
+                <p class="mainSectionHeader"><span class="codeLine">03</span><br>{{ content.projects.homelab.rack.header }}</p>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.homelab.rack.dream.header }}</p>
+                    <p class="sectionText">{{ content.projects.homelab.rack.dream.value }}</p>
+                </div>
+
+                <figure class="sectionImageVertical">
+                    <img src="./projects/homelab/rack_cabinet_2022.jpg" [alt]="content.projects.homelab.rack.dream.img">
+                    <figcaption>{{ content.projects.homelab.rack.dream.img }}</figcaption>
+                </figure>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.homelab.rack.subnets.header }}</p>
+                    <p class="sectionText">{{ content.projects.homelab.rack.subnets.value }}</p>
+                </div>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.homelab.rack.backupIsp.header }}</p>
+                    <p class="sectionText">{{ content.projects.homelab.rack.backupIsp.value1 }}</p>
+                    <p class="sectionText">{{ content.projects.homelab.rack.backupIsp.value2 }}</p>
+                </div>
+            </section>
+
+            <section>
+                <p class="mainSectionHeader"><span class="codeLine">04</span><br>{{ content.projects.homelab.current.header }}</p>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.homelab.current.simplification.header }}</p>
+                    <p class="sectionText">{{ content.projects.homelab.current.simplification.value }}</p>
+                </div>
+
+                <figure>
+                    <img src="./projects/homelab/network_2026.jpg" [alt]="content.projects.homelab.current.simplification.img">
+                    <figcaption>{{ content.projects.homelab.current.simplification.img }}</figcaption>
+                </figure>
+
+                <div>
+                    <p class="sectionHeader">{{ content.projects.homelab.current.services.header }}</p>
+                    <p class="sectionText">{{ content.projects.homelab.current.services.value }}</p>
+                </div>
+
+                <figure>
+                    <img src="./projects/homelab/netcat.jpg" [alt]="content.projects.homelab.current.services.img">
+                    <figcaption>{{ content.projects.homelab.current.services.img }}</figcaption>
+                </figure>
+            </section>
+        </article>
+    </div>
+</div>
