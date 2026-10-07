@@ -45,6 +45,12 @@ export const homeContent: HomeContent = {
   settings: {
     fullscreen: 'Fullscreen',
   },
+  about: {
+    header: "I'm a software developer, but I don't limit myself to just writing code.",
+    p1: "I work on software development on a daily basis, and in my free time I enjoy experimenting with technology. I work on my own projects - designing electronic circuits, 3D-printing parts, and running a homelab. I'm also interested in astrophotography, which often becomes an excuse to build something of my own.",
+    p2: "I enjoy projects that require stepping outside a single field - learning a new technology, designing a solution from scratch, or combining seemingly unrelated areas.",
+    p3: "I'm a self-directed learner, and I learn by building - from an idea, through experiments and prototypes, to a working solution.",
+  },
   projects: {
     journeycraft: {
       introduction: {

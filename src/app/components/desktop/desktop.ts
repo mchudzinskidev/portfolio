@@ -119,6 +119,8 @@ export class Desktop {
         component = About;
         icon = 'me';
         title = this.content.generic.aboutMe;
+        innerHeight = 256 + 64;
+        innerWidth = 256 + 640 + 64 + 32;
         break;
       }
       case WindowType.gear: {

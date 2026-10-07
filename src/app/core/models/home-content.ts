@@ -43,6 +43,12 @@ export interface HomeContent {
   settings: {
     fullscreen: string,
   },
+  about: {
+    header: string,
+    p1: string,
+    p2: string,
+    p3: string,
+  },
   projects: {
     journeycraft: {
       introduction: {
