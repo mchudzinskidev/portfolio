@@ -39,6 +39,10 @@ export class FileExplorer implements OnInit{
         this.openAppClicked()(this.fs.getPath(node));
       }else if(this.fs.getPath(node) === 'home/desktop/get-in-touch/linkedin'){
         this.openAppClicked()(this.fs.getPath(node));
+      }else if(this.fs.getPath(node) === 'home/desktop/get-in-touch/marcin_chudzinski_cv_pl.pdf'){
+        this.openAppClicked()(this.fs.getPath(node));
+      }else if(this.fs.getPath(node) === 'home/desktop/get-in-touch/marcin_chudzinski_cv_en.pdf'){
+        this.openAppClicked()(this.fs.getPath(node));
       }else{
         this.openBrowserClicked()(this.fs.getPath(node));
       }
