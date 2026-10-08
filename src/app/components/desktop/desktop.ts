@@ -351,10 +351,8 @@ export class Desktop {
     return icon.gridPosX < 0 || icon.gridPosY < 0;
   }
   public changeLang(lang: Lang) {
-    if (this.ls.newLangAfterReload !== lang) {
-      this.ls.newLangAfterReload = lang;
-      this.newWindow(WindowType.off, { showRestartRequiredMsg: true });
-    }
+    this.ls.newLangAfterReload = lang;
+    this.newWindow(WindowType.off, { showRestartRequiredMsg: true });
   }
   private openApp(path: string) {
     switch (path) {
