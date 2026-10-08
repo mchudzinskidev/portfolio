@@ -366,6 +366,14 @@ export class Desktop {
         this.newWindow(WindowType.in);
         break;
       }
+      case 'home/desktop/get-in-touch/marcin_chudzinski_cv_pl.pdf': {
+        window.open('https://mchudzinski.dev/marcin_chudzinski_cv_pl.pdf', '_blank')?.focus();
+        break;
+      }
+      case 'home/desktop/get-in-touch/marcin_chudzinski_cv_en.pdf': {
+        window.open('https://mchudzinski.dev/marcin_chudzinski_cv_en.pdf', '_blank')?.focus();
+        break;
+      }
       default: {
         this.newWindow(WindowType.net, { path: path });
       }

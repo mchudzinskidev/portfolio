@@ -93,7 +93,8 @@ export class FileSystem {
         children: [
           { name: 'mail.txt', parent: null, favorite: true, created: '2026', modified: '2026'  },
           { name: 'linkedin', parent: null, favorite: false, created: '2022', modified: '2026'  },
-          { name: 'cv.pdf', parent: null, favorite: false, created: '2022', modified: '2026'  },
+          { name: 'marcin_chudzinski_cv_en.pdf', parent: null, favorite: false, created: '2026', modified: '2026' },
+          { name: 'marcin_chudzinski_cv_pl.pdf', parent: null, favorite: false, created: '2022', modified: '2026' },
         ]
       },{
         name: 'projects',
