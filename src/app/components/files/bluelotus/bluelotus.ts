@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Content } from '../../../core/services/content';
 
 @Component({
   selector: 'app-bluelotus',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './bluelotus.scss',
 })
 export class Bluelotus {
-
+  public content = inject(Content).getHome();
 }
