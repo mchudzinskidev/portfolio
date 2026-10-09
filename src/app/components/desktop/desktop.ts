@@ -46,7 +46,9 @@ export class Desktop {
     gridSize: 128,
     wType: WindowType.projects,
     selected: false,
-  }, {
+  }
+  // to show hashi.exe again uncomment this and file-system.ts
+  /*, {
     title: this.content.desktop.hashi,
     gridPosX: 4,
     gridPosY: 3,
@@ -54,7 +56,7 @@ export class Desktop {
     gridSize: 128,
     wType: WindowType.hashi,
     selected: false,
-  }];
+  }*/];
   public selection = {
     visible: false,
     startX: 0,

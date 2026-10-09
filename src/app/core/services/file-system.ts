@@ -78,13 +78,14 @@ export class FileSystem {
       favorite: true,
       created: '2026',
       modified: '2026',
-      children: [{
+      // to show hashi.exe again uncomment this and desktop.ts
+      children: [/*{
         name: 'hashi.exe',
         parent: null,
         favorite: false,
         created: '2026',
         modified: '2026',
-      },{
+      },*/{
         name: 'get-in-touch',
         parent: null,
         favorite: false,
