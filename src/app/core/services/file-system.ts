@@ -78,13 +78,14 @@ export class FileSystem {
       favorite: true,
       created: '2026',
       modified: '2026',
-      children: [{
+      // to show hashi.exe again uncomment this and desktop.ts
+      children: [/*{
         name: 'hashi.exe',
         parent: null,
         favorite: false,
         created: '2026',
         modified: '2026',
-      },{
+      },*/{
         name: 'get-in-touch',
         parent: null,
         favorite: false,
@@ -93,8 +94,6 @@ export class FileSystem {
         children: [
           { name: 'mail.txt', parent: null, favorite: true, created: '2026', modified: '2026'  },
           { name: 'linkedin', parent: null, favorite: false, created: '2022', modified: '2026'  },
-          { name: 'marcin_chudzinski_cv_en.pdf', parent: null, favorite: false, created: '2026', modified: '2026' },
-          { name: 'marcin_chudzinski_cv_pl.pdf', parent: null, favorite: false, created: '2022', modified: '2026' },
         ]
       },{
         name: 'projects',

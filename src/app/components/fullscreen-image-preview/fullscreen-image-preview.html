@@ -1,0 +1,5 @@
+@if (imageService.image(); as image) {
+  <div class="preview" (click)="close()">
+    <img [src]="image.src" [alt]="image.alt">
+  </div>
+}
